@@ -12,22 +12,22 @@ class Dish
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    private ?int $id = null;
+    private ?int $id;
 
     #[ORM\Column(length: 255)]
-    private ?string $name = null;
+    private ?string $name;
 
     #[ORM\Column]
-    private ?float $price = null;
+    private ?float $price;
 
     #[ORM\Column(type: Types::TEXT)]
-    private ?string $description = null;
+    private ?string $description;
 
     #[ORM\Column(length: 255)]
-    private ?string $picture = null;
+    private ?string $picture;
 
     #[ORM\ManyToOne(inversedBy: 'dishes')]
-    private ?Category $category_id = null;
+    private ?Category $category_id;
 
     public function getId(): ?int
     {
