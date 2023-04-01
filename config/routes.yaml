@@ -1,0 +1,77 @@
+#page d'accueil
+homepage:
+  path: /
+  controller: App\Controller\HomeController::index
+
+#Gestion des plats
+dishes_list:
+  path: /dishes
+  controller: App\Controller\DishController::list
+
+dish_add:
+  path: /dishes/add
+  controller: App\Controller\DishController::add
+
+dish_modify:
+  path: /dishes/modify/{id}
+  controller: App\Controller\DishController::modify
+  
+dish_post:
+  path: /dishes/post
+  controller: App\Controller\DishController::post
+  methods: [POST]
+
+dish_remove:
+  path: /dishes/remove/{id}
+  controller: App\Controller\DishController::remove
+
+  #Gestion des menus
+menus_list:
+  path: /menus
+  controller: App\Controller\MenuController::list
+
+menu_add:
+  path: /menus/add
+  controller: App\Controller\MenuController::add
+
+menu_modify:
+  path: /menus/modify/{id}
+  controller: App\Controller\MenuController::modify
+  
+menu_post:
+  path: /menus/post
+  controller: App\Controller\MenuController::post
+  methods: [POST]
+
+menu_remove:
+  path: /menus/remove/{id}
+  controller: App\Controller\MenuController::remove
+
+
+ #Gestion des réservations
+reservation_add:
+  path: /reservation/add
+  controller: App\Controller\ReservationController::add
+
+reservation_modify:
+  path: /reservation/modify/{id}
+  controller: App\Controller\ReservationController::modify
+  
+reservation_post:
+  path: /reservation/post
+  controller: App\Controller\ReservationController::post
+  methods: [POST]
+
+reservation_remove:
+  path: /reservation/remove/{id}
+  controller: App\Controller\ReservationController::remove
+
+#Gestion des contacts 
+contact:
+  path: /contact
+  controller: App\Controller\ContactController::edit
+
+contact_post:
+  path: /contact/post
+  controller: App\Controller\ContactController::post
+  methods: [POST]
