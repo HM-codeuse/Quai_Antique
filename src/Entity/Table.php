@@ -20,7 +20,7 @@ class Table
     #[ORM\Column]
     private ?int $numberOfSettings = null;
 
-    #[ORM\ManyToOne(inversedBy: 'table_id')]
+    #[ORM\OneToOne(mappedBy: 'table_id', targetEntity: Reservation::class)]
     private ?Reservation $reservation = null;
 
     public function getId(): ?int
