@@ -86,3 +86,8 @@ a4ca56,127.0.0.1,GET,http://127.0.0.1:8000/home,1680770783,,200
 3f654b,127.0.0.1,GET,http://127.0.0.1:8000/home,1680770972,,200
 98a8f3,127.0.0.1,GET,http://127.0.0.1:8000/docs/5.3/assets/brand/bootstrap-logo.svg,1680770973,07037b,404
 07037b,127.0.0.1,GET,http://127.0.0.1:8000/docs/5.3/assets/brand/bootstrap-logo.svg,1680770973,,404
+f69f3c,127.0.0.1,GET,http://127.0.0.1:8000/,1680772808,,200
+a3ff8f,127.0.0.1,GET,http://127.0.0.1:8000/home,1680772823,,200
+bf9873,127.0.0.1,GET,http://127.0.0.1:8000/home,1680772832,,200
+cd8665,127.0.0.1,GET,http://127.0.0.1:8000/docs/5.3/assets/brand/bootstrap-logo.svg,1680772833,6ec688,404
+6ec688,127.0.0.1,GET,http://127.0.0.1:8000/docs/5.3/assets/brand/bootstrap-logo.svg,1680772833,,404
