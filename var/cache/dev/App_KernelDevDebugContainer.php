@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerNUkU4vr\App_KernelDevDebugContainer([
     'container.build_hash' => 'NUkU4vr',
-    'container.build_id' => 'bdd9bbb2',
-    'container.build_time' => 1680709096,
+    'container.build_id' => 'ac6d090b',
+    'container.build_time' => 1680770775,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerNUkU4vr');

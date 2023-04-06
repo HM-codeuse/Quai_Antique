@@ -74,3 +74,15 @@ ce42aa,127.0.0.1,GET,http://127.0.0.1:8000/,1680092881,,200
 b829e7,127.0.0.1,GET,http://127.0.0.1:8000/docs/5.3/assets/brand/bootstrap-logo.svg,1680092882,,404
 c90a8b,::1,GET,http://localhost/Quai_Antique/public/,1680123951,,200
 09a047,::1,GET,http://localhost/Quai_Antique/public/,1680124293,,200
+a4ca56,127.0.0.1,GET,http://127.0.0.1:8000/home,1680770783,,200
+4f5e1b,127.0.0.1,GET,http://127.0.0.1:8000/docs/5.3/assets/brand/bootstrap-logo.svg,1680770785,3ee48e,404
+3ee48e,127.0.0.1,GET,http://127.0.0.1:8000/docs/5.3/assets/brand/bootstrap-logo.svg,1680770785,,404
+0baf28,127.0.0.1,GET,http://127.0.0.1:8000/home,1680770799,,200
+428cbc,127.0.0.1,GET,http://127.0.0.1:8000/docs/5.3/assets/brand/bootstrap-logo.svg,1680770800,1dbcc9,404
+1dbcc9,127.0.0.1,GET,http://127.0.0.1:8000/docs/5.3/assets/brand/bootstrap-logo.svg,1680770800,,404
+8d33be,127.0.0.1,GET,http://127.0.0.1:8000/home,1680770894,,200
+7bf9f4,127.0.0.1,GET,http://127.0.0.1:8000/docs/5.3/assets/brand/bootstrap-logo.svg,1680770895,3555e6,404
+3555e6,127.0.0.1,GET,http://127.0.0.1:8000/docs/5.3/assets/brand/bootstrap-logo.svg,1680770895,,404
+3f654b,127.0.0.1,GET,http://127.0.0.1:8000/home,1680770972,,200
+98a8f3,127.0.0.1,GET,http://127.0.0.1:8000/docs/5.3/assets/brand/bootstrap-logo.svg,1680770973,07037b,404
+07037b,127.0.0.1,GET,http://127.0.0.1:8000/docs/5.3/assets/brand/bootstrap-logo.svg,1680770973,,404
