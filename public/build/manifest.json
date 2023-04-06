@@ -1,6 +1,15 @@
 {
-  "build/app.css": "/build/app.65db7838.css",
-  "build/app.js": "/build/app.418bd37c.js",
-  "build/runtime.js": "/build/runtime.847f55a6.js",
-  "build/138.d66d58a9.js": "/build/138.d66d58a9.js"
+  "build/app.css": "/build/app.css",
+  "build/app.js": "/build/app.js",
+  "build/runtime.js": "/build/runtime.js",
+  "build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js.js": "/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js.js",
+  "build/images/nouilles-savoie.jpg": "/build/images/nouilles-savoie.jpg",
+  "build/images/saumon-renversé.jpg": "/build/images/saumon-renversé.jpg",
+  "build/images/salade.jpg": "/build/images/salade.jpg",
+  "build/images/chambéry_map.png": "/build/images/chambéry_map.png",
+  "build/images/boeuf-bourguignon2.jpg": "/build/images/boeuf-bourguignon2.jpg",
+  "build/images/specials-3.jpg": "/build/images/specials-3.jpg",
+  "build/images/specials-2.jpg": "/build/images/specials-2.jpg",
+  "build/images/specials-1.jpg": "/build/images/specials-1.jpg",
+  "build/images/logo.jpg": "/build/images/logo.jpg"
 }

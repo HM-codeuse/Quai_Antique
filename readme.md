@@ -8,6 +8,7 @@ Le Quai Antique est un restaurant de Chambéry qui propose la cuisine traditionn
 -   PHP 8.0.25
 -   Composer 2.5.4
 -   Symfony CLI
+-   nodejs et npm
 
 ### Lancer l'environnement de développement 
 

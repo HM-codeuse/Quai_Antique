@@ -66,9 +66,11 @@ class __TwigTemplate_d8d78fa23fbcf1a5960eaff0cdbcd0de5485c1b133b8d7a2bb4dfd90b6b
 \t    </head>
 
     <body>
-    
         ";
+        // line 19
+        $this->loadTemplate("base_site/nav.html.twig", "base.html.twig", 19)->display($context);
         // line 20
+        echo "        ";
         $this->displayBlock('body', $context, $blocks);
         // line 21
         echo "    </body>
@@ -170,9 +172,14 @@ class __TwigTemplate_d8d78fa23fbcf1a5960eaff0cdbcd0de5485c1b133b8d7a2bb4dfd90b6b
         return "base.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  151 => 20,  138 => 13,  128 => 12,  115 => 10,  105 => 9,  86 => 6,  74 => 21,  72 => 20,  65 => 15,  62 => 12,  59 => 9,  54 => 6,  47 => 1,);
+        return array (  153 => 20,  140 => 13,  130 => 12,  117 => 10,  107 => 9,  88 => 6,  76 => 21,  73 => 20,  71 => 19,  65 => 15,  62 => 12,  59 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -195,7 +202,7 @@ class __TwigTemplate_d8d78fa23fbcf1a5960eaff0cdbcd0de5485c1b133b8d7a2bb4dfd90b6b
 \t    </head>
 
     <body>
-    
+        {% include 'base_site/nav.html.twig' %}
         {% block body %}{% endblock %}
     </body>
 </html>
