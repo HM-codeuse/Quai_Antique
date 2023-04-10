@@ -12,12 +12,12 @@ return [[
     'entrypoints' => [
         'app' => [
             'js' => [
-                '/build/runtime.61b1725c.js',
-                '/build/1.ddd63995.js',
-                '/build/app.191d3dbe.js',
+                '/build/runtime.js',
+                '/build/vendors-node_modules_bootstrap_dist_js_bootstrap_esm_js.js',
+                '/build/app.js',
             ],
             'css' => [
-                '/build/app.65db7838.css',
+                '/build/app.css',
             ],
         ],
     ],

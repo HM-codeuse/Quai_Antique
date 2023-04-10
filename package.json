@@ -25,6 +25,7 @@
     "dependencies": {
         "autoprefixer": "^10.4.14",
         "bootstrap": "^5.2.3",
+        "bootstrap-icons": "^1.10.4",
         "postcss-loader": "^7.2.4"
     },
     "browserslist": [

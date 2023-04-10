@@ -48,7 +48,7 @@ class __TwigTemplate_d8d78fa23fbcf1a5960eaff0cdbcd0de5485c1b133b8d7a2bb4dfd90b6b
 <html>
     \t<head>
 \t        <meta charset=\"UTF-8\">
-          <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+          \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
 \t        <title>";
         // line 6
         $this->displayBlock('title', $context, $blocks);
@@ -58,22 +58,26 @@ class __TwigTemplate_d8d78fa23fbcf1a5960eaff0cdbcd0de5485c1b133b8d7a2bb4dfd90b6b
         // line 9
         echo "\t        ";
         $this->displayBlock('stylesheets', $context, $blocks);
-        // line 12
+        // line 13
         echo "\t        ";
         $this->displayBlock('javascripts', $context, $blocks);
-        // line 15
+        // line 16
         echo "\t        
 \t    </head>
 
     <body>
         ";
-        // line 19
-        $this->loadTemplate("base_site/nav.html.twig", "base.html.twig", 19)->display($context);
         // line 20
+        $this->loadTemplate("base_site/nav.html.twig", "base.html.twig", 20)->display($context);
+        // line 21
         echo "        ";
         $this->displayBlock('body', $context, $blocks);
-        // line 21
-        echo "    </body>
+        // line 22
+        echo "\t\t";
+        $this->loadTemplate("base_site/footer.html.twig", "base.html.twig", 22)->display($context);
+        // line 23
+        echo "
+    </body>
 </html>
 ";
         
@@ -117,6 +121,7 @@ class __TwigTemplate_d8d78fa23fbcf1a5960eaff0cdbcd0de5485c1b133b8d7a2bb4dfd90b6b
         echo "\t        ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackLinkTags("app");
         echo "
+\t\t\t<link rel=\"stylesheet\" href=\"style.css\">
 \t        ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -126,7 +131,7 @@ class __TwigTemplate_d8d78fa23fbcf1a5960eaff0cdbcd0de5485c1b133b8d7a2bb4dfd90b6b
 
     }
 
-    // line 12
+    // line 13
     public function block_javascripts($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -136,7 +141,7 @@ class __TwigTemplate_d8d78fa23fbcf1a5960eaff0cdbcd0de5485c1b133b8d7a2bb4dfd90b6b
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "javascripts"));
 
-        // line 13
+        // line 14
         echo "\t            ";
         echo $this->extensions['Symfony\WebpackEncoreBundle\Twig\EntryFilesTwigExtension']->renderWebpackScriptTags("app");
         echo "
@@ -149,7 +154,7 @@ class __TwigTemplate_d8d78fa23fbcf1a5960eaff0cdbcd0de5485c1b133b8d7a2bb4dfd90b6b
 
     }
 
-    // line 20
+    // line 21
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -179,7 +184,7 @@ class __TwigTemplate_d8d78fa23fbcf1a5960eaff0cdbcd0de5485c1b133b8d7a2bb4dfd90b6b
 
     public function getDebugInfo()
     {
-        return array (  153 => 20,  140 => 13,  130 => 12,  117 => 10,  107 => 9,  88 => 6,  76 => 21,  73 => 20,  71 => 19,  65 => 15,  62 => 12,  59 => 9,  54 => 6,  47 => 1,);
+        return array (  158 => 21,  145 => 14,  135 => 13,  121 => 10,  111 => 9,  92 => 6,  79 => 23,  76 => 22,  73 => 21,  71 => 20,  65 => 16,  62 => 13,  59 => 9,  54 => 6,  47 => 1,);
     }
 
     public function getSourceContext()
@@ -188,12 +193,13 @@ class __TwigTemplate_d8d78fa23fbcf1a5960eaff0cdbcd0de5485c1b133b8d7a2bb4dfd90b6b
 <html>
     \t<head>
 \t        <meta charset=\"UTF-8\">
-          <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
+          \t<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">
 \t        <title>{% block title %}Welcome!{% endblock %}</title>
 \t        
 \t        {# Run `composer require symfony/webpack-encore-bundle` to start using Symfony UX #}
 \t        {% block stylesheets %}
 \t        {{ encore_entry_link_tags('app') }}
+\t\t\t<link rel=\"stylesheet\" href=\"style.css\">
 \t        {% endblock %}
 \t        {% block javascripts %}
 \t            {{ encore_entry_script_tags('app') }}
@@ -204,6 +210,8 @@ class __TwigTemplate_d8d78fa23fbcf1a5960eaff0cdbcd0de5485c1b133b8d7a2bb4dfd90b6b
     <body>
         {% include 'base_site/nav.html.twig' %}
         {% block body %}{% endblock %}
+\t\t{% include 'base_site/footer.html.twig' %}
+
     </body>
 </html>
 ", "base.html.twig", "C:\\xampp\\htdocs\\Quai_Antique\\templates\\base.html.twig");

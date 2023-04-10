@@ -3,7 +3,7 @@
         'name' => '__root__',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '99121a7560cb18744843c0631760285d9b2c1d5e',
+        'reference' => 'd13563c340fcabc5f908f204b908595db1b5c89d',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -13,7 +13,7 @@
         '__root__' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '99121a7560cb18744843c0631760285d9b2c1d5e',
+            'reference' => 'd13563c340fcabc5f908f204b908595db1b5c89d',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -1297,6 +1297,15 @@
             'install_path' => __DIR__ . '/../theseer/tokenizer',
             'aliases' => array(),
             'dev_requirement' => true,
+        ),
+        'twbs/bootstrap-icons' => array(
+            'pretty_version' => 'v1.10.4',
+            'version' => '1.10.4.0',
+            'reference' => 'd7747f9b467de4d62841e2308367a88eaacc9aac',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../twbs/bootstrap-icons',
+            'aliases' => array(),
+            'dev_requirement' => false,
         ),
         'twig/extra-bundle' => array(
             'pretty_version' => 'v3.5.1',
