@@ -59,13 +59,13 @@ class __TwigTemplate_3f33cd54b17ac6d8dce5cf0939d7fb3d978968d2434a27063e1caab8c52
     <div class=\"col mb-3\">
       <h5>Horaires</h5>
       <ul class=\"nav flex-column\">
-        <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-body-secondary\">Lun :12h00 - 14h30 / 19h00 - 22h30</a></li>
-        <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-body-secondary\">Lun :12h00 - 14h30 / 19h00 - 22h30</a></li>
-        <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-body-secondary\">Lun :12h00 - 14h30 / 19h00 - 22h30</a></li>
-        <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-body-secondary\">Lun :12h00 - 14h30 / 19h00 - 22h30</a></li>
-        <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-body-secondary\">Lun :12h00 - 14h30 / 19h00 - 22h30</a></li>
-        <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-body-secondary\">Lun :12h00 - 14h30 / 19h00 - 22h30</a></li>
-        <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-body-secondary\">Lun :12h00 - 14h30 / 19h00 - 22h30</a></li>
+        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
+        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
+        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
+        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
+        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
+        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
+        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
 
       </ul>
     </div>
@@ -144,13 +144,13 @@ class __TwigTemplate_3f33cd54b17ac6d8dce5cf0939d7fb3d978968d2434a27063e1caab8c52
     <div class=\"col mb-3\">
       <h5>Horaires</h5>
       <ul class=\"nav flex-column\">
-        <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-body-secondary\">Lun :12h00 - 14h30 / 19h00 - 22h30</a></li>
-        <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-body-secondary\">Lun :12h00 - 14h30 / 19h00 - 22h30</a></li>
-        <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-body-secondary\">Lun :12h00 - 14h30 / 19h00 - 22h30</a></li>
-        <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-body-secondary\">Lun :12h00 - 14h30 / 19h00 - 22h30</a></li>
-        <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-body-secondary\">Lun :12h00 - 14h30 / 19h00 - 22h30</a></li>
-        <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-body-secondary\">Lun :12h00 - 14h30 / 19h00 - 22h30</a></li>
-        <li class=\"nav-item mb-2\"><a href=\"#\" class=\"nav-link p-0 text-body-secondary\">Lun :12h00 - 14h30 / 19h00 - 22h30</a></li>
+        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
+        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
+        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
+        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
+        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
+        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
+        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
 
       </ul>
     </div>
