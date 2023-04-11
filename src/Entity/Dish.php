@@ -24,7 +24,7 @@ class Dish
     private ?string $description;
 
     #[ORM\Column(length: 255)]
-    private ?string $picture;
+    private ?string $file;
 
     #[ORM\ManyToOne(inversedBy: 'dishes')]
     private ?Category $category_id;
@@ -70,14 +70,14 @@ class Dish
         return $this;
     }
 
-    public function getPicture(): ?string
+    public function getFile(): ?string
     {
-        return $this->picture;
+        return $this->file;
     }
 
-    public function setPicture(string $picture): self
+    public function setFile(string $file): self
     {
-        $this->picture = $picture;
+        $this->file = $file;
 
         return $this;
     }

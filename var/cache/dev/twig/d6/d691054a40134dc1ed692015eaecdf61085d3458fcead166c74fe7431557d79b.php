@@ -46,28 +46,30 @@ class __TwigTemplate_063f8f8eae47b3adf68ad3df526348866c182670cc981ced99c6ba8b8c1
 </div>
 <div class=\"row row-cols-1 row-cols-md-3 g-4\">
       <div class=\"col\">
-        <div class=\"card\">
+        <div class=\"card rounded-3\">
             <img src=\"";
         // line 9
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/specials-1.jpg"), "html", null, true);
         echo "\" class=\"img-fluid\" alt=\"...\">         
+            <h2 class=\"text-center\">titre1</h2>
         </div>
       </div>
       <div class=\"col\">
-        <div class=\"card\">
+        <div class=\"card rounded-3\">
             <img src=\"";
-        // line 14
+        // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/specials-2.jpg"), "html", null, true);
         echo "\" class=\"img-fluid\" alt=\"...\">
-         
+            <h2 class=\"text-center\">titre2</h2>
         </div>
       </div>
       <div class=\"col\">
-        <div class=\"card\">
+        <div class=\"card rounded-3\">
             <img src=\"";
-        // line 20
+        // line 21
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/specials-3.jpg"), "html", null, true);
         echo "\" class=\"img-fluid\" alt=\"...\">
+            <h2 class=\"text-center\">titre3</h2>
         </div>
       </div>
       </div>
@@ -92,7 +94,7 @@ class __TwigTemplate_063f8f8eae47b3adf68ad3df526348866c182670cc981ced99c6ba8b8c1
 
     public function getDebugInfo()
     {
-        return array (  69 => 20,  60 => 14,  52 => 9,  43 => 2,);
+        return array (  70 => 21,  61 => 15,  52 => 9,  43 => 2,);
     }
 
     public function getSourceContext()
@@ -104,19 +106,21 @@ class __TwigTemplate_063f8f8eae47b3adf68ad3df526348866c182670cc981ced99c6ba8b8c1
 </div>
 <div class=\"row row-cols-1 row-cols-md-3 g-4\">
       <div class=\"col\">
-        <div class=\"card\">
+        <div class=\"card rounded-3\">
             <img src=\"{{ asset('build/images/specials-1.jpg') }}\" class=\"img-fluid\" alt=\"...\">         
+            <h2 class=\"text-center\">titre1</h2>
         </div>
       </div>
       <div class=\"col\">
-        <div class=\"card\">
+        <div class=\"card rounded-3\">
             <img src=\"{{ asset('build/images/specials-2.jpg') }}\" class=\"img-fluid\" alt=\"...\">
-         
+            <h2 class=\"text-center\">titre2</h2>
         </div>
       </div>
       <div class=\"col\">
-        <div class=\"card\">
+        <div class=\"card rounded-3\">
             <img src=\"{{ asset('build/images/specials-3.jpg') }}\" class=\"img-fluid\" alt=\"...\">
+            <h2 class=\"text-center\">titre3</h2>
         </div>
       </div>
       </div>
