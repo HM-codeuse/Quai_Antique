@@ -47,11 +47,11 @@ class __TwigTemplate_7473b2118886f654447ddcadac4596afdf576b8276cc83d0202d759c064
       <div class=\"card-body\">
         <h5 class=\"card-title\">Contactez-nous</h5>
         <div class=\"mb-3\">
-            <label for=\"exampleFormControlInput1\" class=\"form-label\">Email address</label>
+            <label for=\"exampleFormControlInput1\" class=\"form-label\">Adresse mail</label>
              <input type=\"email\" class=\"form-control\" id=\"exampleFormControlInput1\" placeholder=\"name@example.com\">
         </div>
         <div class=\"mb-3\">
-            <label for=\"exampleFormControlTextarea1\" class=\"form-label\">Example textarea</label>
+            <label for=\"exampleFormControlTextarea1\" class=\"form-label\">Votre message</label>
             <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>
         </div>
       </div>
@@ -105,11 +105,11 @@ class __TwigTemplate_7473b2118886f654447ddcadac4596afdf576b8276cc83d0202d759c064
       <div class=\"card-body\">
         <h5 class=\"card-title\">Contactez-nous</h5>
         <div class=\"mb-3\">
-            <label for=\"exampleFormControlInput1\" class=\"form-label\">Email address</label>
+            <label for=\"exampleFormControlInput1\" class=\"form-label\">Adresse mail</label>
              <input type=\"email\" class=\"form-control\" id=\"exampleFormControlInput1\" placeholder=\"name@example.com\">
         </div>
         <div class=\"mb-3\">
-            <label for=\"exampleFormControlTextarea1\" class=\"form-label\">Example textarea</label>
+            <label for=\"exampleFormControlTextarea1\" class=\"form-label\">Votre message</label>
             <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>
         </div>
       </div>
