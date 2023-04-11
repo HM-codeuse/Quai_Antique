@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerBi6Be3P\App_KernelDevDebugContainer([
     'container.build_hash' => 'Bi6Be3P',
-    'container.build_id' => 'f0c810b7',
-    'container.build_time' => 1681126795,
+    'container.build_id' => '06fba07c',
+    'container.build_time' => 1681206072,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerBi6Be3P');
