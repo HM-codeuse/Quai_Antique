@@ -72,7 +72,10 @@ class __TwigTemplate_116e06b9c8dfd4fbc1ba503c3c94d8e195c03254aaa7ef8ad02cb795c46
         $this->loadTemplate("home/star_dishes.html.twig", "home/index.html.twig", 5)->display($context);
         // line 6
         echo "    ";
-        $this->loadTemplate("home/contact_access.html.twig", "home/index.html.twig", 6)->display($context);
+        $this->loadTemplate("home/last_dish_access.html.twig", "home/index.html.twig", 6)->display($context);
+        // line 7
+        echo "    ";
+        $this->loadTemplate("home/contact.html.twig", "home/index.html.twig", 7)->display($context);
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -93,7 +96,7 @@ class __TwigTemplate_116e06b9c8dfd4fbc1ba503c3c94d8e195c03254aaa7ef8ad02cb795c46
 
     public function getDebugInfo()
     {
-        return array (  74 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  77 => 7,  74 => 6,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -103,7 +106,8 @@ class __TwigTemplate_116e06b9c8dfd4fbc1ba503c3c94d8e195c03254aaa7ef8ad02cb795c46
 {% block body %}
     {% include 'home/carroussel.html.twig' %}
     {% include 'home/star_dishes.html.twig' %}
-    {% include 'home/contact_access.html.twig' %}
+    {% include 'home/last_dish_access.html.twig' %}
+    {% include 'home/contact.html.twig' %}
 {% endblock %}", "home/index.html.twig", "C:\\xampp\\htdocs\\Quai_Antique\\templates\\home\\index.html.twig");
     }
 }

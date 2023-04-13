@@ -12,12 +12,13 @@
     --info: #392C1E;
 }
 
+
 .logo {
     font-family: 'Luxurious Script', cursive;
     font-size: 2rem;
 }
 
-.contact-card, .access-card {
+.lash-dish, .access-card {
     background-color: var(--secondary);
     height: 100%;
 }
@@ -28,6 +29,7 @@
 
 iframe {
     border:0;
+    height: 200%;
 }
 
 nav, footer {
