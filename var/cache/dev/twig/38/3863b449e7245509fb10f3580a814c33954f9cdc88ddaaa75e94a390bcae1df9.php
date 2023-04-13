@@ -40,14 +40,13 @@ class __TwigTemplate_751efbc40821bc320602b2d4c34a4fa48ae2e4a564cbc51f39a95fd6058
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base_site/nav.html.twig"));
 
         // line 1
-        echo " <nav class=\"navbar navbar-expand-lg bg-body-tertiary bg-dark text-light\" data-bs-theme=\"dark\">
+        echo " <nav class=\"navbar navbar-expand-lg bg-body-tertiary text-light\" >
       <div class=\"container-fluid\">
-        <a class=\"navbar-brand link-light\" href=\"#\">
-          <img src=\"";
-        // line 4
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/specials-1.jpg"), "html", null, true);
-        echo "\" alt=\"Logo\" width=\"30\" height=\"24\"width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">
-          Quai Antique 
+        <a class=\"navbar-brand link-light\" href=\"";
+        // line 3
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        echo "\">
+          <h2 class=\"logo\">Quai Antique</h2>
         </a>
         <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
           <span class=\"navbar-toggler-icon\"></span>
@@ -55,32 +54,35 @@ class __TwigTemplate_751efbc40821bc320602b2d4c34a4fa48ae2e4a564cbc51f39a95fd6058
         <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
          <ul class=\"navbar-nav\">
             <li class=\"nav-item\">
-              <a class=\"nav-link link-light active\" aria-current=\"page\" href=\"\"";
-        // line 13
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("homepage");
-        echo "\"\">Accueil</a>
+              <a class=\"nav-link link-light active\" aria-current=\"page\" href=\"";
+        // line 12
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_home");
+        echo "\">ACCUEIL</a>
             </li>
             <li class=\"nav-item\">
-             <a class=\"nav-link link-light\" href=\"\"";
-        // line 16
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("dishes_list");
-        echo "\"\">Plats</a>
+             <a class=\"nav-link link-light\" href=\"";
+        // line 15
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_dishes");
+        echo "\">PLATS</a>
             </li>
            <li class=\"nav-item\">
-             <a class=\"nav-link link-light\" href=\"\"";
-        // line 19
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("menus_list");
-        echo "\"\">Menus</a>
+             <a class=\"nav-link link-light\" href=\"";
+        // line 18
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_menu");
+        echo "\">MENUS</a>
            </li>
            <li class=\"nav-item\">
-             <a class=\"nav-link link-light\" href=\"\"";
-        // line 22
-        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("contact");
-        echo "\"\">Contact</a>
+             <a class=\"nav-link link-light\" href=\"";
+        // line 21
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_contact");
+        echo "\">CONTACT</a>
             </li>
          </ul>
         </div>
-        <button type=\"button\" class=\"btn btn-success\">Réserver</button>
+        <button type=\"button\" class=\"btn-primary rounded-5\" ><a class=\"nav-link link-light \" href=\"";
+        // line 25
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation");
+        echo "\">Réserver</a></button>
      </div>
 </nav>";
         
@@ -103,16 +105,15 @@ class __TwigTemplate_751efbc40821bc320602b2d4c34a4fa48ae2e4a564cbc51f39a95fd6058
 
     public function getDebugInfo()
     {
-        return array (  78 => 22,  72 => 19,  66 => 16,  60 => 13,  48 => 4,  43 => 1,);
+        return array (  84 => 25,  77 => 21,  71 => 18,  65 => 15,  59 => 12,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source(" <nav class=\"navbar navbar-expand-lg bg-body-tertiary bg-dark text-light\" data-bs-theme=\"dark\">
+        return new Source(" <nav class=\"navbar navbar-expand-lg bg-body-tertiary text-light\" >
       <div class=\"container-fluid\">
-        <a class=\"navbar-brand link-light\" href=\"#\">
-          <img src=\"{{ asset('build/images/specials-1.jpg') }}\" alt=\"Logo\" width=\"30\" height=\"24\"width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">
-          Quai Antique 
+        <a class=\"navbar-brand link-light\" href=\"{{ path ('app_home') }}\">
+          <h2 class=\"logo\">Quai Antique</h2>
         </a>
         <button class=\"navbar-toggler\" type=\"button\" data-bs-toggle=\"collapse\" data-bs-target=\"#navbarNav\" aria-controls=\"navbarNav\" aria-expanded=\"false\" aria-label=\"Toggle navigation\">
           <span class=\"navbar-toggler-icon\"></span>
@@ -120,20 +121,20 @@ class __TwigTemplate_751efbc40821bc320602b2d4c34a4fa48ae2e4a564cbc51f39a95fd6058
         <div class=\"collapse navbar-collapse\" id=\"navbarNav\">
          <ul class=\"navbar-nav\">
             <li class=\"nav-item\">
-              <a class=\"nav-link link-light active\" aria-current=\"page\" href=\"\"{{ path('homepage') }}\"\">Accueil</a>
+              <a class=\"nav-link link-light active\" aria-current=\"page\" href=\"{{ path ('app_home') }}\">ACCUEIL</a>
             </li>
             <li class=\"nav-item\">
-             <a class=\"nav-link link-light\" href=\"\"{{ path('dishes_list') }}\"\">Plats</a>
+             <a class=\"nav-link link-light\" href=\"{{ path ('app_dishes') }}\">PLATS</a>
             </li>
            <li class=\"nav-item\">
-             <a class=\"nav-link link-light\" href=\"\"{{ path('menus_list') }}\"\">Menus</a>
+             <a class=\"nav-link link-light\" href=\"{{ path ('app_menu') }}\">MENUS</a>
            </li>
            <li class=\"nav-item\">
-             <a class=\"nav-link link-light\" href=\"\"{{ path('contact') }}\"\">Contact</a>
+             <a class=\"nav-link link-light\" href=\"{{ path ('app_contact') }}\">CONTACT</a>
             </li>
          </ul>
         </div>
-        <button type=\"button\" class=\"btn btn-success\">Réserver</button>
+        <button type=\"button\" class=\"btn-primary rounded-5\" ><a class=\"nav-link link-light \" href=\"{{ path ('app_reservation') }}\">Réserver</a></button>
      </div>
 </nav>", "base_site/nav.html.twig", "C:\\xampp\\htdocs\\Quai_Antique\\templates\\base_site\\nav.html.twig");
     }

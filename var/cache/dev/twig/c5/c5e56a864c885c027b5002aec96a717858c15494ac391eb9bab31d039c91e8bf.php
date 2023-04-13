@@ -40,14 +40,10 @@ class __TwigTemplate_3f33cd54b17ac6d8dce5cf0939d7fb3d978968d2434a27063e1caab8c52
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "base_site/footer.html.twig"));
 
         // line 1
-        echo "<footer class=\"row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top\">
+        echo "<footer class=\"row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 mt-5 border-top\">
     <div class=\"col mb-3\">
       <a href=\"/\" class=\"d-flex align-items-center mb-3 link-body-emphasis text-decoration-none\">
-        <img src=\"";
-        // line 4
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/specials-1.jpg"), "html", null, true);
-        echo "\" alt=\"Logo\" width=\"30\" height=\"24\"width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">
-          Quai Antique 
+        <h2 class=\"logo\">Quai Antique</h2> 
       </a>
       <p class=\"text-body-secondary\">© 2023</p>
     </div>
@@ -116,23 +112,17 @@ class __TwigTemplate_3f33cd54b17ac6d8dce5cf0939d7fb3d978968d2434a27063e1caab8c52
         return "base_site/footer.html.twig";
     }
 
-    public function isTraitable()
-    {
-        return false;
-    }
-
     public function getDebugInfo()
     {
-        return array (  48 => 4,  43 => 1,);
+        return array (  43 => 1,);
     }
 
     public function getSourceContext()
     {
-        return new Source("<footer class=\"row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 my-5 border-top\">
+        return new Source("<footer class=\"row row-cols-1 row-cols-sm-2 row-cols-md-5 py-5 mt-5 border-top\">
     <div class=\"col mb-3\">
       <a href=\"/\" class=\"d-flex align-items-center mb-3 link-body-emphasis text-decoration-none\">
-        <img src=\"{{ asset('build/images/specials-1.jpg') }}\" alt=\"Logo\" width=\"30\" height=\"24\"width=\"30\" height=\"24\" class=\"d-inline-block align-text-top\">
-          Quai Antique 
+        <h2 class=\"logo\">Quai Antique</h2> 
       </a>
       <p class=\"text-body-secondary\">© 2023</p>
     </div>

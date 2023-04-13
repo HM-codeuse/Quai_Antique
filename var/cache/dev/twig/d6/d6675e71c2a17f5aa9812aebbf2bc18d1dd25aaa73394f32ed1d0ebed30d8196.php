@@ -40,7 +40,7 @@ class __TwigTemplate_7473b2118886f654447ddcadac4596afdf576b8276cc83d0202d759c064
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/contact_access.html.twig"));
 
         // line 2
-        echo "<div class=\"acces-contact\">
+        echo "<div class=\"access-contact my-4\"id=\"access-contact\">
 <div class=\"row\">
   <div class=\"col-sm-6 mb-3 mb-sm-0\">
     <div class=\"contact-card my-3 mx-3 p-3 rounded-3\">
@@ -53,7 +53,7 @@ class __TwigTemplate_7473b2118886f654447ddcadac4596afdf576b8276cc83d0202d759c064
         <div class=\"mb-3\">
             <label for=\"exampleFormControlTextarea1\" class=\"form-label\">Votre message</label>
             <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>
-        <button class=\"btn btn-danger mx-2\" type=\"submit\">Button</button>
+        <button class=\"btn-primary btn-lg rounded-5 mx-2 my-2 p-2\" type=\"submit\">Envoyer</button>
         </div>
       </div>
     </div>
@@ -91,7 +91,7 @@ class __TwigTemplate_7473b2118886f654447ddcadac4596afdf576b8276cc83d0202d759c064
     public function getSourceContext()
     {
         return new Source("{# Contact et Access #}
-<div class=\"acces-contact\">
+<div class=\"access-contact my-4\"id=\"access-contact\">
 <div class=\"row\">
   <div class=\"col-sm-6 mb-3 mb-sm-0\">
     <div class=\"contact-card my-3 mx-3 p-3 rounded-3\">
@@ -104,7 +104,7 @@ class __TwigTemplate_7473b2118886f654447ddcadac4596afdf576b8276cc83d0202d759c064
         <div class=\"mb-3\">
             <label for=\"exampleFormControlTextarea1\" class=\"form-label\">Votre message</label>
             <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>
-        <button class=\"btn btn-danger mx-2\" type=\"submit\">Button</button>
+        <button class=\"btn-primary btn-lg rounded-5 mx-2 my-2 p-2\" type=\"submit\">Envoyer</button>
         </div>
       </div>
     </div>

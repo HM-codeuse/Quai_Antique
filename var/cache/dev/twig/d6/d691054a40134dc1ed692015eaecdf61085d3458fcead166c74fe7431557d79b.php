@@ -40,36 +40,36 @@ class __TwigTemplate_063f8f8eae47b3adf68ad3df526348866c182670cc981ced99c6ba8b8c1
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/star_dishes.html.twig"));
 
         // line 2
-        echo "<div class=\"star\" id= \"star_container\">
+        echo "<div class=\"star\">
 <div class=\"row\">
-<h2 class=\"text-center\">Nos plats vedettes</h2>
+<h2 class=\"text-center my-4\">Nos plats vedettes</h2>
 </div>
 <div class=\"row row-cols-1 row-cols-md-3 g-4\">
       <div class=\"col\">
-        <div class=\"card rounded-3\">
+        <div class=\"card rounded-3 my-3 mx-3 p-3 rounded-3\">
             <img src=\"";
         // line 9
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/specials-1.jpg"), "html", null, true);
         echo "\" class=\"img-fluid\" alt=\"...\">         
-            <h2 class=\"text-center\">titre1</h2>
+            <h3 class=\"text-center\">titre1</h3>
         </div>
       </div>
       <div class=\"col\">
-        <div class=\"card rounded-3\">
+        <div class=\"card rounded-3 my-3 mx-3 p-3 rounded-3\">
             <img src=\"";
         // line 15
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/specials-2.jpg"), "html", null, true);
         echo "\" class=\"img-fluid\" alt=\"...\">
-            <h2 class=\"text-center\">titre2</h2>
+            <h3 class=\"text-center\">titre2</h3>
         </div>
       </div>
       <div class=\"col\">
-        <div class=\"card rounded-3\">
+        <div class=\"card rounded-3 my-3 mx-3 p-3 rounded-3\">
             <img src=\"";
         // line 21
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/specials-3.jpg"), "html", null, true);
         echo "\" class=\"img-fluid\" alt=\"...\">
-            <h2 class=\"text-center\">titre3</h2>
+            <h3 class=\"text-center\">titre3</h3>
         </div>
       </div>
       </div>
@@ -100,27 +100,27 @@ class __TwigTemplate_063f8f8eae47b3adf68ad3df526348866c182670cc981ced99c6ba8b8c1
     public function getSourceContext()
     {
         return new Source("{# plats vedette #}
-<div class=\"star\" id= \"star_container\">
+<div class=\"star\">
 <div class=\"row\">
-<h2 class=\"text-center\">Nos plats vedettes</h2>
+<h2 class=\"text-center my-4\">Nos plats vedettes</h2>
 </div>
 <div class=\"row row-cols-1 row-cols-md-3 g-4\">
       <div class=\"col\">
-        <div class=\"card rounded-3\">
+        <div class=\"card rounded-3 my-3 mx-3 p-3 rounded-3\">
             <img src=\"{{ asset('build/images/specials-1.jpg') }}\" class=\"img-fluid\" alt=\"...\">         
-            <h2 class=\"text-center\">titre1</h2>
+            <h3 class=\"text-center\">titre1</h3>
         </div>
       </div>
       <div class=\"col\">
-        <div class=\"card rounded-3\">
+        <div class=\"card rounded-3 my-3 mx-3 p-3 rounded-3\">
             <img src=\"{{ asset('build/images/specials-2.jpg') }}\" class=\"img-fluid\" alt=\"...\">
-            <h2 class=\"text-center\">titre2</h2>
+            <h3 class=\"text-center\">titre2</h3>
         </div>
       </div>
       <div class=\"col\">
-        <div class=\"card rounded-3\">
+        <div class=\"card rounded-3 my-3 mx-3 p-3 rounded-3\">
             <img src=\"{{ asset('build/images/specials-3.jpg') }}\" class=\"img-fluid\" alt=\"...\">
-            <h2 class=\"text-center\">titre3</h2>
+            <h3 class=\"text-center\">titre3</h3>
         </div>
       </div>
       </div>

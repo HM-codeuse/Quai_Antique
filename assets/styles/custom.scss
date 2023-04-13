@@ -1,9 +1,45 @@
+
+//Fonts_links
+@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+
+
+
+:root {
+    font-family: 'Montserrat', sans-serif;
+    --primary: #906427;
+    --secondary: #618C03;
+    --info: #392C1E;
+}
+
+.logo {
+    font-family: 'Luxurious Script', cursive;
+    font-size: 2rem;
+}
+
 .contact-card, .access-card {
-    background-color: #906427;
-    color:white;
+    background-color: var(--secondary);
     height: 100%;
+}
+
+.star, button{
+    background-color:var(--primary);
 }
 
 iframe {
     border:0;
 }
+
+nav, footer {
+    background-color: #392C1E;
+    color:white;
+}
+
+h2, h5 {
+    color: white;
+}
+
+h3{
+    color: black;
+}
+
