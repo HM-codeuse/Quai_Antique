@@ -41,7 +41,7 @@ class __TwigTemplate_5f86ab3471b38545ae8f9a8412a2c313eb187a37fa4000535a8e43e6c6f
 
         // line 1
         echo "<div class=\"contact-form\">
-    <h3 class=\"contact-form-title text-center\">Contactez-nous</h3>
+    <h3 class=\"contact-form-title text-center m-4\">Contactez-nous</h3>
         <div class=\"row align-items-center m-3\">
             <div class=\"contact-mail col-2 \">
                 <label for=\"MailInput\" class=\"form-label\">Adresse mail</label>
@@ -84,7 +84,7 @@ class __TwigTemplate_5f86ab3471b38545ae8f9a8412a2c313eb187a37fa4000535a8e43e6c6f
     public function getSourceContext()
     {
         return new Source("<div class=\"contact-form\">
-    <h3 class=\"contact-form-title text-center\">Contactez-nous</h3>
+    <h3 class=\"contact-form-title text-center m-4\">Contactez-nous</h3>
         <div class=\"row align-items-center m-3\">
             <div class=\"contact-mail col-2 \">
                 <label for=\"MailInput\" class=\"form-label\">Adresse mail</label>

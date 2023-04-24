@@ -68,7 +68,7 @@ class __TwigTemplate_be962642cdf2a318fd6f8d1a9c39e989adf4f8ccaf15949cc5c9c80449f
         echo "
 ";
         // line 5
-        $this->loadTemplate("home/contact_access.html.twig", "contact/index.html.twig", 5)->display($context);
+        $this->loadTemplate("home/contact.html.twig", "contact/index.html.twig", 5)->display($context);
         // line 6
         echo "
 
@@ -102,7 +102,7 @@ class __TwigTemplate_be962642cdf2a318fd6f8d1a9c39e989adf4f8ccaf15949cc5c9c80449f
 
 {% block body %}
 
-{% include 'home/contact_access.html.twig' %}
+{% include 'home/contact.html.twig' %}
 
 
 {% endblock %}

@@ -49,3 +49,22 @@ h3{
     color: var(--primary);
 }
 
+//page des plats 
+.starter-title, .side-title {
+    color:var(--secondary);
+}
+
+.dish-meat {
+    background-color: var(--secondary);
+}
+
+.dish-dessert {
+    background-color: var(--primary);
+}
+.starter-content, .side-content {
+    color:var(--info);
+}
+
+.meat-content, .dessert-content {
+    color: white;
+}
