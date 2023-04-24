@@ -25,6 +25,10 @@
 
 .star, button{
     background-color:var(--primary);
+    color:white;
+    border-radius: 20px;
+    margin: 10px;
+    border-style: none;
 }
 
 iframe {
@@ -42,6 +46,6 @@ h2, h5 {
 }
 
 h3{
-    color: black;
+    color: var(--primary);
 }
 

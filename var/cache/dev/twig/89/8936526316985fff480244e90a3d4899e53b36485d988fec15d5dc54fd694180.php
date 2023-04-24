@@ -79,7 +79,7 @@ class __TwigTemplate_c483c2adc13a5bb782635c37d2db1f3763d49a021345fad48fc7b6cfded
             </li>
          </ul>
         </div>
-        <button type=\"button\" class=\"btn-primary rounded-5\" ><a class=\"nav-link link-light \" href=\"";
+        <button type=\"button\" class=\"btn-primary rounded-4 mx-2 my-2 p-2\" ><a class=\"nav-link link-light \" href=\"";
         // line 25
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation");
         echo "\">Réserver</a></button>
@@ -134,7 +134,7 @@ class __TwigTemplate_c483c2adc13a5bb782635c37d2db1f3763d49a021345fad48fc7b6cfded
             </li>
          </ul>
         </div>
-        <button type=\"button\" class=\"btn-primary rounded-5\" ><a class=\"nav-link link-light \" href=\"{{ path ('app_reservation') }}\">Réserver</a></button>
+        <button type=\"button\" class=\"btn-primary rounded-4 mx-2 my-2 p-2\" ><a class=\"nav-link link-light \" href=\"{{ path ('app_reservation') }}\">Réserver</a></button>
      </div>
 </nav>", "base_site/nav.html.twig", "C:\\xampp\\htdocs\\Quai_Antique\\templates\\base_site\\nav.html.twig");
     }

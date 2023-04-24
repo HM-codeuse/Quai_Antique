@@ -1,12 +1,22 @@
-
-<h2 class="contact-title">Contactez-nous</h2>
- <div class="row mb-3">
-            <div class="contact-form">
-            <label for="exampleFormControlInput1" class="form-label">Adresse mail</label>
-             <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
-</div>
-        <div class="mb-3">
-            <label for="exampleFormControlTextarea1" class="form-label">Votre message</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-        <button class="btn-primary rounded-5 mx-2 my-2 p-2" type="submit">Envoyer</button>
+<div class="contact-form">
+    <h3 class="contact-form-title text-center">Contactez-nous</h3>
+        <div class="row align-items-center m-3">
+            <div class="contact-mail col-2 ">
+                <label for="MailInput" class="form-label">Adresse mail</label>
+            </div>
+            <div class="contact-mail col-9 ">
+                <input type="email" class="form-control" id="MailInput" placeholder="name@example.com">
+            </div>
         </div>
+        <div class="row g-2 align-items-center m-3">
+            <div class="contact-message col-2">
+                <label for="MessageInput" class="form-label">Votre message</label>
+            </div>
+            <div class="contact-message col-9">
+                <textarea class="form-control" id="MessageInput" rows="10"></textarea>
+            </div>
+            <div class=" valdation-form d-grid col-6 mx-auto">
+                <button class="btn-primary my-2 p-2 rounded-4" type="submit">Envoyer</button>
+            </div>
+        </div>
+</div>

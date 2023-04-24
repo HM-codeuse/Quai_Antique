@@ -40,18 +40,29 @@ class __TwigTemplate_5f86ab3471b38545ae8f9a8412a2c313eb187a37fa4000535a8e43e6c6f
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "template", "home/contact.html.twig"));
 
         // line 1
-        echo "
-<h2 class=\"contact-title\">Contactez-nous</h2>
- <div class=\"row mb-3\">
-            <div class=\"contact-form\">
-            <label for=\"exampleFormControlInput1\" class=\"form-label\">Adresse mail</label>
-             <input type=\"email\" class=\"form-control\" id=\"exampleFormControlInput1\" placeholder=\"name@example.com\">
+        echo "<div class=\"contact-form\">
+    <h3 class=\"contact-form-title text-center\">Contactez-nous</h3>
+        <div class=\"row align-items-center m-3\">
+            <div class=\"contact-mail col-2 \">
+                <label for=\"MailInput\" class=\"form-label\">Adresse mail</label>
+            </div>
+            <div class=\"contact-mail col-9 \">
+                <input type=\"email\" class=\"form-control\" id=\"MailInput\" placeholder=\"name@example.com\">
+            </div>
+        </div>
+        <div class=\"row g-2 align-items-center m-3\">
+            <div class=\"contact-message col-2\">
+                <label for=\"MessageInput\" class=\"form-label\">Votre message</label>
+            </div>
+            <div class=\"contact-message col-9\">
+                <textarea class=\"form-control\" id=\"MessageInput\" rows=\"10\"></textarea>
+            </div>
+            <div class=\" valdation-form d-grid col-6 mx-auto\">
+                <button class=\"btn-primary my-2 p-2 rounded-4\" type=\"submit\">Envoyer</button>
+            </div>
+        </div>
 </div>
-        <div class=\"mb-3\">
-            <label for=\"exampleFormControlTextarea1\" class=\"form-label\">Votre message</label>
-            <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>
-        <button class=\"btn-primary rounded-5 mx-2 my-2 p-2\" type=\"submit\">Envoyer</button>
-        </div>";
+";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
 
@@ -72,17 +83,28 @@ class __TwigTemplate_5f86ab3471b38545ae8f9a8412a2c313eb187a37fa4000535a8e43e6c6f
 
     public function getSourceContext()
     {
-        return new Source("
-<h2 class=\"contact-title\">Contactez-nous</h2>
- <div class=\"row mb-3\">
-            <div class=\"contact-form\">
-            <label for=\"exampleFormControlInput1\" class=\"form-label\">Adresse mail</label>
-             <input type=\"email\" class=\"form-control\" id=\"exampleFormControlInput1\" placeholder=\"name@example.com\">
+        return new Source("<div class=\"contact-form\">
+    <h3 class=\"contact-form-title text-center\">Contactez-nous</h3>
+        <div class=\"row align-items-center m-3\">
+            <div class=\"contact-mail col-2 \">
+                <label for=\"MailInput\" class=\"form-label\">Adresse mail</label>
+            </div>
+            <div class=\"contact-mail col-9 \">
+                <input type=\"email\" class=\"form-control\" id=\"MailInput\" placeholder=\"name@example.com\">
+            </div>
+        </div>
+        <div class=\"row g-2 align-items-center m-3\">
+            <div class=\"contact-message col-2\">
+                <label for=\"MessageInput\" class=\"form-label\">Votre message</label>
+            </div>
+            <div class=\"contact-message col-9\">
+                <textarea class=\"form-control\" id=\"MessageInput\" rows=\"10\"></textarea>
+            </div>
+            <div class=\" valdation-form d-grid col-6 mx-auto\">
+                <button class=\"btn-primary my-2 p-2 rounded-4\" type=\"submit\">Envoyer</button>
+            </div>
+        </div>
 </div>
-        <div class=\"mb-3\">
-            <label for=\"exampleFormControlTextarea1\" class=\"form-label\">Votre message</label>
-            <textarea class=\"form-control\" id=\"exampleFormControlTextarea1\" rows=\"3\"></textarea>
-        <button class=\"btn-primary rounded-5 mx-2 my-2 p-2\" type=\"submit\">Envoyer</button>
-        </div>", "home/contact.html.twig", "C:\\xampp\\htdocs\\Quai_Antique\\templates\\home\\contact.html.twig");
+", "home/contact.html.twig", "C:\\xampp\\htdocs\\Quai_Antique\\templates\\home\\contact.html.twig");
     }
 }
