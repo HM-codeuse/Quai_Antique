@@ -41,6 +41,10 @@ nav, footer {
     color:white;
 }
 
+h1 {
+    color: var(--primary);
+}
+
 h2, h5 {
     color: white;
 }
@@ -67,4 +71,19 @@ h3{
 
 .meat-content, .dessert-content {
     color: white;
+}
+
+
+//page des menus 
+.menu-title {
+    color:var(--secondary);
+}
+.menu-description {
+    color: var(--info);
+}
+ 
+.price {
+    color: var(--primary);
+    font-style: italic;
+    font-weight: bolder;
 }

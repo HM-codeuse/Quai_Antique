@@ -25,7 +25,6 @@ class __TwigTemplate_4abb7f9c991051d14763a1d0fdf0696f54024bac4d84930d5cdd8104937
         $this->source = $this->getSourceContext();
 
         $this->blocks = [
-            'title' => [$this, 'block_title'],
             'body' => [$this, 'block_body'],
         ];
     }
@@ -56,25 +55,6 @@ class __TwigTemplate_4abb7f9c991051d14763a1d0fdf0696f54024bac4d84930d5cdd8104937
     }
 
     // line 3
-    public function block_title($context, array $blocks = [])
-    {
-        $macros = $this->macros;
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e = $this->extensions["Symfony\\Bundle\\WebProfilerBundle\\Twig\\WebProfilerExtension"];
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->enter($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
-
-        echo "Hello MenuController!";
-        
-        $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
-
-        
-        $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
-
-    }
-
-    // line 5
     public function block_body($context, array $blocks = [])
     {
         $macros = $this->macros;
@@ -84,31 +64,42 @@ class __TwigTemplate_4abb7f9c991051d14763a1d0fdf0696f54024bac4d84930d5cdd8104937
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
-        // line 6
-        echo "<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
+        // line 4
+        echo "<div class=\"row\">
+<img src=\"";
+        // line 5
+        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/boeuf-bourguignon2.jpg"), "html", null, true);
+        echo "\" class=\"d-block w-100\" alt=\"Plat\" height=\"500\">
+</div>
+<h1 class=\"menus-title text-center m-4 p-2\">Nos menus</h1>
 
-<div class=\"example-wrapper\">
-    <h1>Hello ";
-        // line 12
-        echo twig_escape_filter($this->env, (isset($context["controller_name"]) || array_key_exists("controller_name", $context) ? $context["controller_name"] : (function () { throw new RuntimeError('Variable "controller_name" does not exist.', 12, $this->source); })()), "html", null, true);
-        echo "! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"";
-        // line 16
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/xampp/htdocs/Quai_Antique/src/Controller/MenuController.php", 0), "html", null, true);
-        echo "\">src/Controller/MenuController.php</a></code></li>
-        <li>Your template at <code><a href=\"";
-        // line 17
-        echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\CodeExtension']->getFileLink("C:/xampp/htdocs/Quai_Antique/templates/menu/index.html.twig", 0), "html", null, true);
-        echo "\">templates/menu/index.html.twig</a></code></li>
-    </ul>
+";
+        // line 9
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["menus"]) || array_key_exists("menus", $context) ? $context["menus"] : (function () { throw new RuntimeError('Variable "menus" does not exist.', 9, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["menu"]) {
+            // line 10
+            echo "    <div class=\"row m-2 p-2 text-center\">
+    <h3 class= \"menu-title\">";
+            // line 11
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["menu"], "name", [], "any", false, false, false, 11), "html", null, true);
+            echo "</h3>
+    <div class=\"menu-description\">
+        <p>";
+            // line 13
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["menu"], "description", [], "any", false, false, false, 13), "html", null, true);
+            echo "</p>
+        <p class=\"price\">Prix: ";
+            // line 14
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["menu"], "price", [], "any", false, false, false, 14), "html", null, true);
+            echo " euros</p>
+    </div>
 </div>
 ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['menu'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -129,30 +120,28 @@ class __TwigTemplate_4abb7f9c991051d14763a1d0fdf0696f54024bac4d84930d5cdd8104937
 
     public function getDebugInfo()
     {
-        return array (  107 => 17,  103 => 16,  96 => 12,  88 => 6,  78 => 5,  59 => 3,  36 => 1,);
+        return array (  94 => 14,  90 => 13,  85 => 11,  82 => 10,  78 => 9,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
     {
         return new Source("{% extends 'base.html.twig' %}
 
-{% block title %}Hello MenuController!{% endblock %}
-
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class=\"example-wrapper\">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href=\"{{ 'C:/xampp/htdocs/Quai_Antique/src/Controller/MenuController.php'|file_link(0) }}\">src/Controller/MenuController.php</a></code></li>
-        <li>Your template at <code><a href=\"{{ 'C:/xampp/htdocs/Quai_Antique/templates/menu/index.html.twig'|file_link(0) }}\">templates/menu/index.html.twig</a></code></li>
-    </ul>
+<div class=\"row\">
+<img src=\"{{ asset('build/images/boeuf-bourguignon2.jpg') }}\" class=\"d-block w-100\" alt=\"Plat\" height=\"500\">
 </div>
+<h1 class=\"menus-title text-center m-4 p-2\">Nos menus</h1>
+
+{% for menu in menus %}
+    <div class=\"row m-2 p-2 text-center\">
+    <h3 class= \"menu-title\">{{menu.name}}</h3>
+    <div class=\"menu-description\">
+        <p>{{ menu.description }}</p>
+        <p class=\"price\">Prix: {{ menu.price }} euros</p>
+    </div>
+</div>
+{% endfor %}
 {% endblock %}
 ", "menu/index.html.twig", "C:\\xampp\\htdocs\\Quai_Antique\\templates\\menu\\index.html.twig");
     }
