@@ -49,7 +49,7 @@ class __TwigTemplate_b0f70bd73e257e177848590ee939fb8367c32dd8844b076292003acfd2e
             <img src=\"";
         // line 8
         echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\AssetExtension']->getAssetUrl("build/images/saumon-renversé.jpg"), "html", null, true);
-        echo "\" class=\"img-fluid\" alt=\"...\">               
+        echo "\" class=\"img-fluid cover\" alt=\"...\">               
       </div>
     </div>
   </div>
@@ -99,7 +99,7 @@ class __TwigTemplate_b0f70bd73e257e177848590ee939fb8367c32dd8844b076292003acfd2e
     <div class=\"access-card my-3 mx-3 p-3 rounded-3\">
       <div class=\"card-body\">
         <h5 class=\"card-title text-center p-3\">Notre dernier chef d'oeuvre</h5>
-            <img src=\"{{ asset('build/images/saumon-renversé.jpg') }}\" class=\"img-fluid\" alt=\"...\">               
+            <img src=\"{{ asset('build/images/saumon-renversé.jpg') }}\" class=\"img-fluid cover\" alt=\"...\">               
       </div>
     </div>
   </div>
