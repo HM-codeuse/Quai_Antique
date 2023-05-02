@@ -41,9 +41,19 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Column(length: 255)]
     private string $email;
 
+    #[ORM\ManyToMany(targetEntity: Allergy::class, mappedBy: 'user')]
+    private Collection $allergies;
+
+
     public function __construct()
     {
         $this->reservations = new ArrayCollection();
+        $this->allergies = new ArrayCollection();
+    }
+
+    public function __toString()
+    {
+        return $this->getId().' - '.$this->getFirstname().' '.$this->getLastname();
     }
 
     public function getId(): ?int
@@ -196,5 +206,31 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
+    /**
+     * @return Collection<int, Allergy>
+     */
+    public function getAllergies(): Collection
+    {
+        return $this->allergies;
+    }
+
+    public function addAllergy(Allergy $allergy): self
+    {
+        if (!$this->allergies->contains($allergy)) {
+            $this->allergies->add($allergy);
+            $allergy->addUser($this);
+        }
+
+        return $this;
+    }
+
+    public function removeAllergy(Allergy $allergy): self
+    {
+        if ($this->allergies->removeElement($allergy)) {
+            $allergy->removeUser($this);
+        }
+
+        return $this;
+    }
     
 }

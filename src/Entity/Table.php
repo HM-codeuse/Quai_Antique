@@ -20,8 +20,10 @@ class Table
     #[ORM\Column]
     private ?int $numberOfSettings = null;
 
-    #[ORM\OneToOne(mappedBy: 'table_id', targetEntity: Reservation::class)]
-    private ?Reservation $reservation = null;
+    public function __toString()
+    {
+        return $this->getId().' - '. $this->getNumberOfSettings();
+    }
 
     public function getId(): ?int
     {
@@ -52,15 +54,4 @@ class Table
         return $this;
     }
 
-    public function getReservation(): ?Reservation
-    {
-        return $this->reservation;
-    }
-
-    public function setReservation(?Reservation $reservation): self
-    {
-        $this->reservation = $reservation;
-
-        return $this;
-    }
 }

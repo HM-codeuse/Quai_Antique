@@ -2,9 +2,11 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Allergy;
 use App\Entity\Category;
 use App\Entity\Menu;
 use App\Entity\OpeningHours;
+use App\Entity\Reservation;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -45,9 +47,12 @@ class DashboardController extends AbstractDashboardController
     public function configureMenuItems(): iterable
     {
         yield MenuItem::linkToDashboard('Tableau de Bord', 'fa fa-home');
-        yield MenuItem::linkToCrud('Categorie', 'fa-solid fa-seedling', Category::class);
-        yield MenuItem::linkToCrud('Menu', 'fa-solid fa-plate-wheat', Menu::class);
+        yield MenuItem::linkToCrud('Categories', 'fa-solid fa-seedling', Category::class);
+        yield MenuItem::linkToCrud('Menus', 'fa-solid fa-plate-wheat', Menu::class);
         yield MenuItem::linkToCrud('Horaires', 'fa-regular fa-clock', OpeningHours::class);
+        yield MenuItem::linkToCrud('Allergies', 'fa-solid fa-triangle-exclamation', Allergy::class);
+        yield MenuItem::linkToCrud('Tables', 'fa-solid fa-utensils', Table::class);
+        yield MenuItem::linkToCrud('Reservations', 'fa-solid fa-pager', Reservation::class);
 
     }
 }
