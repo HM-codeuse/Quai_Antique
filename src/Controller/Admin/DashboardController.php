@@ -2,16 +2,19 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Menu;
+use App\Entity\User;
+use App\Entity\Table;
 use App\Entity\Allergy;
 use App\Entity\Category;
-use App\Entity\Menu;
-use App\Entity\OpeningHours;
 use App\Entity\Reservation;
-use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
-use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
-use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
+use App\Entity\OpeningHours;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
+use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
+use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
 
 class DashboardController extends AbstractDashboardController
 {
@@ -53,6 +56,8 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Allergies', 'fa-solid fa-triangle-exclamation', Allergy::class);
         yield MenuItem::linkToCrud('Tables', 'fa-solid fa-utensils', Table::class);
         yield MenuItem::linkToCrud('Reservations', 'fa-solid fa-pager', Reservation::class);
+        yield MenuItem::linkToCrud('Clients', 'fa-solid fa-user', User::class);
+
 
     }
 }

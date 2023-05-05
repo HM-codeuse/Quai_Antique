@@ -13,11 +13,12 @@ class AllergyCrudController extends AbstractCrudController
         return Allergy::class;
     }
 
-    
+    /*
     public function configureFields(string $pageName): iterable
     {
         yield from parent::configureFields($pageName);
         yield AssociationField::new('user');
     }
+    */
     
 }

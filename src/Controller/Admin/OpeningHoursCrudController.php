@@ -4,6 +4,9 @@ namespace App\Controller\Admin;
 
 use App\Entity\OpeningHours;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\DateTimeField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextareaField;
 
 class OpeningHoursCrudController extends AbstractCrudController
 {
@@ -11,15 +14,5 @@ class OpeningHoursCrudController extends AbstractCrudController
     {
         return OpeningHours::class;
     }
-
-    /*
-    public function configureFields(string $pageName): iterable
-    {
-        return [
-            IdField::new('id'),
-            TextField::new('title'),
-            TextEditorField::new('description'),
-        ];
-    }
-    */
+    
 }

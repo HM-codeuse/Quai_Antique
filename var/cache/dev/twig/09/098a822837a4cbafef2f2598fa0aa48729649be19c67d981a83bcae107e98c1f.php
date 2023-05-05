@@ -72,32 +72,31 @@ class __TwigTemplate_88d4f27c43b1a8f8f42a5d07c108c3eab5a93a86f453a52bcf0e24b7b07
         echo "\" class=\"d-block w-100\" alt=\"Plat\" height=\"500\">
 </div>
 <h1 class=\"dishes-title text-center \">Nos plats</h1>
+
+
 ";
-        // line 32
-        echo "
-";
-        // line 33
+        // line 10
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 33, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["categories"]) || array_key_exists("categories", $context) ? $context["categories"] : (function () { throw new RuntimeError('Variable "categories" does not exist.', 10, $this->source); })()));
         foreach ($context['_seq'] as $context["_key"] => $context["category"]) {
-            // line 34
+            // line 11
             echo "    <div class=\"row m-2 p-2 text-center\">
     <h3 class= \"category-title text-center\">";
-            // line 35
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 35), "html", null, true);
+            // line 12
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["category"], "name", [], "any", false, false, false, 12), "html", null, true);
             echo "</h3>
     <div class=\"list-dishes\">
         <ul class=\"dish-list\">
                 ";
-            // line 38
+            // line 15
             $context['_parent'] = $context;
-            $context['_seq'] = twig_ensure_traversable((isset($context["dishes"]) || array_key_exists("dishes", $context) ? $context["dishes"] : (function () { throw new RuntimeError('Variable "dishes" does not exist.', 38, $this->source); })()));
+            $context['_seq'] = twig_ensure_traversable((isset($context["dishes"]) || array_key_exists("dishes", $context) ? $context["dishes"] : (function () { throw new RuntimeError('Variable "dishes" does not exist.', 15, $this->source); })()));
             foreach ($context['_seq'] as $context["_key"] => $context["dish"]) {
-                // line 39
+                // line 16
                 echo "                <li class=\"dish\">
                     ";
-                // line 40
-                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["dish"], "name", [], "any", false, false, false, 40), "html", null, true);
+                // line 17
+                echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["dish"], "name", [], "any", false, false, false, 17), "html", null, true);
                 echo "
                 </li>
                 ";
@@ -105,7 +104,7 @@ class __TwigTemplate_88d4f27c43b1a8f8f42a5d07c108c3eab5a93a86f453a52bcf0e24b7b07
             $_parent = $context['_parent'];
             unset($context['_seq'], $context['_iterated'], $context['_key'], $context['dish'], $context['_parent'], $context['loop']);
             $context = array_intersect_key($context, $_parent) + $_parent;
-            // line 43
+            // line 20
             echo "        </ul>
     </div>
 </div>
@@ -114,10 +113,10 @@ class __TwigTemplate_88d4f27c43b1a8f8f42a5d07c108c3eab5a93a86f453a52bcf0e24b7b07
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['category'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 47
+        // line 24
         echo "
 ";
-        // line 49
+        // line 26
         echo "
 ";
         
@@ -140,7 +139,7 @@ class __TwigTemplate_88d4f27c43b1a8f8f42a5d07c108c3eab5a93a86f453a52bcf0e24b7b07
 
     public function getDebugInfo()
     {
-        return array (  121 => 49,  118 => 47,  109 => 43,  100 => 40,  97 => 39,  93 => 38,  87 => 35,  84 => 34,  80 => 33,  77 => 32,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
+        return array (  120 => 26,  117 => 24,  108 => 20,  99 => 17,  96 => 16,  92 => 15,  86 => 12,  83 => 11,  79 => 10,  71 => 5,  68 => 4,  58 => 3,  35 => 1,);
     }
 
     public function getSourceContext()
@@ -152,30 +151,7 @@ class __TwigTemplate_88d4f27c43b1a8f8f42a5d07c108c3eab5a93a86f453a52bcf0e24b7b07
 <img src=\"{{ asset('build/images/boeuf-bourguignon2.jpg') }}\" class=\"d-block w-100\" alt=\"Plat\" height=\"500\">
 </div>
 <h1 class=\"dishes-title text-center \">Nos plats</h1>
-{# <div class=\"row dish-starter\">
-    <h2 class= \"starter-title text-center\">Les entrées</h2>
-    <div class=\"starter-content\">
-        <p>entrée 1</p>
-    </div>
-</div>
-<div class=\"row dish-meat\">
-    <h2 class= \"meat-title text-center\">Les viandes</h2>
-    <div class=\"meat-content\">
-        <p>viande 1</p>
-    </div>
-</div>
-<div class=\"row dish-side\">
-    <h2 class= \"side-title text-center\">Les accompagnements</h2>
-    <div class=\"side-content\">
-        <p>Accompagnement 1</p>        
-    </div>
-</div>
-<div class=\"row dish-dessert\">
-    <h2 class= \"dessert-title text-center\">Les desserts</h2>
-    <div class=\"dessert-content\">
-        <p>Dessert 1</p>        
-    </div>
-</div> #}
+
 
 {% for category in categories %}
     <div class=\"row m-2 p-2 text-center\">

@@ -55,15 +55,27 @@ class __TwigTemplate_9e3ecf2262a9592fefc341ea0be4ee7f97a32127632bb8c0a22159a7061
     <div class=\"col mb-3\">
       <h5>Horaires</h5>
       <ul class=\"nav flex-column\">
-        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-
-      </ul>
+        ";
+        // line 23
+        echo "            ";
+        $context['_parent'] = $context;
+        $context['_seq'] = twig_ensure_traversable((isset($context["openinghours"]) || array_key_exists("openinghours", $context) ? $context["openinghours"] : (function () { throw new RuntimeError('Variable "openinghours" does not exist.', 23, $this->source); })()));
+        foreach ($context['_seq'] as $context["_key"] => $context["openingHour"]) {
+            // line 24
+            echo "               <li>";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["openingHour"], "dayOfTheWeek", [], "any", false, false, false, 24), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["openingHour"], "lunchService", [], "any", false, false, false, 24), "html", null, true);
+            echo " ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["openingHour"], "eveningService", [], "any", false, false, false, 24), "html", null, true);
+            echo "</li>
+            ";
+        }
+        $_parent = $context['_parent'];
+        unset($context['_seq'], $context['_iterated'], $context['_key'], $context['openingHour'], $context['_parent'], $context['loop']);
+        $context = array_intersect_key($context, $_parent) + $_parent;
+        // line 26
+        echo "      </ul>
     </div>
 
     <div class=\"col mb-3\">
@@ -112,9 +124,14 @@ class __TwigTemplate_9e3ecf2262a9592fefc341ea0be4ee7f97a32127632bb8c0a22159a7061
         return "base_site/footer.html.twig";
     }
 
+    public function isTraitable()
+    {
+        return false;
+    }
+
     public function getDebugInfo()
     {
-        return array (  43 => 1,);
+        return array (  78 => 26,  65 => 24,  60 => 23,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -134,14 +151,16 @@ class __TwigTemplate_9e3ecf2262a9592fefc341ea0be4ee7f97a32127632bb8c0a22159a7061
     <div class=\"col mb-3\">
       <h5>Horaires</h5>
       <ul class=\"nav flex-column\">
+        {# <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
         <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
         <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
         <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
         <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
         <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-
+        <li class=\"nav-item mb-2\">Lun :12h00 - 14h30 / 19h00 - 22h30</li> #}
+            {% for openingHour in openinghours %}
+               <li>{{ openingHour.dayOfTheWeek }} {{ openingHour.lunchService }} {{ openingHour.eveningService }}</li>
+            {% endfor %}
       </ul>
     </div>
 

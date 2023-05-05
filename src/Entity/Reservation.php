@@ -22,15 +22,23 @@ class Reservation
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $time = null;
 
-    #[ORM\OneToMany(mappedBy: 'reservation', targetEntity: Table::class)]
-    private Collection $table_id;
+   
+    #[ORM\ManyToOne(inversedBy: 'reservation')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?User $user = null;
 
-    #[ORM\ManyToOne(inversedBy: 'reservations')]
-    private ?User $user_id = null;
+    #[ORM\OneToMany(mappedBy: 'reservation', targetEntity: Table::class)]
+    private Collection $tables;
+
+    /*
+    public function __toString()
+    {
+        return $this->getUser();
+    }+*/
 
     public function __construct()
     {
-        $this->table_id = new ArrayCollection();
+       $this->tables = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -62,45 +70,45 @@ class Reservation
         return $this;
     }
 
+    public function getUser(): ?User
+    {
+        return $this->user;
+    }
+
+    public function setUser(?User $user): self
+    {
+        $this->user = $user;
+
+        return $this;
+    }
+
     /**
      * @return Collection<int, Table>
      */
-    public function getTableId(): Collection
+    public function getTables(): Collection
     {
-        return $this->table_id;
+        return $this->tables;
     }
 
-    public function addTableId(Table $tableId): self
+    public function addTable(Table $table): self
     {
-        if (!$this->table_id->contains($tableId)) {
-            $this->table_id->add($tableId);
-            $tableId->setReservation($this);
+        if (!$this->tables->contains($table)) {
+            $this->tables->add($table);
         }
 
         return $this;
     }
 
-    public function removeTableId(Table $tableId): self
+    public function removeTable(Table $table): self
     {
-        if ($this->table_id->removeElement($tableId)) {
+        if ($this->tables->removeElement($table)) {
             // set the owning side to null (unless already changed)
-            if ($tableId->getReservation() === $this) {
-                $tableId->setReservation(null);
+            if ($table->getId() === $this) {
+               
             }
         }
 
         return $this;
     }
 
-    public function getUserId(): ?User
-    {
-        return $this->user_id;
-    }
-
-    public function setUserId(?User $user_id): self
-    {
-        $this->user_id = $user_id;
-
-        return $this;
-    }
 }

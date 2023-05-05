@@ -250,6 +250,7 @@ $catalogue = new MessageCatalogue('uk', array (
     'exception.forbidden_action' => 'Дія не може бути виконана над цим елементом.',
     'exception.insufficient_entity_permission' => 'У вас немає дозволу на доступ до цього елемента.',
     'autocomplete.no-results-found' => 'Нічого не знайдено',
+    'autocomplete.no-more-results' => 'Більше немає результатів',
     'autocomplete.loading-more-results' => 'Завантаження інших результатів…',
   ),
 ));

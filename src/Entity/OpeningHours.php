@@ -16,51 +16,51 @@ class OpeningHours
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?Date $dayOfTheWeek = null;
+    private ?string $dayOfTheWeek = null;
 
     #[ORM\Column(length: 255)]
-    private ?DateTime $hourOfOpening = null;
+    private ?string $lunchService = null;
 
     #[ORM\Column(length: 255)]
-    private ?DateTime $hourOfClosing = null;
+    private ?string $eveningService = null;
 
     public function getId(): ?int
     {
         return $this->id;
     }
 
-    public function getDayOfTheWeek(): ?date
+    public function getDayOfTheWeek(): ?string
     {
         return $this->dayOfTheWeek;
     }
 
-    public function setDayOfTheWeek(date $dayOfTheWeek): self
+    public function setDayOfTheWeek(string $dayOfTheWeek): self
     {
         $this->dayOfTheWeek = $dayOfTheWeek;
 
         return $this;
     }
 
-    public function getHourOfOpening(): ?datetime
+    public function getLunchService(): ?string
     {
-        return $this->hourOfOpening;
+        return $this->lunchService;
     }
 
-    public function setHourOfOpening(datetime $hourOfOpening): self
+    public function setLunchService(string $lunchService): self
     {
-        $this->hourOfOpening = $hourOfOpening;
+        $this->lunchService = $lunchService;
 
         return $this;
     }
 
-    public function getHourOfClosing(): ?datetime
+    public function getEveningService(): ?string
     {
-        return $this->hourOfClosing;
+        return $this->eveningService;
     }
 
-    public function setHourOfClosing(datetime $hourOfClosing): self
+    public function setEveningService(string $eveningService): self
     {
-        $this->hourOfClosing = $hourOfClosing;
+        $this->eveningService = $eveningService;
 
         return $this;
     }

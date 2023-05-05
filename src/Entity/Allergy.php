@@ -21,6 +21,11 @@ class Allergy
     #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'allergies')]
     private Collection $user;
 
+    public function __toString()
+    {
+        return $this->getAliment();
+    }
+
     public function __construct()
     {
         $this->user = new ArrayCollection();
