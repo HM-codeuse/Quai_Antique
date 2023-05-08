@@ -9,7 +9,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
-class ReservationType extends AbstractType
+class Reservation1Type extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options): void
     {
@@ -18,7 +18,6 @@ class ReservationType extends AbstractType
             ->add('time')
             ->add('user')
             ->add('email', EmailType::class, ['mapped' => false])
-            ->add('Valider', SubmitType::class)
         ;
     }
 

@@ -65,7 +65,7 @@ class __TwigTemplate_b2fa8af188b3f0808a50ac0a1f2e0206f21b76a09f32d73ed52f03c91d4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02 = $this->extensions["Symfony\\Bridge\\Twig\\Extension\\ProfilerExtension"];
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "title"));
 
-        echo "Reservation index";
+        echo "Réservations";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
 
@@ -85,54 +85,61 @@ class __TwigTemplate_b2fa8af188b3f0808a50ac0a1f2e0206f21b76a09f32d73ed52f03c91d4
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->enter($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof = new \Twig\Profiler\Profile($this->getTemplateName(), "block", "body"));
 
         // line 7
-        echo "    <h1>Reservation index</h1>
+        echo "    <h1>Les réservations confirmées</h1>
 
     <table class=\"table\">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Date</th>
-                <th>Time</th>
-                <th>actions</th>
+                <th>Heure de réservation</th>
+                <th>Nom du client</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
         ";
-        // line 19
+        // line 20
         $context['_parent'] = $context;
-        $context['_seq'] = twig_ensure_traversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new RuntimeError('Variable "reservations" does not exist.', 19, $this->source); })()));
+        $context['_seq'] = twig_ensure_traversable((isset($context["reservations"]) || array_key_exists("reservations", $context) ? $context["reservations"] : (function () { throw new RuntimeError('Variable "reservations" does not exist.', 20, $this->source); })()));
         $context['_iterated'] = false;
         foreach ($context['_seq'] as $context["_key"] => $context["reservation"]) {
-            // line 20
+            // line 21
             echo "            <tr>
                 <td>";
-            // line 21
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 21), "html", null, true);
-            echo "</td>
-                <td>";
             // line 22
-            ((twig_get_attribute($this->env, $this->source, $context["reservation"], "date", [], "any", false, false, false, 22)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "date", [], "any", false, false, false, 22), "Y-m-d"), "html", null, true))) : (print ("")));
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 22), "html", null, true);
             echo "</td>
                 <td>";
             // line 23
-            ((twig_get_attribute($this->env, $this->source, $context["reservation"], "time", [], "any", false, false, false, 23)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "time", [], "any", false, false, false, 23), "H:i:s"), "html", null, true))) : (print ("")));
+            ((twig_get_attribute($this->env, $this->source, $context["reservation"], "date", [], "any", false, false, false, 23)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "date", [], "any", false, false, false, 23), "Y-m-d"), "html", null, true))) : (print ("")));
             echo "</td>
+                <td>";
+            // line 24
+            ((twig_get_attribute($this->env, $this->source, $context["reservation"], "time", [], "any", false, false, false, 24)) ? (print (twig_escape_filter($this->env, twig_date_format_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "time", [], "any", false, false, false, 24), "H:i:s"), "html", null, true))) : (print ("")));
+            echo "</td>
+                <td>";
+            // line 25
+            ((twig_get_attribute($this->env, $this->source, $context["reservation"], "user", [], "any", false, false, false, 25)) ? (print (twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, $context["reservation"], "user", [], "any", false, false, false, 25), "html", null, true))) : (print ("")));
+            echo "</td>
+
+
                 <td>
                     <a href=\"";
-            // line 25
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 25)]), "html", null, true);
-            echo "\">show</a>
+            // line 29
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_show", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 29)]), "html", null, true);
+            echo "\">Ouvrir</a>
                     <a href=\"";
-            // line 26
-            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 26)]), "html", null, true);
-            echo "\">edit</a>
+            // line 30
+            echo twig_escape_filter($this->env, $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_edit", ["id" => twig_get_attribute($this->env, $this->source, $context["reservation"], "id", [], "any", false, false, false, 30)]), "html", null, true);
+            echo "\">Modifier</a>
                 </td>
             </tr>
         ";
             $context['_iterated'] = true;
         }
         if (!$context['_iterated']) {
-            // line 30
+            // line 34
             echo "            <tr>
                 <td colspan=\"4\">no records found</td>
             </tr>
@@ -141,14 +148,14 @@ class __TwigTemplate_b2fa8af188b3f0808a50ac0a1f2e0206f21b76a09f32d73ed52f03c91d4
         $_parent = $context['_parent'];
         unset($context['_seq'], $context['_iterated'], $context['_key'], $context['reservation'], $context['_parent'], $context['loop']);
         $context = array_intersect_key($context, $_parent) + $_parent;
-        // line 34
+        // line 38
         echo "        </tbody>
     </table>
 
     <a href=\"";
-        // line 37
+        // line 41
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation_new");
-        echo "\">Create new</a>
+        echo "\">Nouvelle réservation</a>
 ";
         
         $__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02->leave($__internal_319393461309892924ff6e74d6d6e64287df64b63545b994e100d4ab223aed02_prof);
@@ -170,7 +177,7 @@ class __TwigTemplate_b2fa8af188b3f0808a50ac0a1f2e0206f21b76a09f32d73ed52f03c91d4
 
     public function getDebugInfo()
     {
-        return array (  150 => 37,  145 => 34,  136 => 30,  127 => 26,  123 => 25,  118 => 23,  114 => 22,  110 => 21,  107 => 20,  102 => 19,  88 => 7,  78 => 6,  59 => 4,  36 => 1,);
+        return array (  157 => 41,  152 => 38,  143 => 34,  134 => 30,  130 => 29,  123 => 25,  119 => 24,  115 => 23,  111 => 22,  108 => 21,  103 => 20,  88 => 7,  78 => 6,  59 => 4,  36 => 1,);
     }
 
     public function getSourceContext()
@@ -178,18 +185,19 @@ class __TwigTemplate_b2fa8af188b3f0808a50ac0a1f2e0206f21b76a09f32d73ed52f03c91d4
         return new Source("{% extends 'base.html.twig' %}
 
 
-{% block title %}Reservation index{% endblock %}
+{% block title %}Réservations{% endblock %}
 
 {% block body %}
-    <h1>Reservation index</h1>
+    <h1>Les réservations confirmées</h1>
 
     <table class=\"table\">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Date</th>
-                <th>Time</th>
-                <th>actions</th>
+                <th>Heure de réservation</th>
+                <th>Nom du client</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -198,9 +206,12 @@ class __TwigTemplate_b2fa8af188b3f0808a50ac0a1f2e0206f21b76a09f32d73ed52f03c91d4
                 <td>{{ reservation.id }}</td>
                 <td>{{ reservation.date ? reservation.date|date('Y-m-d') : '' }}</td>
                 <td>{{ reservation.time ? reservation.time|date('H:i:s') : '' }}</td>
+                <td>{{ reservation.user ? reservation.user}}</td>
+
+
                 <td>
-                    <a href=\"{{ path('app_reservation_show', {'id': reservation.id}) }}\">show</a>
-                    <a href=\"{{ path('app_reservation_edit', {'id': reservation.id}) }}\">edit</a>
+                    <a href=\"{{ path('app_reservation_show', {'id': reservation.id}) }}\">Ouvrir</a>
+                    <a href=\"{{ path('app_reservation_edit', {'id': reservation.id}) }}\">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -211,7 +222,7 @@ class __TwigTemplate_b2fa8af188b3f0808a50ac0a1f2e0206f21b76a09f32d73ed52f03c91d4
         </tbody>
     </table>
 
-    <a href=\"{{ path('app_reservation_new') }}\">Create new</a>
+    <a href=\"{{ path('app_reservation_new') }}\">Nouvelle réservation</a>
 {% endblock %}
 ", "reservation/index.html.twig", "C:\\xampp\\htdocs\\Quai_Antique\\templates\\reservation\\index.html.twig");
     }

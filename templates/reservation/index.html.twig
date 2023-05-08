@@ -1,18 +1,19 @@
 {% extends 'base.html.twig' %}
 
 
-{% block title %}Reservation index{% endblock %}
+{% block title %}Réservations{% endblock %}
 
 {% block body %}
-    <h1>Reservation index</h1>
+    <h1>Les réservations confirmées</h1>
 
     <table class="table">
         <thead>
             <tr>
                 <th>Id</th>
                 <th>Date</th>
-                <th>Time</th>
-                <th>actions</th>
+                <th>Heure de réservation</th>
+                <th>Nom du client</th>
+                <th>Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -21,9 +22,12 @@
                 <td>{{ reservation.id }}</td>
                 <td>{{ reservation.date ? reservation.date|date('Y-m-d') : '' }}</td>
                 <td>{{ reservation.time ? reservation.time|date('H:i:s') : '' }}</td>
+                <td>{{ reservation.user ? reservation.user}}</td>
+
+
                 <td>
-                    <a href="{{ path('app_reservation_show', {'id': reservation.id}) }}">show</a>
-                    <a href="{{ path('app_reservation_edit', {'id': reservation.id}) }}">edit</a>
+                    <a href="{{ path('app_reservation_show', {'id': reservation.id}) }}">Ouvrir</a>
+                    <a href="{{ path('app_reservation_edit', {'id': reservation.id}) }}">Modifier</a>
                 </td>
             </tr>
         {% else %}
@@ -34,5 +38,5 @@
         </tbody>
     </table>
 
-    <a href="{{ path('app_reservation_new') }}">Create new</a>
+    <a href="{{ path('app_reservation_new') }}">Nouvelle réservation</a>
 {% endblock %}
