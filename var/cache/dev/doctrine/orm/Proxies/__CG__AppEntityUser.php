@@ -217,12 +217,12 @@ class User extends \App\Entity\User implements \Doctrine\ORM\Proxy\Proxy
     /**
      * {@inheritDoc}
      */
-    public function setUsername(string $firstname): \App\Entity\User
+    public function setUsername(string $email): \App\Entity\User
     {
 
-        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUsername', [$firstname]);
+        $this->__initializer__ && $this->__initializer__->__invoke($this, 'setUsername', [$email]);
 
-        return parent::setUsername($firstname);
+        return parent::setUsername($email);
     }
 
     /**

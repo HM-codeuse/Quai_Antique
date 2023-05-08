@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Repository\MenuRepository;
 use App\Repository\OpeningHoursRepository;
-
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
