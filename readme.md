@@ -45,3 +45,8 @@ php bin/console doctrine:migrations:migrate
 ``bash
 npm run build
 ``
+
+## Créer un nouveau mdp haché pour créer un nouvel utilisateur 
+``bash
+symfony console security:hash-password
+``

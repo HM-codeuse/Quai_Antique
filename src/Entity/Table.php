@@ -18,7 +18,7 @@ class Table
     private ?bool $status = null;
 
     #[ORM\Column]
-    private ?int $numberOfSettings = null;
+    private ?string $numberOfSettings;
 
     public function __toString()
     {
@@ -42,12 +42,12 @@ class Table
         return $this;
     }
 
-    public function getNumberOfSettings(): ?int
+    public function getNumberOfSettings(): ?string
     {
         return $this->numberOfSettings;
     }
 
-    public function setNumberOfSettings(int $numberOfSettings): self
+    public function setNumberOfSettings(string $numberOfSettings): self
     {
         $this->numberOfSettings = $numberOfSettings;
 

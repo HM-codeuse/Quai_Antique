@@ -16,6 +16,6 @@ if (!\class_exists(App_KernelDevDebugContainer::class, false)) {
 
 return new \ContainerLFrfR94\App_KernelDevDebugContainer([
     'container.build_hash' => 'LFrfR94',
-    'container.build_id' => '33b695d5',
-    'container.build_time' => 1683543671,
+    'container.build_id' => '48814d96',
+    'container.build_time' => 1683640870,
 ], __DIR__.\DIRECTORY_SEPARATOR.'ContainerLFrfR94');
