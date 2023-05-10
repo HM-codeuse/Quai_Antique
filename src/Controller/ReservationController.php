@@ -47,6 +47,8 @@ class ReservationController extends AbstractController
     #[Route('/{id}', name: 'app_reservation_show', methods: ['GET'])]
     public function show(Reservation $reservation, OpeningHoursRepository $openingHoursRepository): Response
     {
+
+        
         return $this->render('reservation/show.html.twig', [
             'reservation' => $reservation,
             'openinghours'=>$openingHoursRepository->findAll(), 
