@@ -54,6 +54,7 @@ class __TwigTemplate_43f33cb860eca91c91f7d020de6f220acb47f8200aad647bfa2f75fbbca
         // line 4
         echo         $this->env->getRuntime('Symfony\Component\Form\FormRenderer')->renderBlock((isset($context["form"]) || array_key_exists("form", $context) ? $context["form"] : (function () { throw new RuntimeError('Variable "form" does not exist.', 4, $this->source); })()), 'form_end');
         echo "
+
 ";
         
         $__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e->leave($__internal_085b0142806202599c7fe3b329164a92397d8978207a37e79d70b8c52599e33e_prof);
@@ -84,6 +85,15 @@ class __TwigTemplate_43f33cb860eca91c91f7d020de6f220acb47f8200aad647bfa2f75fbbca
     {{ form_widget(form) }}
     <button class=\"btn\">{{ button_label|default('Save') }}</button>
 {{ form_end(form) }}
-", "reservation/_form.html.twig", "C:\\xampp\\htdocs\\Quai_Antique\\templates\\reservation\\_form.html.twig");
+
+{# 
+<div class=\"slots\">
+<h2>MIDI</h2>
+<button class=\"selected-slot\">
+{{ slot.time }}
+</button>
+<h2>SOIR</h2>
+
+</div> #}", "reservation/_form.html.twig", "C:\\xampp\\htdocs\\Quai_Antique\\templates\\reservation\\_form.html.twig");
     }
 }

@@ -403,6 +403,14 @@
         <argument type="service" id=".service_locator.SoiLYDQ.App\Controller\Admin\ReservationCrudController"/>
       </call>
     </service>
+    <service id="App\Controller\Admin\SlotCrudController" class="App\Controller\Admin\SlotCrudController" public="true" autowire="true" autoconfigure="true">
+      <tag name="ea.crud_controller"/>
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.SoiLYDQ.App\Controller\Admin\SlotCrudController"/>
+      </call>
+    </service>
     <service id="App\Controller\Admin\TableCrudController" class="App\Controller\Admin\TableCrudController" public="true" autowire="true" autoconfigure="true">
       <tag name="ea.crud_controller"/>
       <tag name="controller.service_arguments"/>
@@ -6935,6 +6943,10 @@
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\ReservationCrudController" class="App\Controller\Admin\ReservationCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\ReservationCrudController" class="App\Controller\Admin\ReservationCrudController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\Admin\ReservationCrudController" class="App\Controller\Admin\ReservationCrudController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\SlotCrudController" class="App\Controller\Admin\SlotCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\SlotCrudController" class="App\Controller\Admin\SlotCrudController" autowire="true" abstract="true"/>
+    <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\SlotCrudController" class="App\Controller\Admin\SlotCrudController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\Admin\SlotCrudController" class="App\Controller\Admin\SlotCrudController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\Admin\TableCrudController" class="App\Controller\Admin\TableCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\Admin\TableCrudController" class="App\Controller\Admin\TableCrudController" autowire="true" abstract="true"/>
     <service id=".instanceof.EasyCorp\Bundle\EasyAdminBundle\Contracts\Controller\CrudControllerInterface.0.App\Controller\Admin\TableCrudController" class="App\Controller\Admin\TableCrudController" autowire="true" abstract="true"/>
@@ -7526,7 +7538,7 @@
         <argument key="authenticationUtils" type="service_closure" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.198mNaY" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.JTNdSsW" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\Admin\AllergyCrudController::autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
@@ -7635,6 +7647,27 @@
         <argument key="App\Controller\Admin\ReservationCrudController::persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\ReservationCrudController::renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\ReservationCrudController::updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\SlotCrudController::autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\SlotCrudController::batchDelete" type="service_closure" id=".service_locator.Olybskb"/>
+        <argument key="App\Controller\Admin\SlotCrudController::configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
+        <argument key="App\Controller\Admin\SlotCrudController::configureAssets" type="service_closure" id=".service_locator.U4Bbnsn"/>
+        <argument key="App\Controller\Admin\SlotCrudController::configureCrud" type="service_closure" id=".service_locator.4C0Bh8j"/>
+        <argument key="App\Controller\Admin\SlotCrudController::configureFilters" type="service_closure" id=".service_locator.Nt.ogDb"/>
+        <argument key="App\Controller\Admin\SlotCrudController::configureResponseParameters" type="service_closure" id=".service_locator.2dc0eaX"/>
+        <argument key="App\Controller\Admin\SlotCrudController::createEditForm" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\SlotCrudController::createEditFormBuilder" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\SlotCrudController::createIndexQueryBuilder" type="service_closure" id=".service_locator.3on9uHL"/>
+        <argument key="App\Controller\Admin\SlotCrudController::createNewForm" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\SlotCrudController::createNewFormBuilder" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\SlotCrudController::delete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\SlotCrudController::deleteEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\SlotCrudController::detail" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\SlotCrudController::edit" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\SlotCrudController::index" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\SlotCrudController::new" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\SlotCrudController::persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\SlotCrudController::renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\SlotCrudController::updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\TableCrudController::autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\TableCrudController::batchDelete" type="service_closure" id=".service_locator.Olybskb"/>
         <argument key="App\Controller\Admin\TableCrudController::configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
@@ -7798,6 +7831,27 @@
         <argument key="App\Controller\Admin\ReservationCrudController:persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\ReservationCrudController:renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\ReservationCrudController:updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\SlotCrudController:autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\SlotCrudController:batchDelete" type="service_closure" id=".service_locator.Olybskb"/>
+        <argument key="App\Controller\Admin\SlotCrudController:configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
+        <argument key="App\Controller\Admin\SlotCrudController:configureAssets" type="service_closure" id=".service_locator.U4Bbnsn"/>
+        <argument key="App\Controller\Admin\SlotCrudController:configureCrud" type="service_closure" id=".service_locator.4C0Bh8j"/>
+        <argument key="App\Controller\Admin\SlotCrudController:configureFilters" type="service_closure" id=".service_locator.Nt.ogDb"/>
+        <argument key="App\Controller\Admin\SlotCrudController:configureResponseParameters" type="service_closure" id=".service_locator.2dc0eaX"/>
+        <argument key="App\Controller\Admin\SlotCrudController:createEditForm" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\SlotCrudController:createEditFormBuilder" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\SlotCrudController:createIndexQueryBuilder" type="service_closure" id=".service_locator.3on9uHL"/>
+        <argument key="App\Controller\Admin\SlotCrudController:createNewForm" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\SlotCrudController:createNewFormBuilder" type="service_closure" id=".service_locator.bgO__Zr"/>
+        <argument key="App\Controller\Admin\SlotCrudController:delete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\SlotCrudController:deleteEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\SlotCrudController:detail" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\SlotCrudController:edit" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\SlotCrudController:index" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\SlotCrudController:new" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\SlotCrudController:persistEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
+        <argument key="App\Controller\Admin\SlotCrudController:renderFilters" type="service_closure" id=".service_locator.ZOQ9v2d"/>
+        <argument key="App\Controller\Admin\SlotCrudController:updateEntity" type="service_closure" id=".service_locator.l2QwsaZ"/>
         <argument key="App\Controller\Admin\TableCrudController:autocomplete" type="service_closure" id=".service_locator.ZOQ9v2d"/>
         <argument key="App\Controller\Admin\TableCrudController:batchDelete" type="service_closure" id=".service_locator.Olybskb"/>
         <argument key="App\Controller\Admin\TableCrudController:configureActions" type="service_closure" id=".service_locator.CKlWSja"/>
@@ -8280,6 +8334,7 @@
         <argument key="App\Controller\Admin\MenuCrudController">App\Entity\Menu</argument>
         <argument key="App\Controller\Admin\OpeningHoursCrudController">App\Entity\OpeningHours</argument>
         <argument key="App\Controller\Admin\ReservationCrudController">App\Entity\Reservation</argument>
+        <argument key="App\Controller\Admin\SlotCrudController">App\Entity\Slot</argument>
         <argument key="App\Controller\Admin\TableCrudController">App\Entity\Table</argument>
         <argument key="App\Controller\Admin\UserCrudController">App\Entity\User</argument>
       </argument>
@@ -8289,6 +8344,7 @@
         <argument key="App\Controller\Admin\MenuCrudController">e300bff</argument>
         <argument key="App\Controller\Admin\OpeningHoursCrudController">c620669</argument>
         <argument key="App\Controller\Admin\ReservationCrudController">0c8464c</argument>
+        <argument key="App\Controller\Admin\SlotCrudController">a70a7b5</argument>
         <argument key="App\Controller\Admin\TableCrudController">a958699</argument>
         <argument key="App\Controller\Admin\UserCrudController">bbbdb9c</argument>
       </argument>
@@ -8298,6 +8354,7 @@
         <argument key="App\Entity\Menu">App\Controller\Admin\MenuCrudController</argument>
         <argument key="App\Entity\OpeningHours">App\Controller\Admin\OpeningHoursCrudController</argument>
         <argument key="App\Entity\Reservation">App\Controller\Admin\ReservationCrudController</argument>
+        <argument key="App\Entity\Slot">App\Controller\Admin\SlotCrudController</argument>
         <argument key="App\Entity\Table">App\Controller\Admin\TableCrudController</argument>
         <argument key="App\Entity\User">App\Controller\Admin\UserCrudController</argument>
       </argument>
@@ -8307,6 +8364,7 @@
         <argument key="e300bff">App\Controller\Admin\MenuCrudController</argument>
         <argument key="c620669">App\Controller\Admin\OpeningHoursCrudController</argument>
         <argument key="0c8464c">App\Controller\Admin\ReservationCrudController</argument>
+        <argument key="a70a7b5">App\Controller\Admin\SlotCrudController</argument>
         <argument key="a958699">App\Controller\Admin\TableCrudController</argument>
         <argument key="bbbdb9c">App\Controller\Admin\UserCrudController</argument>
       </argument>
@@ -8411,6 +8469,12 @@
     <service id=".service_locator.SoiLYDQ.App\Controller\Admin\ReservationCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\Admin\ReservationCrudController"/>
       <argument>App\Controller\Admin\ReservationCrudController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.SoiLYDQ" method="withContext"/>
+    </service>
+    <service id=".service_locator.SoiLYDQ.App\Controller\Admin\SlotCrudController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\Admin\SlotCrudController"/>
+      <argument>App\Controller\Admin\SlotCrudController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.SoiLYDQ" method="withContext"/>
     </service>
@@ -8679,12 +8743,12 @@
       <argument type="service" id="EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.198mNaY"/>
+      <argument type="service" id=".service_locator.JTNdSsW"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.198mNaY"/>
+      <argument type="service" id=".service_locator.JTNdSsW"/>
     </service>
     <service id="debug.traced.messenger.bus.default.inner" class="Symfony\Component\Messenger\MessageBus">
       <argument type="iterator">
@@ -9703,7 +9767,7 @@
     <service id="EasyCorp\Bundle\EasyAdminBundle\Menu\MenuItemMatcherInterface" alias="EasyCorp\Bundle\EasyAdminBundle\Menu\MenuItemMatcher"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.gSv9zYw" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.198mNaY"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.JTNdSsW"/>
     <service id="session" alias=".session.do-not-use" public="true">
       <deprecated package="symfony/framework-bundle" version="5.3">The "%alias_id%" service and "SessionInterface" alias are deprecated, use "$requestStack-&gt;getSession()" instead.</deprecated>
     </service>
@@ -9734,7 +9798,7 @@
     <service id=".service_locator.tbo4Jjv" alias=".service_locator.bgO__Zr"/>
     <service id=".service_locator.4mN4wkR" alias=".service_locator.mryMuMu"/>
     <service id=".service_locator._OYejev" alias=".service_locator.9h5qdI5"/>
-    <service id=".service_locator.HsG6hkL" alias=".service_locator.198mNaY"/>
+    <service id=".service_locator.0QorQE8" alias=".service_locator.JTNdSsW"/>
     <service id=".service_locator.wKF4yn1" alias=".service_locator.19_mNxd"/>
     <service id=".service_locator.9nqKWTK" alias=".service_locator.mdRZzla"/>
     <service id=".service_locator.nk0lT0X" alias=".service_locator.1kmbKC8"/>

@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Reservation;
+use App\Entity\Slot;
 use App\Form\ReservationType;
 use App\Repository\OpeningHoursRepository;
 use App\Repository\ReservationRepository;
@@ -30,11 +31,14 @@ class ReservationController extends AbstractController
         $form = $this->createForm(ReservationType::class, $reservation);
         $form->handleRequest($request);
 
+
         if ($form->isSubmitted() && $form->isValid()) {
             $reservationRepository->save($reservation, true);
 
             return $this->redirectToRoute('app_reservation_index', [], Response::HTTP_SEE_OTHER);
         }
+
+
 
         return $this->renderForm('reservation/new.html.twig', [
             'reservation' => $reservation,

@@ -18,10 +18,6 @@ class Reservation
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $date = null;
-
-    #[ORM\Column(type: Types::TIME_MUTABLE)]
-    private ?\DateTimeInterface $time = null;
-
    
     #[ORM\ManyToOne(inversedBy: 'reservation')]
     #[ORM\JoinColumn(nullable: false)]
@@ -30,11 +26,10 @@ class Reservation
     #[ORM\OneToMany(mappedBy: 'reservation', targetEntity: Table::class)]
     private Collection $tables;
 
-    /*
-    public function __toString()
-    {
-        return $this->getUser();
-    }+*/
+    #[ORM\ManyToOne(inversedBy: 'reservation')]
+    private ?Slot $slot = null;
+
+    
 
     public function __construct()
     {
@@ -58,17 +53,7 @@ class Reservation
         return $this;
     }
 
-    public function getTime(): ?\DateTimeInterface
-    {
-        return $this->time;
-    }
-
-    public function setTime(\DateTimeInterface $time): self
-    {
-        $this->time = $time;
-
-        return $this;
-    }
+    
 
     public function getUser(): ?User
     {
@@ -107,6 +92,18 @@ class Reservation
                
             }
         }
+
+        return $this;
+    }
+
+    public function getSlot(): ?Slot
+    {
+        return $this->slot;
+    }
+
+    public function setSlot(?Slot $slot): self
+    {
+        $this->slot = $slot;
 
         return $this;
     }

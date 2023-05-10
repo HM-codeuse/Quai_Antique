@@ -9,6 +9,7 @@ use App\Entity\Allergy;
 use App\Entity\Category;
 use App\Entity\Reservation;
 use App\Entity\OpeningHours;
+use App\Entity\Slot;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
@@ -55,6 +56,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Horaires', 'fa-regular fa-clock', OpeningHours::class);
         yield MenuItem::linkToCrud('Allergies', 'fa-solid fa-triangle-exclamation', Allergy::class);
         yield MenuItem::linkToCrud('Tables', 'fa-solid fa-utensils', Table::class);
+        yield MenuItem::linkToCrud('Créneaux', 'fa-solid fa-clock', Slot::class);
         yield MenuItem::linkToCrud('Reservations', 'fa-solid fa-pager', Reservation::class);
         yield MenuItem::linkToCrud('Clients', 'fa-solid fa-user', User::class);
 
