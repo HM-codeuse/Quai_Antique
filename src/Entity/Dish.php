@@ -2,11 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\DishRepository;
+use Vich\UploadableField;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Repository\DishRepository;
+use Symfony\Component\HttpFoundation\File\File;
+use Vich\UploaderBundle\Mapping\Annotation as Vich;
 
 #[ORM\Entity(repositoryClass: DishRepository::class)]
+#[Vich\Uploadable]
 class Dish
 {
     #[ORM\Id]
@@ -29,68 +33,134 @@ class Dish
     #[ORM\ManyToOne(inversedBy: 'dishes')]
     private ?Category $category_id;
 
-    public function getId(): ?int
+
+     // NOTE: This is not a mapped field of entity metadata, just a simple property.
+     #[Vich\UploadableField(mapping: 'dishes', fileNameProperty: 'imageName', size: 'imageSize')]
+     private ?File $imageFile = null;
+ 
+     #[ORM\Column(nullable: true)]
+     private ?string $imageName = null;
+ 
+     #[ORM\Column(nullable: true)]
+     private ?int $imageSize = null;
+ 
+     #[ORM\Column(nullable: true)]
+     private ?\DateTimeImmutable $updatedAt = null;
+
+     public function getId(): ?int
+     {
+         return $this->id;
+     }
+
+     public function getName(): ?string
+     {
+         return $this->name;
+     }
+
+     public function setName(string $name): self
+     {
+         $this->name = $name;
+
+         return $this;
+     }
+
+     public function getPrice(): ?float
+     {
+         return $this->price;
+     }
+
+     public function setPrice(float $price): self
+     {
+         $this->price = $price;
+
+         return $this;
+     }
+
+     public function getDescription(): ?string
+     {
+         return $this->description;
+     }
+
+     public function setDescription(string $description): self
+     {
+         $this->description = $description;
+
+         return $this;
+     }
+
+     public function getFile(): ?string
+     {
+         return $this->file;
+     }
+
+     public function setFile(string $file): self
+     {
+         $this->file = $file;
+
+         return $this;
+     }
+
+     public function getCategoryId(): ?Category
+     {
+         return $this->category_id;
+     }
+
+     public function setCategoryId(?Category $category_id): self
+     {
+         $this->category_id = $category_id;
+
+         return $this;
+     }
+
+    public function setImageFile(?File $imageFile = null): void
     {
-        return $this->id;
+        $this->imageFile = $imageFile;
+
+        if (null !== $imageFile) {
+            // It is required that at least one field changes if you are using doctrine
+            // otherwise the event listeners won't be called and the file is lost
+            $this->updatedAt = new \DateTimeImmutable();
+        }
     }
 
-    public function getName(): ?string
+    public function getImageFile(): ?File
     {
-        return $this->name;
+        return $this->imageFile;
     }
 
-    public function setName(string $name): self
+    public function setImageName(?string $imageName): self
     {
-        $this->name = $name;
+        $this->imageName = $imageName;
 
         return $this;
     }
 
-    public function getPrice(): ?float
+    public function getImageName(): ?string
     {
-        return $this->price;
+        return $this->imageName;
     }
 
-    public function setPrice(float $price): self
+    public function setImageSize(?int $imageSize): self
     {
-        $this->price = $price;
+        $this->imageSize = $imageSize;
 
         return $this;
     }
 
-    public function getDescription(): ?string
+    public function getImageSize(): ?int
     {
-        return $this->description;
+        return $this->imageSize;
     }
 
-    public function setDescription(string $description): self
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
-        $this->description = $description;
+        return $this->updatedAt;
+    }
+
+    public function setUpdatedAt(?\DateTimeImmutable $updatedAt): self
+    {
+        $this->updatedAt = $updatedAt;
 
         return $this;
-    }
-
-    public function getFile(): ?string
-    {
-        return $this->file;
-    }
-
-    public function setFile(string $file): self
-    {
-        $this->file = $file;
-
-        return $this;
-    }
-
-    public function getCategoryId(): ?Category
-    {
-        return $this->category_id;
-    }
-
-    public function setCategoryId(?Category $category_id): self
-    {
-        $this->category_id = $category_id;
-
-        return $this;
-    }
+    }  
 }

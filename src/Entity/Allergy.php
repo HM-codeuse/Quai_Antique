@@ -31,8 +31,6 @@ class Allergy
         $this->user = new ArrayCollection();
     }
 
-
-
     public function getId(): ?int
     {
         return $this->id;

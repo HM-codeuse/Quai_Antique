@@ -19,15 +19,6 @@ class Slot
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $time = null;
 
-    #[ORM\OneToMany(mappedBy: 'slt', targetEntity: reservation::class)]
-    private Collection $reservation;
-
-    public function __construct()
-    {
-        $this->reservation = new ArrayCollection();
-    }
-
-
     public function getId(): ?int
     {
         return $this->id;
@@ -45,35 +36,7 @@ class Slot
         return $this;
     }
 
-    /**
-     * @return Collection<int, reservation>
-     */
-    public function getReservation(): Collection
-    {
-        return $this->reservation;
-    }
-
-    public function addReservation(reservation $reservation): self
-    {
-        if (!$this->reservation->contains($reservation)) {
-            $this->reservation->add($reservation);
-            $reservation->setSlt($this);
-        }
-
-        return $this;
-    }
-
-    public function removeReservation(reservation $reservation): self
-    {
-        if ($this->reservation->removeElement($reservation)) {
-            // set the owning side to null (unless already changed)
-            if ($reservation->getSlt() === $this) {
-                $reservation->setSlt(null);
-            }
-        }
-
-        return $this;
-    }
+  
 
  
 }

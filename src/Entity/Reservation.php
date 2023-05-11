@@ -26,10 +26,7 @@ class Reservation
     #[ORM\OneToMany(mappedBy: 'reservation', targetEntity: Table::class)]
     private Collection $tables;
 
-    #[ORM\ManyToOne(inversedBy: 'reservation')]
-    private ?Slot $slot = null;
-
-    
+ 
 
     public function __construct()
     {
@@ -52,8 +49,6 @@ class Reservation
 
         return $this;
     }
-
-    
 
     public function getUser(): ?User
     {
@@ -79,6 +74,7 @@ class Reservation
     {
         if (!$this->tables->contains($table)) {
             $this->tables->add($table);
+            $table->setReservation($this);
         }
 
         return $this;
@@ -88,22 +84,10 @@ class Reservation
     {
         if ($this->tables->removeElement($table)) {
             // set the owning side to null (unless already changed)
-            if ($table->getId() === $this) {
-               
+            if ($table->getReservation() === $this) {
+                $table->setReservation(null);
             }
         }
-
-        return $this;
-    }
-
-    public function getSlot(): ?Slot
-    {
-        return $this->slot;
-    }
-
-    public function setSlot(?Slot $slot): self
-    {
-        $this->slot = $slot;
 
         return $this;
     }
