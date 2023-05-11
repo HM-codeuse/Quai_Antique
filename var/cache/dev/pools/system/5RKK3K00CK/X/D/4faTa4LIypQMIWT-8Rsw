@@ -1,0 +1,3 @@
+<?php //App%255CEntity%255CDish%2524imageSize
+
+return [PHP_INT_MAX, []];

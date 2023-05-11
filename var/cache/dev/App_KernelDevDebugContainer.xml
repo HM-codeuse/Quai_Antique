@@ -7268,7 +7268,7 @@
       <tag name="twig.runtime"/>
       <argument type="service" id="Vich\UploaderBundle\Templating\Helper\UploaderHelper"/>
     </service>
-    <service id="vich_uploader.metadata.reader" class="Doctrine\Common\Annotations\AnnotationReader"/>
+    <service id="vich_uploader.metadata.reader" class="Vich\UploaderBundle\Metadata\Driver\AttributeReader"/>
     <service id="vich_uploader.listener.clean.dishes" class="Vich\UploaderBundle\EventListener\Doctrine\CleanListener">
       <tag name="doctrine.event_subscriber" priority="50"/>
       <argument>dishes</argument>
