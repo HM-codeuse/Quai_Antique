@@ -2,14 +2,15 @@
 
 namespace App\Controller\Admin;
 
+use App\Entity\Dish;
 use App\Entity\Menu;
+use App\Entity\Slot;
 use App\Entity\User;
 use App\Entity\Table;
 use App\Entity\Allergy;
 use App\Entity\Category;
 use App\Entity\Reservation;
 use App\Entity\OpeningHours;
-use App\Entity\Slot;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;

@@ -50,6 +50,8 @@ class Reservation
         return $this;
     }
 
+    
+
     public function getUser(): ?User
     {
         return $this->user;
@@ -74,7 +76,6 @@ class Reservation
     {
         if (!$this->tables->contains($table)) {
             $this->tables->add($table);
-            $table->setReservation($this);
         }
 
         return $this;
@@ -84,8 +85,8 @@ class Reservation
     {
         if ($this->tables->removeElement($table)) {
             // set the owning side to null (unless already changed)
-            if ($table->getReservation() === $this) {
-                $table->setReservation(null);
+            if ($table->getId() === $this) {
+               
             }
         }
 

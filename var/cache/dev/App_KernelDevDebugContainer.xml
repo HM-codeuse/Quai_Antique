@@ -5731,6 +5731,13 @@
         </argument>
         <argument>null</argument>
       </call>
+      <call method="add">
+        <argument type="service" id=".security.request_matcher.bBoc_aM"/>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
     </service>
     <service id="security.context_listener" class="Symfony\Component\Security\Http\Firewall\ContextListener">
       <tag name="monolog.logger" channel="security"/>
@@ -6276,6 +6283,9 @@
     </service>
     <service id=".security.request_matcher.o9pxlOr" class="Symfony\Component\HttpFoundation\RequestMatcher">
       <argument>^/reservation</argument>
+    </service>
+    <service id=".security.request_matcher.bBoc_aM" class="Symfony\Component\HttpFoundation\RequestMatcher">
+      <argument>^/reservation/new$</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand">
       <tag name="console.command" command="security:encode-password"/>
