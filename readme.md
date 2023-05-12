@@ -46,7 +46,15 @@ php bin/console doctrine:migrations:migrate
 npm run build
 ``
 
-## Créer un nouveau mdp haché pour créer un nouvel utilisateur 
+
+## Pour créer un nouvel utilisateur
+### 1. Créer un nouveau mdp crypté
 ``bash
 symfony console security:hash-password
+``
+copier le mot de passe haché
+
+### 2. Insérer un nouvel utilisateur en sql
+``DBeaver
+INSERT INTO users (firstname, lastname, email, password, username, roles) VALUES ('Monprénom', 'Monnom', 'mon@email.com', 'monmotdepassecrypté','monusername','MON_ROLE')
 ``
