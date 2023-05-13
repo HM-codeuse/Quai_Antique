@@ -21,6 +21,9 @@ class Allergy
     #[ORM\ManyToMany(targetEntity: User::class, inversedBy: 'allergies')]
     private Collection $user;
 
+    #[ORM\ManyToMany(targetEntity: Reservation::class, mappedBy: 'allergy')]
+    private Collection $reservations;
+
     public function __toString()
     {
         return $this->getAliment();
@@ -29,6 +32,7 @@ class Allergy
     public function __construct()
     {
         $this->user = new ArrayCollection();
+        $this->reservations = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -68,6 +72,33 @@ class Allergy
     public function removeUser(User $user): self
     {
         $this->user->removeElement($user);
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Reservation>
+     */
+    public function getReservations(): Collection
+    {
+        return $this->reservations;
+    }
+
+    public function addReservation(Reservation $reservation): self
+    {
+        if (!$this->reservations->contains($reservation)) {
+            $this->reservations->add($reservation);
+            $reservation->addAllergy($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReservation(Reservation $reservation): self
+    {
+        if ($this->reservations->removeElement($reservation)) {
+            $reservation->removeAllergy($this);
+        }
 
         return $this;
     }

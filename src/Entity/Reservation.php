@@ -26,11 +26,20 @@ class Reservation
     #[ORM\OneToMany(mappedBy: 'reservation', targetEntity: Table::class)]
     private Collection $tables;
 
- 
+    #[ORM\Column(length: 255)]
+    private ?string $email = null;
+
+    #[ORM\ManyToMany(targetEntity: Allergy::class, inversedBy: 'reservations')]
+    private Collection $allergy;
+
+    #[ORM\OneToOne(inversedBy: 'reservation')]
+    #[ORM\JoinColumn(nullable: false)]
+    private ?Slot $slot = null;
 
     public function __construct()
     {
        $this->tables = new ArrayCollection();
+       $this->allergy = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -89,6 +98,54 @@ class Reservation
                
             }
         }
+
+        return $this;
+    }
+
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+
+    public function setEmail(string $email): self
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection<int, Allergy>
+     */
+    public function getAllergy(): Collection
+    {
+        return $this->allergy;
+    }
+
+    public function addAllergy( Allergy $allergy): self
+    {
+        if (!$this->allergy->contains($allergy)) {
+            $this->allergy->add($allergy);
+        }
+
+        return $this;
+    }
+
+    public function removeAllergy(Allergy $allergy): self
+    {
+        $this->allergy->removeElement($allergy);
+
+        return $this;
+    }
+
+    public function getSlot(): ?Slot
+    {
+        return $this->slot;
+    }
+
+    public function setSlot(Slot $slot): self
+    {
+        $this->slot = $slot;
 
         return $this;
     }

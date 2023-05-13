@@ -362,8 +362,8 @@ abstract class AbstractNormalizer implements NormalizerInterface, DenormalizerIn
                         }
 
                         $variadicParameters = [];
-                        foreach ($data[$paramName] as $parameterData) {
-                            $variadicParameters[] = $this->denormalizeParameter($reflectionClass, $constructorParameter, $paramName, $parameterData, $context, $format);
+                        foreach ($data[$paramName] as $parameterKey => $parameterData) {
+                            $variadicParameters[$parameterKey] = $this->denormalizeParameter($reflectionClass, $constructorParameter, $paramName, $parameterData, $context, $format);
                         }
 
                         $params = array_merge($params, $variadicParameters);
@@ -417,7 +417,15 @@ abstract class AbstractNormalizer implements NormalizerInterface, DenormalizerIn
             }
 
             if ($constructor->isConstructor()) {
-                return $reflectionClass->newInstanceArgs($params);
+                try {
+                    return $reflectionClass->newInstanceArgs($params);
+                } catch (\TypeError $th) {
+                    if (!isset($context['not_normalizable_value_exceptions'])) {
+                        throw $th;
+                    }
+
+                    return $reflectionClass->newInstanceWithoutConstructor();
+                }
             } else {
                 return $constructor->invokeArgs(null, $params);
             }

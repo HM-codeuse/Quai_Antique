@@ -19,6 +19,9 @@ class Slot
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $time = null;
 
+    #[ORM\OneToOne(mappedBy: 'slot')]
+    private ?Reservation $reservation = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -32,6 +35,23 @@ class Slot
     public function setTime(\DateTimeInterface $time): self
     {
         $this->time = $time;
+
+        return $this;
+    }
+
+    public function getReservation(): ?Reservation
+    {
+        return $this->reservation;
+    }
+
+    public function setReservation(Reservation $reservation): self
+    {
+        // set the owning side of the relation if necessary
+        if ($reservation->getSlot() !== $this) {
+            $reservation->setSlot($this);
+        }
+
+        $this->reservation = $reservation;
 
         return $this;
     }
