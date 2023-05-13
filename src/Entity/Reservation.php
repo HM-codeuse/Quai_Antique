@@ -23,8 +23,6 @@ class Reservation
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
-    #[ORM\OneToMany(mappedBy: 'reservation', targetEntity: Table::class)]
-    private Collection $tables;
 
     #[ORM\Column(length: 255)]
     private ?string $email = null;
@@ -38,7 +36,6 @@ class Reservation
 
     public function __construct()
     {
-       $this->tables = new ArrayCollection();
        $this->allergy = new ArrayCollection();
     }
 
@@ -73,34 +70,6 @@ class Reservation
         return $this;
     }
 
-    /**
-     * @return Collection<int, Table>
-     */
-    public function getTables(): Collection
-    {
-        return $this->tables;
-    }
-
-    public function addTable(Table $table): self
-    {
-        if (!$this->tables->contains($table)) {
-            $this->tables->add($table);
-        }
-
-        return $this;
-    }
-
-    public function removeTable(Table $table): self
-    {
-        if ($this->tables->removeElement($table)) {
-            // set the owning side to null (unless already changed)
-            if ($table->getId() === $this) {
-               
-            }
-        }
-
-        return $this;
-    }
 
     public function getEmail(): ?string
     {
