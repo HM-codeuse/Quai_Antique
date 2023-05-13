@@ -1912,6 +1912,54 @@
             "install-path": "../friendsofphp/proxy-manager-lts"
         },
         {
+            "name": "heroku/heroku-buildpack-php",
+            "version": "v231",
+            "version_normalized": "231.0.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/heroku/heroku-buildpack-php.git",
+                "reference": "5c628e7e989e9d96d742bea67f3245bebe5fc7be"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/heroku/heroku-buildpack-php/zipball/5c628e7e989e9d96d742bea67f3245bebe5fc7be",
+                "reference": "5c628e7e989e9d96d742bea67f3245bebe5fc7be",
+                "shasum": ""
+            },
+            "time": "2023-02-14T21:03:27+00:00",
+            "bin": [
+                "bin/heroku-php-apache2",
+                "bin/heroku-php-nginx"
+            ],
+            "type": "library",
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Zuelke",
+                    "email": "dz@heroku.com"
+                }
+            ],
+            "description": "Toolkit for starting a PHP application locally, with or without foreman, using the same config for PHP and Apache2/Nginx as on Heroku",
+            "homepage": "https://github.com/heroku/heroku-buildpack-php",
+            "keywords": [
+                "apache",
+                "apache2",
+                "foreman",
+                "heroku",
+                "nginx",
+                "php"
+            ],
+            "support": {
+                "issues": "https://github.com/heroku/heroku-buildpack-php/issues",
+                "source": "https://github.com/heroku/heroku-buildpack-php/tree/v231"
+            },
+            "install-path": "../heroku/heroku-buildpack-php"
+        },
+        {
             "name": "jms/metadata",
             "version": "2.8.0",
             "version_normalized": "2.8.0.0",
@@ -4483,6 +4531,35 @@
                 }
             ],
             "install-path": "../symfony/amqp-messenger"
+        },
+        {
+            "name": "symfony/apache-pack",
+            "version": "v1.0.1",
+            "version_normalized": "1.0.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/apache-pack.git",
+                "reference": "3aa5818d73ad2551281fc58a75afd9ca82622e6c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/apache-pack/zipball/3aa5818d73ad2551281fc58a75afd9ca82622e6c",
+                "reference": "3aa5818d73ad2551281fc58a75afd9ca82622e6c",
+                "shasum": ""
+            },
+            "time": "2017-12-12T01:46:35+00:00",
+            "type": "symfony-pack",
+            "installation-source": "dist",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "description": "A pack for Apache support in Symfony",
+            "support": {
+                "issues": "https://github.com/symfony/apache-pack/issues",
+                "source": "https://github.com/symfony/apache-pack/tree/master"
+            },
+            "install-path": "../symfony/apache-pack"
         },
         {
             "name": "symfony/asset",
@@ -11300,6 +11377,7 @@
         "doctrine/data-fixtures",
         "doctrine/doctrine-fixtures-bundle",
         "fakerphp/faker",
+        "heroku/heroku-buildpack-php",
         "myclabs/deep-copy",
         "nikic/php-parser",
         "phar-io/manifest",
