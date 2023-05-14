@@ -21,8 +21,11 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
 
     public const LOGIN_ROUTE = 'app_login';
 
-    public function __construct(private UrlGeneratorInterface $urlGenerator)
+    private UrlGeneratorInterface $urlGenerator;
+
+    public function __construct(UrlGeneratorInterface $urlGenerator)
     {
+        $this->urlGenerator = $urlGenerator;
     }
 
     public function authenticate(Request $request): Passport
@@ -42,13 +45,25 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
 
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
-        if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
-            return new RedirectResponse($targetPath);
+        $targetPath = $this->getTargetPath($request->getSession(), 'main');
+
+        if (!$targetPath) {
+            $roles = $token->getUser()->getRoles();
+
+            if (in_array('ROLE_ADMIN', $roles)) {
+                $url = $this->urlGenerator->generate('app_admin');
+            } elseif (in_array('ROLE_USER', $roles)) {
+                $url = $this->urlGenerator->generate('app_home');
+            } else {
+                throw new \Exception('Invalid user role');
+            }
+
+            return new RedirectResponse($url);
         }
 
-        // For example:
-        return new RedirectResponse($this->urlGenerator->generate('admin'));
+        return new RedirectResponse($targetPath);
     }
+    
 
     protected function getLoginUrl(Request $request): string
     {

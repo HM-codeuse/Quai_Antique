@@ -27,7 +27,6 @@ class AppFixtures extends Fixture
 
         $user->setEmail('user@test.com')
              ->setFirstname($faker->firstName())
-             ->setLastname($faker->lastName())
              ->setUsername($faker->firstName());
 
         $password = $this->encoder->hashPassword($user, 'password');

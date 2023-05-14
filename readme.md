@@ -56,5 +56,5 @@ copier le mot de passe haché
 
 ### 2. Insérer un nouvel utilisateur en sql
 ``DBeaver
-INSERT INTO users (firstname, lastname, email, password, username, roles) VALUES ('Monprénom', 'Monnom', 'mon@email.com', 'monmotdepassecrypté','monusername','MON_ROLE')
+INSERT INTO users (firstname, username, email, password, roles) VALUES ('Monprénom', 'Monnom', 'mon@email.com', 'monmotdepassecrypté','MON_ROLE')
 ``

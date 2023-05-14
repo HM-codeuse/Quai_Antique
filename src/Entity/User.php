@@ -31,13 +31,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
      */
     #[ORM\Column]
     private string $password;
-
    
     #[ORM\Column(length: 255)]
     private ?string $firstname;
 
-    #[ORM\Column(length: 255)]
-    private ?string $lastname;
+    // #[ORM\Column(length: 255)]
+    // private ?string $lastname;
 
     #[ORM\Column(length: 255)]
     private string $email;
@@ -54,7 +53,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
 
     public function __toString()
     {
-        return $this->getId().' - '.$this->getFirstname().' '.$this->getLastname();
+        return $this->getId().' - '.$this->getFirstname().' '.$this->getUsername();
     }
 
     public function getId(): ?int
@@ -96,17 +95,17 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
 
-    public function getLastname(): ?string
-    {
-        return $this->lastname;
-    }
+    // public function getLastname(): ?string
+    // {
+    //     return $this->lastname;
+    // }
 
-    public function setLastname(string $lastname): self
-    {
-        $this->lastname = $lastname;
+    // public function setLastname(string $lastname): self
+    // {
+    //     $this->lastname = $lastname;
 
-        return $this;
-    }
+    //     return $this;
+    // }
 
     public function getEmail(): ?string
     {
