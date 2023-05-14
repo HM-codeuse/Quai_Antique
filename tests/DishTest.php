@@ -14,12 +14,12 @@ class DishTest extends TestCase
         $dish->setName('nom')
              ->setPrice(15.50)
              ->setDescription('Une description du plat')
-             ->setPicture('Nom du fichier');
+             ->setFile('Nom du fichier');
 
         $this->assertTrue($dish->getName()==='nom');
         $this->assertTrue($dish->getPrice()===15.50);
         $this->assertTrue($dish->getDescription()==='Une description du plat');
-        $this->assertTrue($dish->getPicture()==='Nom du fichier');
+        $this->assertTrue($dish->getFile()==='Nom du fichier');
 
     }
 
@@ -30,12 +30,12 @@ class DishTest extends TestCase
         $dish->setName('nom')
              ->setPrice(15.50)
              ->setDescription('Une description du plat')
-             ->setPicture('Nom du fichier');
+             ->setFile('Nom du fichier');
 
         $this->assertFalse($dish->getName()==='false');
         $this->assertFalse($dish->getPrice()===10.50);
         $this->assertFalse($dish->getDescription()==='false');
-        $this->assertFalse($dish->getPicture()==='false');
+        $this->assertFalse($dish->getFile()==='false');
 
     }
 
@@ -46,12 +46,12 @@ class DishTest extends TestCase
         $dish->setName('')
              ->setPrice(0.0)
              ->setDescription('')
-             ->setPicture('');
+             ->setFile('');
 
         $this->assertEmpty($dish->getName());
         $this->assertEmpty($dish->getPrice());
         $this->assertEmpty($dish->getDescription());
-        $this->assertEmpty($dish->getPicture());
+        $this->assertEmpty($dish->getFile());
 
     }
 }

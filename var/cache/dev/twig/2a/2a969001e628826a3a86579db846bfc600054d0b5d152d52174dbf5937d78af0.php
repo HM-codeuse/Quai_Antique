@@ -83,6 +83,11 @@ class __TwigTemplate_cdd6c348f819838a917f47c99209cd8070225de1662cfb287bb40c21816
         // line 25
         echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_reservation");
         echo "\">Réserver</a></button>
+        <button type=\"button\" class=\"btn-primary rounded-4 mx-2 my-2 p-2\" ><a class=\"nav-link link-light \" href=\"";
+        // line 26
+        echo $this->extensions['Symfony\Bridge\Twig\Extension\RoutingExtension']->getPath("app_register");
+        echo "\">Réserver</a></button>
+
      </div>
 </nav>";
         
@@ -105,7 +110,7 @@ class __TwigTemplate_cdd6c348f819838a917f47c99209cd8070225de1662cfb287bb40c21816
 
     public function getDebugInfo()
     {
-        return array (  84 => 25,  77 => 21,  71 => 18,  65 => 15,  59 => 12,  47 => 3,  43 => 1,);
+        return array (  88 => 26,  84 => 25,  77 => 21,  71 => 18,  65 => 15,  59 => 12,  47 => 3,  43 => 1,);
     }
 
     public function getSourceContext()
@@ -135,6 +140,8 @@ class __TwigTemplate_cdd6c348f819838a917f47c99209cd8070225de1662cfb287bb40c21816
          </ul>
         </div>
         <button type=\"button\" class=\"btn-primary rounded-4 mx-2 my-2 p-2\" ><a class=\"nav-link link-light \" href=\"{{ path ('app_reservation') }}\">Réserver</a></button>
+        <button type=\"button\" class=\"btn-primary rounded-4 mx-2 my-2 p-2\" ><a class=\"nav-link link-light \" href=\"{{ path ('app_register') }}\">Réserver</a></button>
+
      </div>
 </nav>", "base_site/nav.html.twig", "C:\\xampp\\htdocs\\Quai_Antique\\templates\\base_site\\nav.html.twig");
     }

@@ -24,9 +24,9 @@ class ReservationType extends AbstractType
                 'label' => 'Votre email'])
             ->add('date', DateType::class, [
                 'label' => 'Date de la réservation'])
-            ->add('time', TimeType::class, [
-                    'label' => 'Heure de la réservation',
-                    'mapped'=>'false'])
+          //  ->add(  'time', TimeType::class, [
+            //        'label' => 'Heure de la réservation',
+              //      'mapped'=>'false'])
             ->add('allergy', TextType::class, [
                 'label' => 'Allergie à signaler'
             ])

@@ -8,5 +8,6 @@ yarn-error.log
 
 ###> symfony/framework-bundle ###
 /vendor/
+/var/
 
 ###< symfony/framework-bundle ###
