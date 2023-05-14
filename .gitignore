@@ -9,5 +9,5 @@ yarn-error.log
 ###> symfony/framework-bundle ###
 /vendor/
 /var/
-
+.env.local
 ###< symfony/framework-bundle ###
