@@ -8,7 +8,7 @@
 
     {% if app.user %}
         <div class="mb-3">
-            Vous êtes connectés en tant que {{ app.user.userName }}, 
+            Vous êtes connectés en tant que {{ app.user.username}}  {{ app.user.firstname }}, 
             <button>
                 <a href="{{ path('app_logout') }}">Me déconnecter </a>
             </button>
@@ -37,7 +37,7 @@
     #}
 
     <button class="btn btn-lg btn-primary" type="submit">
-        Sign in
+        Se connecter
     </button>
 </form>
 {% endblock %}

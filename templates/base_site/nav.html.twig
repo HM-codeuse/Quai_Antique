@@ -22,8 +22,30 @@
             </li>
          </ul>
         </div>
-        <button type="button" class="btn-primary rounded-4 mx-2 my-2 p-2" ><a class="nav-link link-light " href="{{ path ('app_reservation') }}">Réserver</a></button>
-        <button type="button" class="btn-primary rounded-4 mx-2 my-2 p-2" ><a class="nav-link link-light " href="{{ path ('app_register') }}">S'inscrire</a></button>
 
+        <div class="end-nav">
+
+         {% if app.user %}
+        <div class="mb-3">
+            Vous êtes connectés en tant que {{ app.user.username}}  {{ app.user.firstname }}, 
+            <button>
+                <a class="nav-link link-light" href="{{ path('app_logout') }}">Me déconnecter </a>
+            </button>
+            <button type="button" class="btn-primary rounded-4 mx-2 my-2 p-2" >
+                <a class="nav-link link-light " href="{{ path ('app_reservation') }}">Réserver</a>
+            </button>
+        </div>
+
+        {% else %}
+        <div class="mb-3">
+           <button type="button" class="btn-primary rounded-4 mx-2 my-2 p-2" ><a class="nav-link link-light " href="{{ path ('app_register') }}">S'inscrire</a></button>
+           <button type="button" class="btn-primary rounded-4 mx-2 my-2 p-2" ><a class="nav-link link-light " href="{{ path ('app_login') }}">Se connecter</a></button>
+           <button type="button" class="btn-primary rounded-4 mx-2 my-2 p-2" ><a class="nav-link link-light " href="{{ path ('app_reservation') }}">Réserver</a></button>
+        </div>
+
+        {% endif %}
+        </div>
+
+       
      </div>
 </nav>

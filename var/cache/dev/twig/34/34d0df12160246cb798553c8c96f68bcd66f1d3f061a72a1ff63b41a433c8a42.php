@@ -84,7 +84,9 @@ class __TwigTemplate_3f7d6a503dbb05f49538b8099387ead05343f1628d1eccce5670b2a2168
             echo "        <div class=\"mb-3\">
             Vous êtes connectés en tant que ";
             // line 11
-            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11), "userName", [], "any", false, false, false, 11), "html", null, true);
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11), "username", [], "any", false, false, false, 11), "html", null, true);
+            echo "  ";
+            echo twig_escape_filter($this->env, twig_get_attribute($this->env, $this->source, twig_get_attribute($this->env, $this->source, (isset($context["app"]) || array_key_exists("app", $context) ? $context["app"] : (function () { throw new RuntimeError('Variable "app" does not exist.', 11, $this->source); })()), "user", [], "any", false, false, false, 11), "firstname", [], "any", false, false, false, 11), "html", null, true);
             echo ", 
             <button>
                 <a href=\"";
@@ -117,7 +119,7 @@ class __TwigTemplate_3f7d6a503dbb05f49538b8099387ead05343f1628d1eccce5670b2a2168
         // line 38
         echo "
     <button class=\"btn btn-lg btn-primary\" type=\"submit\">
-        Sign in
+        Se connecter
     </button>
 </form>
 ";
@@ -141,7 +143,7 @@ class __TwigTemplate_3f7d6a503dbb05f49538b8099387ead05343f1628d1eccce5670b2a2168
 
     public function getDebugInfo()
     {
-        return array (  118 => 38,  112 => 25,  104 => 20,  99 => 17,  92 => 13,  87 => 11,  84 => 10,  82 => 9,  79 => 8,  73 => 6,  71 => 5,  68 => 4,  49 => 3,  46 => 2,  44 => 1,);
+        return array (  120 => 38,  114 => 25,  106 => 20,  101 => 17,  94 => 13,  87 => 11,  84 => 10,  82 => 9,  79 => 8,  73 => 6,  71 => 5,  68 => 4,  49 => 3,  46 => 2,  44 => 1,);
     }
 
     public function getSourceContext()
@@ -156,7 +158,7 @@ class __TwigTemplate_3f7d6a503dbb05f49538b8099387ead05343f1628d1eccce5670b2a2168
 
     {% if app.user %}
         <div class=\"mb-3\">
-            Vous êtes connectés en tant que {{ app.user.userName }}, 
+            Vous êtes connectés en tant que {{ app.user.username}}  {{ app.user.firstname }}, 
             <button>
                 <a href=\"{{ path('app_logout') }}\">Me déconnecter </a>
             </button>
@@ -185,7 +187,7 @@ class __TwigTemplate_3f7d6a503dbb05f49538b8099387ead05343f1628d1eccce5670b2a2168
     #}
 
     <button class=\"btn btn-lg btn-primary\" type=\"submit\">
-        Sign in
+        Se connecter
     </button>
 </form>
 {% endblock %}

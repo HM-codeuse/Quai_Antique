@@ -43,25 +43,16 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
         );
     }
 
+
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
-        $targetPath = $this->getTargetPath($request->getSession(), 'main');
-
-        if (!$targetPath) {
-            $roles = $token->getUser()->getRoles();
-
-            if (in_array('ROLE_ADMIN', $roles)) {
-                $url = $this->urlGenerator->generate('app_admin');
-            } elseif (in_array('ROLE_USER', $roles)) {
-                $url = $this->urlGenerator->generate('app_home');
-            } else {
-                throw new \Exception('Invalid user role');
-            }
-
-            return new RedirectResponse($url);
+        if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
+            return new RedirectResponse($targetPath);
         }
 
-        return new RedirectResponse($targetPath);
+        // For example:
+        return new RedirectResponse($this->urlGenerator->generate('app_home'));
+        // throw new \Exception('TODO: provide a valid redirect inside '.FILE);
     }
     
 
