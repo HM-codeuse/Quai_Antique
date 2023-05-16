@@ -28,7 +28,8 @@ class ReservationType extends AbstractType
             ->add('email', EmailType::class, [
                 'label' => 'Votre email'])
             ->add('date', DateType::class, [
-                'label' => 'Date de la réservation'])
+                'label' => 'Date de la réservation', 
+                'widget' => 'single_text'])
             ->add('slot', EntityType::class, [
                 'class' => Slot::class,     
                 'label' => 'Heure de la réservation',
