@@ -34,6 +34,11 @@ class Reservation
     #[ORM\JoinColumn(nullable: false)]
     private ?Slot $slot = null;
 
+    #[ORM\ManyToOne(targetEntity:Table::class, inversedBy: 'reservation')]
+    #[ORM\JoinColumn(nullable: false)]
+    private $table;
+
+
     public function __construct()
     {
        $this->allergy = new ArrayCollection();
@@ -118,5 +123,19 @@ class Reservation
 
         return $this;
     }
+
+
+    public function getTable(): ?Table
+    {
+        return $this->table;
+    }
+
+    public function setTable(?Table $table): self
+    {
+        $this->table = $table;
+
+        return $this;
+    }
+
 
 }

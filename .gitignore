@@ -10,4 +10,5 @@ yarn-error.log
 /vendor/
 /var/
 .env.local
+public/bundles/
 ###< symfony/framework-bundle ###
