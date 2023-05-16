@@ -88,17 +88,7 @@ class Dish
          return $this;
      }
 
-     public function getFile(): ?string
-     {
-         return $this->file;
-     }
 
-     public function setFile(string $file): self
-     {
-         $this->file = $file;
-
-         return $this;
-     }
 
      public function getCategoryId(): ?Category
      {
