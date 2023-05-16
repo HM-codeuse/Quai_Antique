@@ -5,7 +5,7 @@
     <div class="access-card my-3 mx-3 p-3 rounded-3">
       <div class="card-body">
         <h5 class="card-title text-center p-3">Notre dernier chef d'oeuvre</h5>
-            <img src="{{ asset('build/images/saumon-renversé.jpg') }}" class="img-fluid cover" alt="...">               
+           <img src=" {{ vich_uploader_asset( lastdish, 'imageFile' ) }} " class="img-fluid" alt="...">         
       </div>
     </div>
   </div>

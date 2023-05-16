@@ -42,7 +42,8 @@ class ReservationType extends AbstractType
                 },
                 'placeholder' => 'Choisissez l\'heure de votre réservation ',
             ])
-            ->add('allergy', TextType::class, [
+            ->add('allergy', TextType::class, [ 
+                'required' => false,
                 'label' => 'Allergie à signaler'
             ])
             ->add('table', EntityType::class, [
@@ -53,7 +54,7 @@ class ReservationType extends AbstractType
                         ->orderBy('t.id', 'ASC');
                 },
                 'choice_label' => function (Table $table) {
-                    return 'Table ' . $table->getId() . ' (' . $table->getNumberOfSettings() . ' places)';
+                    return 'Table ' . $table->getId() . ' (' . $table->getNumberOfSettings() . ')';
                 },
                 'placeholder' => 'Choisissez une table',
             ])

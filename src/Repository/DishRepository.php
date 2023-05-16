@@ -46,11 +46,57 @@ class DishRepository extends ServiceEntityRepository
     {
         return $this->createQueryBuilder('d')
             ->orderBy('d.id', 'DESC')
-            ->setMaxResults(10)
+            ->setMaxResults(3)
             ->getQuery()
             ->getResult()
         ;
     }
+
+    public function lastDish()
+    {
+        return $this->createQueryBuilder('d')
+            ->where('d.category = :categoryId')
+            ->setParameter('categoryId', 4)
+            ->orderBy('d.id', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
+    public function firstDish()
+    {
+        return $this->createQueryBuilder('d')
+            ->orderBy('d.name', 'DESC')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
+    public function carrousselDish()
+    {
+        return $this->createQueryBuilder('d')
+            ->orderBy('d.id', 'ASC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult()
+        ;
+    }
+
+    public function dishesByCategories() {
+       return $this->createQueryBuilder('d')
+        ->select('d', 'c')
+        ->leftJoin('d.category', 'c')
+        ->orderBy('c.id', 'ASC') 
+        ->addOrderBy('d.id', 'ASC') 
+        ->getQuery()
+        ->getResult()
+    ;
+    }
+    
+
+
 
 //    public function findOneBySomeField($value): ?Dish
 //    {

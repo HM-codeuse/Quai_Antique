@@ -2,6 +2,7 @@
 
 namespace App\Controller;
 
+use App\Entity\Dish;
 use App\Repository\DishRepository;
 use App\Repository\OpeningHoursRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -14,8 +15,12 @@ class HomeController extends AbstractController
     public function index(DishRepository $dishRepository,  OpeningHoursRepository $openingHoursRepository): Response
     {
         return $this->render('home/index.html.twig', [
-           'dishs'=>$dishRepository->lastTree(),
+           'lasttree'=>$dishRepository ->lastTree(),
            'openinghours'=>$openingHoursRepository->findAll(),
+           'lastdish'=>$dishRepository-> lastDish(),
+           'firstdish'=>$dishRepository-> firstDish(),
+           'carrousseldishs'=>$dishRepository-> carrousselDish(),
+        //    'lastTree'=>$dishRepository->lastTree()
         ]);
     }
 }

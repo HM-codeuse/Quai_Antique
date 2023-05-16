@@ -4,23 +4,15 @@
 <h2 class="text-center my-4">Nos plats vedettes</h2>
 </div>
 <div class="row row-cols-1 row-cols-md-3 g-4">
-      <div class="col">
+     
+      {% for dish in lasttree %}
+       <div class="col">
         <div class="card my-3 mx-3 p-3 rounded-3">
-            <img src="{{ asset('build/images/specials-1.jpg') }}" class="img-fluid" alt="...">         
-            <h3 class="text-center">Assiette Terre-mer</h3>
+           <img src=" {{ vich_uploader_asset( dish, 'imageFile' ) }} " class="img-fluid" alt="...">         
+            <h3 class="text-center"> {{ dish.name }} </h3>  
         </div>
-      </div>
-      <div class="col">
-        <div class="card my-3 mx-3 p-3 rounded-3">
-            <img src="{{ asset('build/images/specials-2.jpg') }}" class="img-fluid" alt="...">
-            <h3 class="text-center">Mélange d'agrumes parsemé de ses baies </h3>
-        </div>
-      </div>
-      <div class="col">
-        <div class="card my-3 mx-3 p-3 rounded-3">
-            <img src="{{ asset('build/images/specials-3.jpg') }}" class="img-fluid" alt="...">
-            <h3 class="text-center">Nouilles du soleil levant</h3>
-        </div>
-      </div>
+        </div>  
+    {% endfor %}
+    
       </div>
       </div>

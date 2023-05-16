@@ -27,15 +27,13 @@ class Dish
     #[ORM\Column(type: Types::TEXT)]
     private ?string $description;
 
-    #[ORM\Column(length: 255)]
-    private ?string $file;
 
     #[ORM\ManyToOne(inversedBy: 'dishes')]
-    private ?Category $category_id;
+    private ?Category $category;
 
 
      // NOTE: This is not a mapped field of entity metadata, just a simple property.
-     #[Vich\UploadableField(mapping: 'dishes', fileNameProperty: 'imageName', size: 'imageSize')]
+     #[Vich\UploadableField(mapping: 'dishes_images', fileNameProperty: 'imageName', size: 'imageSize')]
      private ?File $imageFile = null;
  
      #[ORM\Column(nullable: true)]
@@ -92,12 +90,12 @@ class Dish
 
      public function getCategoryId(): ?Category
      {
-         return $this->category_id;
+         return $this->category;
      }
 
-     public function setCategoryId(?Category $category_id): self
+     public function setCategoryId(?Category $category): self
      {
-         $this->category_id = $category_id;
+         $this->category = $category;
 
          return $this;
      }

@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\User;
 use App\Form\RegistrationFormType;
+use App\Repository\DishRepository;
 use App\Security\AppAuthenticator;
 use Doctrine\ORM\EntityManagerInterface;
 use App\Repository\OpeningHoursRepository;
@@ -18,7 +19,7 @@ use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 class RegistrationController extends AbstractController
 {
     #[Route('/register', name: 'app_register')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppAuthenticator $authenticator, EntityManagerInterface $entityManager, OpeningHoursRepository $openingHoursRepository): Response
+    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppAuthenticator $authenticator, EntityManagerInterface $entityManager, OpeningHoursRepository $openingHoursRepository, DishRepository $dishRepository): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -52,6 +53,8 @@ class RegistrationController extends AbstractController
         return $this->render('registration/register.html.twig', [
             'registrationForm' => $form->createView(),
             'openinghours'=>$openingHoursRepository->findAll(),
+            'firstdish'=>$dishRepository-> firstDish(),
+
         ]);
     }
 }

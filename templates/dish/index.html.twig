@@ -2,26 +2,23 @@
 
 {% block body %}
 <div class="row">
-<img src="{{ asset('build/images/boeuf-bourguignon2.jpg') }}" class="d-block w-100" alt="Plat" height="500">
-</div>
 <h1 class="dishes-title text-center ">Nos plats</h1>
-
 
 {% for category in categories %}
     <div class="row m-2 p-2 text-center">
     <h3 class= "category-title text-center">{{category.name}}</h3>
     <div class="list-dishes">
         <ul class="dish-list">
-                {% for dish in dishes %}
-                <li class="dish">
-                    {{ dish.name }}
-                </li>
-                {% endfor %}
+             {% for category, dish in dishesByCategories %}
+                {# {% if category.id is defined %} #}
+                <li> {{ dish.name }} </li>
+                {# {% endif %} #}
+            {% endfor %}        
+               
         </ul>
     </div>
 </div>
 {% endfor %}
 
-{# pour l'instant c'est vide car on n'a pas encore de plats dans la bdd  #}
 
 {% endblock %}
