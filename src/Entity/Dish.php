@@ -29,7 +29,7 @@ class Dish
 
 
     #[ORM\ManyToOne(inversedBy: 'dishes')]
-    private ?Category $category;
+    private ?Category $category_id;
 
 
      // NOTE: This is not a mapped field of entity metadata, just a simple property.
@@ -90,12 +90,12 @@ class Dish
 
      public function getCategoryId(): ?Category
      {
-         return $this->category;
+         return $this->category_id;
      }
 
-     public function setCategoryId(?Category $category): self
+     public function setCategoryId(?Category $category_id): self
      {
-         $this->category = $category;
+         $this->category_id = $category_id;
 
          return $this;
      }

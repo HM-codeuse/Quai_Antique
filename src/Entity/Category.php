@@ -18,7 +18,7 @@ class Category
     #[ORM\Column(length: 255)]
     private ?string $name = null;
 
-    #[ORM\OneToMany(mappedBy: 'category', targetEntity: Dish::class)]
+    #[ORM\OneToMany(mappedBy: 'category_id', targetEntity: Dish::class)]
     private Collection $dishes;
 
     public function __toString()
