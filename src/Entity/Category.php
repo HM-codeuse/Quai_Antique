@@ -60,7 +60,7 @@ class Category
     {
         if (!$this->dishes->contains($dish)) {
             $this->dishes->add($dish);
-            $dish->setCategoryId($this);
+            $dish->setCategory($this);
         }
 
         return $this;
@@ -70,8 +70,8 @@ class Category
     {
         if ($this->dishes->removeElement($dish)) {
             // set the owning side to null (unless already changed)
-            if ($dish->getCategoryId() === $this) {
-                $dish->setCategoryId(null);
+            if ($dish->getCategory() === $this) {
+                $dish->setCategory(null);
             }
         }
 
