@@ -8,9 +8,9 @@
     <div class="row m-2 p-2 text-center">
     <h3 class= "category-title text-center">{{category.name}}</h3>
     <div class="list-dishes">
-        <ul class="dish-list">
-             {% for category, dish in dishesByCategories %}
-                {# {% if category.id is defined %} #}
+        <ul class="list-unstyled">
+             {% for dish in dishes %}
+                {# {% if category.dish = category.name %} #}
                 <li> {{ dish.name }} </li>
                 {# {% endif %} #}
             {% endfor %}        
@@ -19,6 +19,7 @@
     </div>
 </div>
 {% endfor %}
+
 
 
 {% endblock %}

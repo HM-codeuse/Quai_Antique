@@ -18,9 +18,11 @@ class HomeController extends AbstractController
            'lasttree'=>$dishRepository ->lastTree(),
            'openinghours'=>$openingHoursRepository->findAll(),
            'lastdish'=>$dishRepository-> lastDish(),
-           'firstdish'=>$dishRepository-> firstDish(),
-           'carrousseldishs'=>$dishRepository-> carrousselDish(),
-        //    'lastTree'=>$dishRepository->lastTree()
+           'oneentry'=>$dishRepository->oneEntry(),
+           'onedish'=>$dishRepository->oneDish(),
+           'onedessert'=>$dishRepository->oneDessert()
+
+
         ]);
     }
 }

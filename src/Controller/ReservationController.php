@@ -37,7 +37,6 @@ class ReservationController extends AbstractController
             'controller_name' => 'ReservationController',
             'openinghours'=>$openingHoursRepository->findAll(),
             'form' => $form->createView(),
-            'firstdish'=>$dishRepository-> firstDish(),
 
         ]);
     }

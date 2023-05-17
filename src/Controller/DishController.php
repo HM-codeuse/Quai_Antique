@@ -19,10 +19,7 @@ class DishController extends AbstractController
             'dishes'=>$dishRepository->findAll(),
             //Je veux afficher les plats de la catégorie spécifiée
             'openinghours'=>$openingHoursRepository->findAll(), 
-            'dishesByCategories'=>$dishRepository -> dishesByCategories(),
             'lastdish'=>$dishRepository-> lastDish(),
-            'firstdish'=>$dishRepository-> firstDish(),
-
 
         ]);
     }

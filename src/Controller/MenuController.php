@@ -19,7 +19,6 @@ class MenuController extends AbstractController
         return $this->render('menu/index.html.twig', [
             'menus' => $menuRepository->findAll(),
             'openinghours'=>$openingHoursRepository->findAll(), 
-            'firstdish'=>$dishRepository-> firstDish(),
 
         ]);
     }

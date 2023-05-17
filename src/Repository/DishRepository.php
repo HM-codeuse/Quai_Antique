@@ -2,6 +2,7 @@
 
 namespace App\Repository;
 
+use App\Entity\Category;
 use App\Entity\Dish;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -45,10 +46,40 @@ class DishRepository extends ServiceEntityRepository
     public function lastTree()
     {
         return $this->createQueryBuilder('d')
-            ->orderBy('d.id', 'DESC')
+            ->orderBy('d.price', 'DESC')
             ->setMaxResults(3)
             ->getQuery()
             ->getResult()
+        ;
+    }
+
+    public function oneEntry()
+    {
+        return $this->createQueryBuilder('d')
+            ->where('d.id = 2')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
+    public function oneDish()
+    {
+        return $this->createQueryBuilder('d')
+            ->where('d.id = 14')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult()
+        ;
+    }
+
+    public function oneDessert()
+    {
+        return $this->createQueryBuilder('d')
+            ->where('d.id = 8')
+            ->setMaxResults(1)
+            ->getQuery()
+            ->getOneOrNullResult()
         ;
     }
 
@@ -62,36 +93,14 @@ class DishRepository extends ServiceEntityRepository
         ;
     }
 
-    public function firstDish()
-    {
-        return $this->createQueryBuilder('d')
-            ->orderBy('d.name', 'DESC')
-            ->setMaxResults(1)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
+    // public function dishesByCategories() {
 
-    public function carrousselDish()
-    {
-        return $this->createQueryBuilder('d')
-            ->orderBy('d.id', 'ASC')
-            ->setMaxResults(3)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-
-    public function dishesByCategories() {
-       return $this->createQueryBuilder('d')
-        ->select('d', 'c')
-        ->leftJoin('d.category', 'c')
-        ->orderBy('c.id', 'ASC') 
-        ->addOrderBy('d.id', 'ASC') 
-        ->getQuery()
-        ->getResult()
-    ;
-    }
+    //    return $this->createQueryBuilder('c')
+    //     ->orderBy('c.name', 'ASC') 
+    //     ->getQuery()
+    //     ->getResult()
+    // ;
+    // }
     
 
 
