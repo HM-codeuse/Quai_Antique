@@ -5,6 +5,7 @@ namespace App\Entity;
 use Vich\UploadableField;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
+use App\Entity\Category;
 use App\Repository\DishRepository;
 use Symfony\Component\HttpFoundation\File\File;
 use Vich\UploaderBundle\Mapping\Annotation as Vich;
@@ -28,8 +29,8 @@ class Dish
     private ?string $description;
 
 
-    #[ORM\ManyToOne(inversedBy: 'dishes')]
-    private ?Category $category_id;
+    #[ORM\ManyToOne(inversedBy: 'dishes', targetEntity: Category::class)]
+    private ?Category $category;
 
 
      // NOTE: This is not a mapped field of entity metadata, just a simple property.
@@ -88,14 +89,14 @@ class Dish
 
 
 
-     public function getCategoryId(): ?Category
+     public function getCategory(): ?Category
      {
-         return $this->category_id;
+         return $this->category;
      }
 
-     public function setCategoryId(?Category $category_id): self
+     public function setCategory(?Category $category): self
      {
-         $this->category_id = $category_id;
+         $this->category = $category;
 
          return $this;
      }

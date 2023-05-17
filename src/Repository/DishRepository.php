@@ -55,8 +55,6 @@ class DishRepository extends ServiceEntityRepository
     public function lastDish()
     {
         return $this->createQueryBuilder('d')
-            ->where('d.category = :categoryId')
-            ->setParameter('categoryId', 4)
             ->orderBy('d.id', 'DESC')
             ->setMaxResults(1)
             ->getQuery()
