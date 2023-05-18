@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="row">
+{% for dish in dishes %}
+    <div class="col-md-4 lg-3 gallery">
+  <div class="card">
+    <img class="image-item" src=" {{ vich_uploader_asset( dish, 'imageFile' ) }} " alt="Card image cap">
+      <h3 class="card-title text-center">{{ dish.name }}</h3>
+    </div>
+</div>
+
+
+{% endfor %}
+</div>
+{% endblock %}

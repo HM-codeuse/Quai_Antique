@@ -57,6 +57,8 @@ h3{
     color: var(--primary);
 }
 
+
+
 //page des plats 
 .starter-title, .side-title {
     color:var(--secondary);
@@ -96,3 +98,21 @@ h3{
     font-weight: bolder;
 }
 
+//page de la galerie 
+.gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.image-item {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+}
+ 
+.card{
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
