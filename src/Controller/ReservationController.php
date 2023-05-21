@@ -17,7 +17,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class ReservationController extends AbstractController
 {
     #[Route('/reservation', name: 'app_reservation')]
-    public function index(Request $request, OpeningHoursRepository $openingHoursRepository, EntityManagerInterface $em, DishRepository $dishRepository): Response
+    public function index(Request $request, OpeningHoursRepository $openingHoursRepository, EntityManagerInterface $entityManager, DishRepository $dishRepository): Response
     {
         $reservation = new Reservation();
 
@@ -26,10 +26,16 @@ class ReservationController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()){
-        $reservation = $form->getData();
+        $reservation->getUser();
+        $reservation->getEmail();
+        $reservation->getDate();
+        $reservation->getSlot();
+        $reservation->getTable();
+        $reservation->getAllergy();
 
-        $em->persist($reservation);
-        $em->flush();
+
+        $entityManager->persist($reservation);
+        $entityManager->flush();
 
         return $this->redirectToRoute('app_home');
     }

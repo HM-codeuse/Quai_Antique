@@ -10,9 +10,9 @@
     <div class="list-dishes">
         <ul class="list-unstyled">
              {% for dish in dishes %}
-                {# {% if category.dish = category.name %} #}
+                {% if dish.category is same as(category) %}
                 <li> {{ dish.name }} </li>
-                {# {% endif %} #}
+                {% endif %}
             {% endfor %}        
                
         </ul>

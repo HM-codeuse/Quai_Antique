@@ -41,7 +41,7 @@ class Reservation
 
     public function __construct()
     {
-       $this->allergy = new ArrayCollection();
+        
     }
 
     public function getId(): ?int
