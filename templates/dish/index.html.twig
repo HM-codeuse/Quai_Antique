@@ -1,9 +1,9 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-<div class="row">
-<h1 class="dishes-title text-center ">Nos plats</h1>
+<h1 class="dishes-title text-center m-4 p-2">Nos plats</h1>
 
+<div class="row">
 {% for category in categories %}
     <div class="row m-2 p-2 text-center">
     <h3 class= "category-title text-center">{{category.name}}</h3>

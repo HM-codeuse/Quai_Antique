@@ -8,7 +8,9 @@
       {% for dish in lasttree %}
        <div class="col">
         <div class="card my-3 mx-3 p-3 rounded-3">
-           <img src=" {{ vich_uploader_asset( dish, 'imageFile' ) }} " class="img-fluid" alt="...">         
+        <figure class="snip">
+        </figure>
+           <img class="image-item" src=" {{ vich_uploader_asset( dish, 'imageFile' ) }} " class="img-fluid" alt="...">         
             <h3 class="text-center"> {{ dish.name }} </h3>  
         </div>
         </div>  

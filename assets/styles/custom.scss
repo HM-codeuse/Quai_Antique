@@ -1,5 +1,6 @@
 
 //Fonts_links
+@import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
@@ -14,8 +15,8 @@
 
 
 .logo {
-    font-family: 'Luxurious Script', cursive;
-    font-size: 2rem;
+    font-family: 'Mea Culpa', cursive;
+    font-size: 3rem;
 }
 
 .lash-dish, .access-card {
@@ -36,25 +37,44 @@ iframe {
     height: 200%;
 }
 
+.image-item{
+    width: 200px;
+    transition: transform .1s;
+    }
+
+.image-item:hover{
+        -ms-transform: scale(1.1); /* IE 9 */
+        -webkit-transform: scale(1.1); /* Safari 3-8 */
+        transform: scale(1.1);
+        }
+
 .model {
-    height: 500px;
+    height: 30%;
 }
 
+
 nav, footer {
-    background-color: #392C1E;
+    background-color: var(--info);
     color:white;
+    font-size: larger;
 }
 
 h1 {
+    font-family: 'Mea Culpa', cursive;
     color: var(--primary);
+    font-size:4rem;
+
 }
 
 h2, h5 {
+    font-family: 'Mea Culpa', cursive;
     color: white;
+    font-size: 2rem;
 }
 
 h3{
     color: var(--primary);
+    
 }
 
 
