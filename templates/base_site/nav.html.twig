@@ -31,8 +31,8 @@
 
          {% if app.user %}
         <div class="mb-3">
-            Vous êtes connectés en tant que {{ app.user.username}}  {{ app.user.firstname }}, 
-            <button>
+           {{ app.user.username}}  {{ app.user.firstname }}, connecté
+            <button type="button" class="btn-primary rounded-4 mx-2 my-2 p-2">
                 <a class="nav-link link-light" href="{{ path('app_logout') }}">Me déconnecter </a>
             </button>
             <button type="button" class="btn-primary rounded-4 mx-2 my-2 p-2" >

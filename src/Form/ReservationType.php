@@ -28,7 +28,9 @@ class ReservationType extends AbstractType
         $builder
             ->add('user', EntityType::class, [
                     'class'=> User::class,
-                    'label' => 'Votre nom'])
+                    'label' => 'Votre nom',
+                    'required' => false])
+
             ->add('email', EmailType::class, [
                 'label' => 'Votre email'])
             ->add('date', DateType::class, [
@@ -43,10 +45,6 @@ class ReservationType extends AbstractType
             ->add('slot', EntityType::class, [
                 'class' => Slot::class,     
                 'label' => 'Heure de la réservation',
-                // 'query_builder' => function (EntityRepository $er) {
-                //     return $er->createQueryBuilder('s')
-                //         ->orderBy('s.id', 'ASC');
-                // },
                 'choice_label' => function (Slot $slot) {
                     return $slot->getTime()->format('H:i');
                 },
@@ -61,10 +59,6 @@ class ReservationType extends AbstractType
             ->add('table', EntityType::class, [
                 'class' => Table::class,
                 'label' => 'Sélectionner une table',
-                // 'query_builder' => function (EntityRepository $er) {
-                //     return $er->createQueryBuilder('t')
-                //         ->orderBy('t.id', 'ASC');
-                // },
                 'choice_label' => function (Table $table) {
                     return 'Table ' . $table->getId() . ' (' . $table->getNumberOfSettings() . ')';
                 },
@@ -79,7 +73,7 @@ class ReservationType extends AbstractType
     {
        
         $resolver->setDefaults([
-            'data_class' => Reservation::class,
+            'data_class' => Reservation::class
         ]);
     }
 }

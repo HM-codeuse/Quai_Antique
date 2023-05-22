@@ -96,7 +96,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     }
 
     
-
     public function getEmail(): ?string
     {
         return $this->email;
@@ -161,6 +160,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->allergies;
     }
 
+      /**
+     * Set the value of allergies
+     *
+     * @return  self
+     */ 
+    public function setAllergies($allergies)
+    {
+        $this->allergies = $allergies;
+
+        return $this;
+    }
+
     public function addAllergy(Allergy $allergy): self
     {
         if (!$this->allergies->contains($allergy)) {
@@ -180,4 +191,6 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
     
+
+  
 }
