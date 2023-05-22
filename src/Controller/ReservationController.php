@@ -44,7 +44,6 @@ class ReservationController extends AbstractController
                 $reservation->addAllergy($allergy);
             }
 
-           
             $entityManager->persist($reservation);
             $entityManager->flush();
 

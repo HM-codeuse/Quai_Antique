@@ -1,64 +1,89 @@
 # Quai Antique
 
-Le Quai Antique est un restaurant de Chambéry qui propose la cuisine traditionnelle de Savoie du chef Arnaud Michant. 
-Ce site a usage professionnel est voué à évoluer dans l'avenir afin de proposer plus de fonctionnalités et d'efficacité pour ses utilisateurs. Une partie histoire du chef et du restaurant arrivera notamment ainsi que la possibilité pour les clients de laisser leurs avis sur la cuisine du chef. 
+Le site Quai Antique est le site d'un restaurant de Chambéry qui propose la cuisine traditionnelle de Savoie du chef Arnaud Michant. 
+Ce site à usage professionnel est voué à évoluer dans l'avenir afin de proposer plus de fonctionnalités et d'efficacité pour ses utilisateurs. Une partie histoire du chef et du restaurant arrivera notamment ainsi que la possibilité pour les clients de laisser leurs avis sur la cuisine du chef. 
 
 ## Environnement de développement 
 
 ### Pré-requis
--   PHP 8.0.25
--   Composer 2.5.4
+Pour exécuter cette application sur votre environnement local, il faudra disposer des éléments suivants:
+-   PHP 8.0.25 ou supérieur
+-   Composer 2.5.4 ou supérieur
 -   Symfony CLI
--   nodejs et npm
--   Easyadmin
--   Alwaysdata 
--   DBeaver
--   VPS
+-   Un espace d'hébergement pour la base de données (comme Alwaysdata)
+-   Un système de gestion de bases de données (par exemple DBeaver)
 
-### Lancer l'environnement de développement 
+Il faudra donc installer tous ces élèments avant de commencer le projet.
 
-``bash
-symfony serve -d
-``
+### Cloner le projet
 
-### Arreter l'environnement de développement 
+- Créer une répertoire pour y télécharger le projet. 
+- Ouvrir un terminal et se placer dans ce projet.
+- Cloner le projet en tapant la commande suivante dans votre terminal
 
-``bash
-symfony serve:stop
-`` 
+```bash 
+git clone https://github.com/HM-codeuse/Quai_Antique.git
+```
+- Se placer dans ce dépot cloné en tapant: 
+```bash
+cd Quai_Antique 
+```
 
-### Lancer des tests
+### Télécharger les dépendances
 
-``bash
-php bin/phpunit
-``
-## Mettre à jour le style 
-``bash
-npm run build
-``
+Pousuivez en téléchargeant les dépendances à l'aide des commandes suivantes:
 
+```bash
+npm install
+composer install
+```
 
-## Lien du dépôt associé au projet
-https://github.com/HM-codeuse/Quai_Antique.git
+### Configurer le fichier d'environnement local
 
+Modifiez le fichier .env.local ou le fichier .env en définissant la variable DATABASE_URL avec les informations de connexion de votre base de données(comme le SGBD, nom de l'application, hôte et mdp)
 
-## Migration du projet vers BDD Alwaysdata
-``bash
+### Créer la base de données et y importer la structure 
+
+- Créez la base de données avec la commande suivante: 
+```bash
+php bin/console doctrine:database:create
+```
+- Réalisez une migration et exécutez cette migration pour importer la structure de la base de données à l'aide des commandes suivantes: 
+```bash
 php bin/console make:migration
 php bin/console doctrine:migrations:migrate
-``
+```
 
+### Importer les données de la base de données du projet 
 
-## Instructions pour la création d'un nouvell utilisateur (client ou admin)
+- Ouvrez le fichier script.sql et copier la partie d'insertion des données pour disposer de données factices dans votre base de données
+
+## Lancer le serveur local et l'arrêter
+- Pour lancer le serveur, taper 
+```bash
+symfony serve -d
+```
+- Pour l'arrêter, taper: 
+```bash
+symfony serve:stop
+```
+
+## Créer un nouvel utilisateur (client ou admin)
 
 ### 1. Créer un nouveau mdp crypté
+- Taper la commande suivante:
 ``bash
 symfony console security:hash-password
 ``
-copier le mot de passe haché
+- Copier le mot de passe hachécrypté
 
 ### 2. Insérer un nouvel administrateur dans la bdd en sql
-``DBeaver
+
+- A l'aide de votre système de gestion de base de données insérer un nouvel administrateur à l'aide du script SQL suivant:
+
+```DBeaver
 INSERT INTO users (firstname, username, email, password, roles) VALUES ('Monprénom', 'Monnom', 'mon@email.com', 'monmotdepassecrypté','["ROLE_ADMIN"]')
-``
-Pour créer un utilisateur client passer par la page d'inscription directemen. 
+```
+Pour créer un utilisateur client, répétez la même démarche ou passez par la page d'inscription. 
+
+Testez, améliorez le projet et amusez-vous!
