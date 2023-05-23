@@ -2,7 +2,6 @@
 
 namespace App\Controller;
 
-use App\Entity\Dish;
 use App\Repository\DishRepository;
 use App\Repository\OpeningHoursRepository;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;

@@ -5,7 +5,6 @@ namespace App\Controller;
 use App\Entity\Reservation;
 use App\Entity\User;
 use App\Form\ReservationType;
-use App\Repository\DishRepository;
 use App\Repository\OpeningHoursRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -29,7 +28,6 @@ class ReservationController extends AbstractController
         /** @var User $user */
         if ($user) {
             $reservation->setEmail($user->getEmail());
-            // $reservation->setAllergies($user->getAllergies());
         } 
 
         $form = $this->createForm(ReservationType::class, $reservation);

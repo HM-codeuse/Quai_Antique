@@ -5,7 +5,6 @@ namespace App\Entity;
 use App\Repository\OpeningHoursRepository;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
-use Symfony\Component\Validator\Constraints\Date;
 
 #[ORM\Entity(repositoryClass: OpeningHoursRepository::class)]
 class OpeningHours

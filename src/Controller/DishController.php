@@ -17,7 +17,6 @@ class DishController extends AbstractController
         return $this->render('dish/index.html.twig', [
             'categories' => $categoryRepository->findAll(),
             'dishes'=>$dishRepository->findAll(),
-            //Je veux afficher les plats de la catégorie spécifiée
             'openinghours'=>$openingHoursRepository->findAll(), 
             'lastdish'=>$dishRepository-> lastDish(),
 

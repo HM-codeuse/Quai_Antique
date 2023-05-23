@@ -5,7 +5,6 @@ namespace App\Entity;
 use App\Repository\MenuRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Mapping\Entity;
 
 
 #[ORM\Entity(repositoryClass: MenuRepository::class)]

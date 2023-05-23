@@ -16,7 +16,6 @@ class GalleryController extends AbstractController
         return $this->render('gallery/index.html.twig', [
             'controller_name' => 'GalleryController',
             'dishes'=>$dishRepository->findAll(),
-            //Je veux afficher les plats de la catégorie spécifiée
             'openinghours'=>$openingHoursRepository->findAll(), 
         ]);
     }
