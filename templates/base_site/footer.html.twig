@@ -13,14 +13,7 @@
     <div class="col mb-3">
       <h5>Horaires</h5>
       <ul class="nav flex-column">
-        {# <li class="nav-item mb-2">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-        <li class="nav-item mb-2">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-        <li class="nav-item mb-2">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-        <li class="nav-item mb-2">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-        <li class="nav-item mb-2">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-        <li class="nav-item mb-2">Lun :12h00 - 14h30 / 19h00 - 22h30</li>
-        <li class="nav-item mb-2">Lun :12h00 - 14h30 / 19h00 - 22h30</li> #}
-            {% for openingHour in openinghours %}
+                  {% for openingHour in openinghours %}
                <li>{{ openingHour.dayOfTheWeek }} {{ openingHour.lunchService }} {{ openingHour.eveningService }}</li>
             {% endfor %}
       </ul>

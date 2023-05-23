@@ -1,10 +1,9 @@
 
 //Fonts_links
 @import url('https://fonts.googleapis.com/css2?family=Mea+Culpa&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Luxurious+Script&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
 
-
+//General
 
 :root {
     font-family: 'Montserrat', sans-serif;
@@ -13,30 +12,26 @@
     --info: #392C1E;
 }
 
-
-.logo {
+h1 {
     font-family: 'Mea Culpa', cursive;
-    font-size: 3rem;
+    color: var(--primary);
+    font-size:4rem;
+
 }
 
-.lash-dish, .access-card {
-    background-color: var(--secondary);
-    height: 100%;
+h2, h5 {
+    font-family: 'Mea Culpa', cursive;
+    color: white;
+    font-size: 2.5rem;
 }
 
-.star, button{
-    background-color:var(--primary);
-    color:white;
-    border-radius: 20px;
-    margin: 10px;
-    border-style: none;
+h3{
+    color:var(--secondary);
+    font-family: 'Mea Culpa', cursive;
+    font-size: 2rem;
 }
 
-iframe {
-    border:0;
-    height: 200%;
-}
-
+//Animation des images 
 .image-item{
     width: 200px;
     transition: transform .1s;
@@ -53,55 +48,62 @@ iframe {
 }
 
 
+//Navbar
+.logo {
+    font-family: 'Mea Culpa', cursive;
+    font-size: 3rem;
+}
 nav, footer {
     background-color: var(--info);
     color:white;
     font-size: larger;
 }
 
-h1 {
-    font-family: 'Mea Culpa', cursive;
-    color: var(--primary);
-    font-size:4rem;
-
-}
-
-h2, h5 {
-    font-family: 'Mea Culpa', cursive;
+.navbar-toggler-icon {
     color: white;
-    font-size: 2rem;
 }
 
-h3{
-    color: var(--primary);
-    
+.nav-link{
+    color: white;
 }
 
-
-
-//page des plats 
-.starter-title, .side-title {
-    color:var(--secondary);
+.nav-link:hover {
+    color:var(--primary);
 }
 
-.dish-meat {
+.nav-link:active {
+    color: var(--secondary);
+}
+
+//Boutons
+button{
     background-color: var(--secondary);
+    color:white;
+    border-radius: 20px;
+    margin: 10px;
+    border-style: none;
 }
 
-.dish-dessert {
-    background-color: var(--primary);
-}
-.starter-content, .side-content {
-    color:var(--info);
+//page d'accueil
+
+.lash-dish, .access-card {
+    background-color: var(--secondary);
+    height: 100%;
 }
 
-.meat-content, .dessert-content {
-    color: white;
+.star{
+    background-color:var(--primary);
+    color:white;
+    border-radius: 20px;
+    margin: 10px;
+    border-style: none;
 }
 
-.dish-list {
-    text-decoration: none;
+iframe {
+    border:0;
+    height: 200%;
 }
+
 
 
 //page des menus 

@@ -1,20 +1,19 @@
 {# plats vedette #}
 <div class="star py-4">
 <div class="row">
-<h2 class="text-center my-4">Nos plats vedettes</h2>
+<div class="container">
+<h2 class="text-center">Nos plats vedettes</h2>
 </div>
-<div class="row row-cols-1 row-cols-md-3 g-4">
+<div class="row row-cols-1 row-cols-lg-3 g-4">
      
       {% for dish in lasttree %}
        <div class="col">
-        <div class="card my-3 mx-3 p-3 rounded-3">
-        <figure class="snip">
-        </figure>
-           <img class="image-item" src=" {{ vich_uploader_asset( dish, 'imageFile' ) }} " class="img-fluid" alt="...">         
-            <h3 class="text-center"> {{ dish.name }} </h3>  
+        <div class="card mx-2 p-3 rounded-3">
+            <img class="image-item" src=" {{ vich_uploader_asset( dish, 'imageFile' ) }} " class="img-fluid" alt="...">         
+            <p class="dish-name text-center text-dark m-3"> {{ dish.name }} </p>  
         </div>
         </div>  
     {% endfor %}
-    
+    </div>
       </div>
       </div>

@@ -3,45 +3,44 @@
         <a class="navbar-brand link-light" href="{{ path ('app_home') }}">
           <h2 class="logo">Quai Antique</h2>
         </a>
-        <button class="navbar-toggler bg-body-tertiary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon text-light"></span>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon active"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-            <li class="nav-item">
-              <a class="nav-link link-light" aria-current="page" href="{{ path ('app_home') }}">ACCUEIL</a>
+            <li class="nav-item ">
+              <a class="nav-link" href="{{ path ('app_home') }}">ACCUEIL</a>
             </li>
             <li class="nav-item">
-             <a class="nav-link link-light" href="{{ path ('app_dishes') }}">PLATS</a>
+             <a class="nav-link" href="{{ path ('app_dishes') }}">PLATS</a>
             </li>
            <li class="nav-item">
-             <a class="nav-link link-light" href="{{ path ('app_menu') }}">MENUS</a>
+             <a class="nav-link" href="{{ path ('app_menu') }}">MENUS</a>
            </li>
            <li class="nav-item">
-             <a class="nav-link link-light" href="{{ path ('app_gallery') }}">GALERIE</a>
+             <a class="nav-link" href="{{ path ('app_gallery') }}">GALERIE</a>
             </li>
            <li class="nav-item">
-             <a class="nav-link link-light" href="{{ path ('app_contact') }}">CONTACT</a>
+             <a class="nav-link" href="{{ path ('app_contact') }}">CONTACT</a>
             </li> 
          </ul>
          <div class="navbar-nav ms-auto">
          {% if app.user %}
-        {# <div class="mb-3"> #}
+
            {{ app.user.username}}  {{ app.user.firstname }}, connecté
-            <button type="button" class="btn-primary rounded-4 mx-2 my-2 p-2 btn-sm">
-                <a class="nav-link link-light" href="{{ path('app_logout') }}">Me déconnecter </a>
+            <button type="button" class="btn-secondary rounded-4 mx-2 my-2 p-2 btn-sm">
+                <a class="nav-link" href="{{ path('app_logout') }}">Me déconnecter </a>
             </button>
-            <button type="button" class="btn-primary rounded-4 mx-2 my-2 p-2 btn-sm" >
-                <a class="nav-link link-light " href="{{ path ('app_reservation') }}">Réserver</a>
+            <button type="button" class="btn-secondary rounded-4 mx-2 my-2 p-2 btn-sm" >
+                <a class="nav-link " href="{{ path ('app_reservation') }}">Réserver</a>
             </button>
-        {# </div> #}
 
         {% else %}
-        {# <div class="mb-3"> #}
-           <button type="button" class="btn-primary rounded-4 mx-2 my-2 p-2 btn-sm" ><a class="nav-link link-light " href="{{ path ('app_register') }}">S'inscrire</a></button>
-           <button type="button" class="btn-primary rounded-4 mx-2 my-2 p-2 btn-sm" ><a class="nav-link link-light " href="{{ path ('app_login') }}">Se connecter</a></button>
-           <button type="button" class="btn-primary rounded-4 mx-2 my-2 p-2 btn-sm" ><a class="nav-link link-light " href="{{ path ('app_reservation') }}">Réserver</a></button>
-        {# </div> #}
+       
+           <button type="button" class="btn-secondary rounded-4 mx-2 my-2 p-2 btn-sm" ><a class="nav-link link-light " href="{{ path ('app_register') }}">S'inscrire</a></button>
+           <button type="button" class="btn-secondary rounded-4 mx-2 my-2 p-2 btn-sm" ><a class="nav-link link-light " href="{{ path ('app_login') }}">Se connecter</a></button>
+           <button type="button" class="btn-secondary rounded-4 mx-2 my-2 p-2 btn-sm" ><a class="nav-link link-light " href="{{ path ('app_reservation') }}">Réserver</a></button>
+       
 
         {% endif %}
         </div>
