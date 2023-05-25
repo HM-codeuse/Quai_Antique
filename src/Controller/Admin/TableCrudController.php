@@ -16,6 +16,7 @@ class TableCrudController extends AbstractCrudController
     
     public function configureFields(string $pageName): iterable
     {
+        yield from parent::configureFields($pageName);
         yield TextField::new('numberOfSettings');
 
     }
