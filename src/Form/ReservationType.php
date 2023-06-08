@@ -61,8 +61,8 @@ class ReservationType extends AbstractType
                 },
                 'placeholder' => 'Choisissez une table',
             ])
-            ->add('submit', SubmitType::class, [
-                'label' => 'Enregistrer la réservation'])
+      //      ->add('submit', SubmitType::class, [
+       //         'label' => 'Enregistrer la réservation'])
         ;
     }
 

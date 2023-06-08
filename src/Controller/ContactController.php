@@ -2,21 +2,44 @@
 
 namespace App\Controller;
 
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use App\Entity\Contact;
+use App\Form\ContactType;
+use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\OpeningHoursRepository;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
-use App\Repository\OpeningHoursRepository;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 
 class ContactController extends AbstractController
 {
     #[Route('/contact', name: 'app_contact')]
-    public function index(OpeningHoursRepository $openingHoursRepository): Response
-    {
-        return $this->render('contact/index.html.twig', [
-            'controller_name' => 'ContactController',
-            'openinghours'=>$openingHoursRepository->findAll(), 
+    public function index(
+        Request $request, 
+        OpeningHoursRepository $openingHoursRepository, 
+        EntityManagerInterface $entityManager
+    ): Response {
+        $contact = new Contact();
+       
+     
+        $form = $this->createForm(ContactType::class, $contact);
+        
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {            
+            $contact = $form->getData();
+            $entityManager->persist($contact);
+            $entityManager->flush();
+
             
+            return $this->redirectToRoute('app_contact_success');
+        }
+
+        return $this->render('contact/index.html.twig', [
+            'controller_name' => 'contactController',
+            'openinghours' => $openingHoursRepository->findAll(),
+            'form' => $form->createView(),
         ]);
     }
 }
