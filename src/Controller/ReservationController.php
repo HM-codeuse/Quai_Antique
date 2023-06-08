@@ -34,7 +34,7 @@ class ReservationController extends AbstractController
         
         $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
+        if ($form->isSubmitted() && $form->isValid()) {            
             $reservation = $form->getData();
 
             $allergies = $form->get('allergy')->getData();
@@ -45,6 +45,7 @@ class ReservationController extends AbstractController
             $entityManager->persist($reservation);
             $entityManager->flush();
 
+            
             return $this->redirectToRoute('app_reservation_success');
         }
 
