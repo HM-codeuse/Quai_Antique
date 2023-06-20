@@ -2,22 +2,26 @@
 
 
 {% block body %}
-	<h1 class="title">Formulaire de réservation</h1>
-	<h6 class="advice">Pour réserver, veuillez vous inscrire ou connecter.</h6>
 
-	{{ form_start(form) }}
-	{{ form_errors(form) }}
+	<div class="reservation_form m-5">
 
-	{{ form_row(form.user) }}
-	{{ form_row(form.email) }}
-	{{ form_row(form.date) }}
-	{{ form_row(form.slot) }}
-	Pour ce créneau, 10
-	{{ form_row(form.table) }}
-	{{ form_row(form.allergy) }}
+		<h1 class="title">Formulaire de réservation</h1>
+		<h6 class="advice">Pour réserver, veuillez vous inscrire ou vous connecter.</h6>
+		{{ form_start(form) }}
+		{{ form_errors(form) }}
 
-	<button type="submit" class="btn-secondary rounded-2 p-2">Enregistrer la réservation</button>
-	{{ form_end(form) }}
+		{{ form_row(form.user) }}
+		{{ form_row(form.email) }}
+		{{ form_row(form.date) }}
+		{{ form_row(form.slot) }}
+
+		{{ form_row(form.table) }}
+		{{ form_row(form.allergy) }}
+
+		<button type="submit" class="btn-secondary rounded-2 p-2">Enregistrer la réservation</button>
+		{{ form_end(form) }}
+
+	</div>
 
 
 {% endblock body %}
