@@ -31,10 +31,17 @@
 					<div class="btn-group m-3" role="group" aria-label="Basic example">
 						<button type="button" class="btn-secondary rounded-4 my-2 btn-sm">
 							<a class="nav-link" href="{{ path('app_logout') }}">Me déconnecter
+							</a>
 							</button>
 							<button type="button" class="btn-secondary rounded-4 my-2 btn-sm">
 								<a class="nav-link " href="{{ path ('app_reservation') }}">Réserver</a>
 							</button>
+							{% if 'ROLE_ADMIN' in app.user.roles %}
+								<button type="button" class="btn-secondary rounded-4 my-2 btn-sm">
+									<a class="nav-link " href="{{ path ('admin') }}">Administration</a>
+								</button>
+							{% endif %}
+
 						</div>
 					{% else %}
 						<div class="btn-group" role="group" aria-label="Basic example">
