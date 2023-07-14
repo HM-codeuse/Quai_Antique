@@ -30,6 +30,11 @@ class Slot
         $this->tables = new ArrayCollection();
     }
 
+    public function __toString(): string
+    {
+        return $this->getTime() ? $this->getTime()->format('H:i') : '';
+    }
+
     public function getId(): ?int
     {
         return $this->id;

@@ -1,6 +1,7 @@
 {% include 'base_site/head.html.twig' %}
 
 {% block body %}
+
 	<form method="post">
 		{% if error %}
 			<div class="alert alert-danger">{{ error.messageKey|trans(error.messageData, 'security') }}</div>
@@ -21,9 +22,9 @@
 		<div class="login_form m-4">
 			<h1 class="h3 mb-3 font-weight-normal">Connectez-vous</h1>
 			<label for="inputUsername">Email</label>
-			<input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
+			<input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control my-3" autocomplete="username" required autofocus>
 			<label for="inputPassword">Mot de passe</label>
-			<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+			<input type="password" name="password" id="inputPassword" class="form-control my-3" autocomplete="current-password" required>
 
 			<input
 			type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">

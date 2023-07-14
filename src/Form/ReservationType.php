@@ -67,7 +67,7 @@ class ReservationType extends AbstractType
                 'class' => Table::class,
                 'label' => 'Sélectionner une table',
                 'choice_label' => function (Table $table) {
-                    return 'Table ' . $table->getId() . ' (' . $table->getNumberOfSettings() . ' personnes)';
+                    return 'Table de ' . $table->getNumberOfSettings() . ' personnes';
                 },
                 'placeholder' => 'Choisissez une table',
             ])
