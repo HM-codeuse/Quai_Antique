@@ -1,25 +1,31 @@
-#syntax=docker/dockerfile:1.4
+FROM php:8.2-fpm
 
-FROM mlocati/php-extension-installer:latest AS php_extension_installer
+RUN apt-get update && apt-get install -y \
+    libicu-dev \
+    libzip-dev \
+    unzip \
+    && rm -rf /var/lib/apt/lists/*
 
-FROM php:8.2-alpine
+RUN docker-php-ext-install intl zip pdo_mysql
 
-WORKDIR /srv/app
+RUN curl -sS https://getcomposer.org/installer | php -- --version=2.5.4 --install-dir=/usr/local/bin --filename=composer
 
-COPY --from=php_extension_installer --link /usr/bin/install-php-extensions /usr/local/bin/
+RUN curl -sL https://deb.nodesource.com/setup_14.x | bash -
+RUN apt-get install -y nodejs
 
-RUN set -eux; \
-    install-php-extensions pdo pdo_mysql intl zip apcu opcache
+RUN mv "$PHP_INI_DIR/php.ini-production" "$PHP_INI_DIR/php.ini"
+RUN echo "date.timezone = UTC" >> "$PHP_INI_DIR/php.ini"
 
-RUN apk add --no-cache $PHPIZE_DEPS git 
-RUN apk add --no-cache build-base zsh shadow
+WORKDIR /var/www/html
+COPY . .
 
-# Symfony cli
-RUN curl -1sLf 'https://dl.cloudsmith.io/public/symfony/stable/setup.alpine.sh' | sh
-RUN apk add symfony-cli
+RUN rm -rf var/cache/*
+RUN composer install
 
-RUN sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+RUN composer dump-autoload --optimize --classmap-authoritative
+
+RUN chown -R www-data:www-data /var/www/html/var
 
 EXPOSE 80
-CMD ["symfony", "serve", "--no-tls", "--allow-http", "--port=80"]
 
+CMD ["php", "-S", "0.0.0.0:80", "-t", "public"]

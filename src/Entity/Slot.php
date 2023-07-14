@@ -19,8 +19,8 @@ class Slot
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $time = null;
 
-    #[ORM\OneToOne(mappedBy: 'slot')]
-    private ?Reservation $reservation = null;
+    #[ORM\OneToMany(targetEntity:Reservation::class, mappedBy: 'slot')]
+    private Collection $reservation;
 
     #[ORM\OneToMany(mappedBy: 'slot', targetEntity: Table::class)]
     private Collection $tables;
@@ -47,7 +47,7 @@ class Slot
         return $this;
     }
 
-    public function getReservation(): ?Reservation
+    public function getReservation(): Collection
     {
         return $this->reservation;
     }

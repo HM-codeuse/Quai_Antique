@@ -4,7 +4,6 @@ namespace App\Form;
 
 use App\Entity\Allergy;
 use App\Entity\Slot;
-use App\Entity\User;
 use App\Entity\Table;
 use App\Entity\Reservation;
 use Symfony\Component\Form\AbstractType;
@@ -13,7 +12,7 @@ use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
 
 
@@ -22,15 +21,26 @@ class ReservationType extends AbstractType
     public function buildForm(FormBuilderInterface $builder,  array $options): void
     {
         
+        $user = $options['user'];
+        $userName = $user ? $user->getUsername() : '';
+        $userEmail = $user ? $user->getEmail() : '';
+        
+        
         $builder
-            ->add('user', EntityType::class, [
-                    'class'=> User::class,
+            ->add('user', TextType::class, [
                     'label' => 'Votre nom',
-                    'required' => false])
+                    'required' => false,
+                    'data' => $userName,
+                    'disabled' => true,
+                ])
 
-            ->add('email', EmailType::class, [
-                'label' => 'Votre email'])
-            ->add('date', DateType::class, [
+            ->add('email', TextType::class, [
+                'label' => 'Votre email',
+                    'required' => false,
+                    'data' => $userEmail,
+                    'disabled' => true,])
+
+            ->add('Date', DateType::class, [
                 'label' => 'Date de la réservation',
                 'constraints' => [
                     new GreaterThanOrEqual([
@@ -57,12 +67,11 @@ class ReservationType extends AbstractType
                 'class' => Table::class,
                 'label' => 'Sélectionner une table',
                 'choice_label' => function (Table $table) {
-                    return 'Table ' . $table->getId() . ' (' . $table->getNumberOfSettings() . ')';
+                    return 'Table ' . $table->getId() . ' (' . $table->getNumberOfSettings() . ' personnes)';
                 },
                 'placeholder' => 'Choisissez une table',
             ])
-      //      ->add('submit', SubmitType::class, [
-       //         'label' => 'Enregistrer la réservation'])
+    
         ;
     }
 
@@ -70,7 +79,8 @@ class ReservationType extends AbstractType
     {
        
         $resolver->setDefaults([
-            'data_class' => Reservation::class
+            'data_class' => Reservation::class,
+            'user' => null
         ]);
     }
 }

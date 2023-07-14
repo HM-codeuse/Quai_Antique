@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+
 use App\Entity\User;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -10,6 +11,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: ReservationRepository::class)]
+#[ORM\Table(uniqueConstraints: [new ORM\UniqueConstraint(name: "reservation_unique",columns: ["table_id", "slot_id", "date"])])]
 class Reservation
 {
     #[ORM\Id]
@@ -18,20 +20,20 @@ class Reservation
     private ?int $id = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
-    private ?\DateTimeInterface $date = null;
+    private ?\DateTimeInterface $Date = null;
    
-    #[ORM\ManyToOne(inversedBy: 'reservation')]
+    #[ORM\ManyToOne(targetEntity:User::class,inversedBy: 'reservation')]
     #[ORM\JoinColumn(nullable: false)]
     private ?User $user = null;
 
 
-    #[ORM\Column(length: 255)]
+    #[ORM\Column(length: 255, nullable: true)]
     private ?string $email = null;
 
     #[ORM\ManyToMany(targetEntity: Allergy::class, inversedBy: 'reservations')]
     private Collection $allergy;
 
-    #[ORM\OneToOne(inversedBy: 'reservation')]
+    #[ORM\ManyToOne(targetEntity:Slot::class, inversedBy: 'reservation')]
     #[ORM\JoinColumn(nullable: false)]
     private ?Slot $slot = null;
 
@@ -52,12 +54,12 @@ class Reservation
 
     public function getDate(): ?\DateTimeInterface
     {
-        return $this->date;
+        return $this->Date;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setDate(\DateTimeInterface $Date): self
     {
-        $this->date = $date;
+        $this->Date = $Date;
 
         return $this;
     }

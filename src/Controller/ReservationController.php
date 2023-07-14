@@ -24,18 +24,19 @@ class ReservationController extends AbstractController
         $reservation = new Reservation();
 
         $user = $this->getUser();
-        $reservation->setUser($user);
-        
+                
         /** @var User $user */
         if ($user) {
+            $reservation ->setUser($user);
             $reservation->setEmail($user->getEmail());
         } 
 
-        $form = $this->createForm(ReservationType::class, $reservation);
+        $form = $this->createForm(ReservationType::class, $reservation, ['user' => $user]);
+        
         
         $form->handleRequest($request);
 
-        // ...
+        // ... verification nombre reservation
 
 if ($form->isSubmitted() && $form->isValid()) {            
     $reservation = $form->getData();
@@ -45,6 +46,7 @@ if ($form->isSubmitted() && $form->isValid()) {
         $reservation->addAllergy($allergy);
     }
 
+    
     // Récupérer l'entité de la table correspondante à la réservation
     $table = $reservation->getTable(); // Remplacez "getTable()" par la méthode pour récupérer la table de votre réservation
     $table->setStatus('réservée');

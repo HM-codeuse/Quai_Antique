@@ -19,10 +19,10 @@ class Table
     private ?bool $status = null;
 
     #[ORM\Column]
-    private ?string $numberOfSettings;
+    private ?int $numberOfSettings;
 
     #[ORM\ManyToOne(inversedBy: 'tables')]
-    private ?slot $slot = null;
+    private ?Slot $slot = null;
 
     #[ORM\Column(type: Types::DATE_MUTABLE)]
     private ?\DateTimeInterface $Date = null;
@@ -61,12 +61,12 @@ class Table
         return $this;
     }
 
-    public function getSlot(): ?slot
+    public function getSlot(): ?Slot
     {
         return $this->slot;
     }
 
-    public function setSlot(?slot $slot): self
+    public function setSlot(?Slot $slot): self
     {
         $this->slot = $slot;
 

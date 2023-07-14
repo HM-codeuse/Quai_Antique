@@ -1,25 +1,36 @@
 {% extends 'base.html.twig' %}
 
 
-{% block body %}
 
+{% block body %}
+<pre>
+	{{ dump(app.user.email) }}
+</pre>;
 	<div class="reservation_form m-5">
 
-		<h1 class="title">Formulaire de réservation</h1>
-		<h6 class="advice">Pour réserver, veuillez vous inscrire ou vous connecter.</h6>
-		{{ form_start(form) }}
-		{{ form_errors(form) }}
+		{% if app.user %}
 
-		{{ form_row(form.user) }}
-		{{ form_row(form.email) }}
-		{{ form_row(form.date) }}
-		{{ form_row(form.slot) }}
+			<h1 class="title">Votre réservation</h1>
 
-		{{ form_row(form.table) }}
-		{{ form_row(form.allergy) }}
+			{{ form_start(form) }}
+			{{ form_errors(form) }}
+			{{ form_row(form.user, { 'disabled': true, 'value': app.user.username }) }}
+			{{ form_row(form.email, { 'disabled': true, 'value': app.user.email }) }}
+			{{ form_row(form.Date) }}
+			{{ form_row(form.slot) }}
 
-		<button type="submit" class="btn-secondary rounded-2 p-2">Enregistrer la réservation</button>
-		{{ form_end(form) }}
+			{{ form_row(form.table) }}
+			{{ form_row(form.allergy) }}
+
+			<button type="submit" class="btn-secondary rounded-2 p-2">Enregistrer la réservation</button>
+			{{ form_end(form) }}
+
+		{% else %}
+
+			<h1 class="title">Votre réservation</h1>
+			<h6 class="advice">Pour réserver, veuillez vous inscrire ou vous connecter.</h6>
+
+		{% endif %}
 
 	</div>
 
