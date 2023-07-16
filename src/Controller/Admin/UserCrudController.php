@@ -5,6 +5,9 @@ namespace App\Controller\Admin;
 use App\Entity\User;
 use EasyCorp\Bundle\EasyAdminBundle\Field\AssociationField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
+use EasyCorp\Bundle\EasyAdminBundle\Field\CollectionField;
+use EasyCorp\Bundle\EasyAdminBundle\Field\Field;
+use EasyCorp\Bundle\EasyAdminBundle\Field\TextField;
 
 class UserCrudController extends AbstractCrudController
 {
@@ -18,6 +21,7 @@ class UserCrudController extends AbstractCrudController
     {
         yield from parent::configureFields($pageName);
         yield AssociationField::new('allergies');
+        // yield CollectionField::new('roles');
 
     }
 }

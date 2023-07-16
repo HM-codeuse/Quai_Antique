@@ -29,7 +29,7 @@ class Table
 
     public function __toString()
     {
-        return $this->getId().' - '. $this->getNumberOfSettings();
+        return 'Table n°'. $this->getId().' de '. $this->getNumberOfSettings().' personnes';
     }
 
     public function getId(): ?int

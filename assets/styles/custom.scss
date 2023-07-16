@@ -31,6 +31,13 @@ h3{
     font-size: 2rem;
 }
 
+h4 {
+    font-family: 'Mea Culpa', cursive;
+    color: white;
+    font-size: 1.5rem;
+}
+
+
 //Animation des images 
 .image-item{
     width: 200px;
@@ -55,7 +62,7 @@ h3{
 //Navbar
 .logo {
     font-family: 'Mea Culpa', cursive;
-    font-size: 3rem;
+    font-size: 2.5rem;
 }
 nav, footer {
     background-color: var(--info);
@@ -148,6 +155,9 @@ iframe {
 }
 
 //footer
+footer {
+    font-size: smaller;
+}
 @media only screen and (max-width: 400px) {
     .openinghours {
       display: none; 

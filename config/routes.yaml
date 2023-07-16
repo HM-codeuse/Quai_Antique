@@ -1,76 +1,48 @@
-homepage:
+app_home:
   path: /
   controller: App\Controller\HomeController::index
 
-#Gestion des plats
-dishes_list:
-  path: /dishes
-  controller: App\Controller\DishController::list
+admin:
+  path: /admin
+  controller: App\Controller\Admin\DashboardCrudController::index
 
-dish_add:
-  path: /dishes/add
-  controller: App\Controller\DishController::add
+app_category:
+  path: /category
+  controller: App\Controller\CategoryController::index
 
-dish_modify:
-  path: /dishes/modify/{id}
-  controller: App\Controller\DishController::modify
-
-dish_post:
-  path: /dishes/post
-  controller: App\Controller\DishController::post
-  methods: [POST]
-
-dish_remove:
-  path: /dishes/remove/{id}
-  controller: App\Controller\DishController::remove
-
-  #Gestion des menus
-menus_list:
-  path: /menus
-  controller: App\Controller\MenuController::list
-
-menu_add:
-  path: /menus/add
-  controller: App\Controller\MenuController::add
-
-menu_modify:
-  path: /menus/modify/{id}
-  controller: App\Controller\MenuController::modify
-
-menu_post:
-  path: /menus/post
-  controller: App\Controller\MenuController::post
-  methods: [POST]
-
-menu_remove:
-  path: /menus/remove/{id}
-  controller: App\Controller\MenuController::remove
-
-
- #Gestion des réservations
-reservation_add:
-  path: /reservation/add
-  controller: App\Controller\ReservationController::add
-
-reservation_modify:
-  path: /reservation/modify/{id}
-  controller: App\Controller\ReservationController::modify
-
-reservation_post:
-  path: /reservation/post
-  controller: App\Controller\ReservationController::post
-  methods: [POST]
-
-reservation_remove:
-  path: /reservation/remove/{id}
-  controller: App\Controller\ReservationController::remove
-
-#Gestion des contacts 
-contact:
+app_contact:
   path: /contact
-  controller: App\Controller\ContactController::edit
+  controller: App\Controller\ContactController::index
 
-contact_post:
-  path: /contact/post
-  controller: App\Controller\ContactController::post
-  methods: [POST]
+app_dish:
+  path: /dish
+  controller: App\Controller\DishController::index
+
+app_gallery:
+  path: /gallery
+  controller: App\Controller\GalleryController::index
+
+app_menu:
+  path: /menu
+  controller: App\Controller\MenuController::index
+
+app_registration:
+  path: /registration
+  controller: App\Controller\RegistrationController::index
+
+app_reservation:
+  path: /reservation
+  controller: App\Controller\ReservationController::index
+
+app_reservation_success:
+  path: /reservation/success
+  controller: App\Controller\Reservation_successController::index
+
+app_login:
+  path: /login
+  controller: App\Controller\SecurityController::login
+
+app_logout:
+  path: /logout
+  controller: App\Controller\SecurityController::logout
+
