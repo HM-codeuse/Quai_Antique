@@ -25,7 +25,7 @@ class DishCrudController extends AbstractCrudController
         yield MoneyField::new('price')
             ->setCurrency('EUR');
         yield TextareaField::new('description');
-       // yield TextField::new('file');
+     
 
         yield AssociationField::new('category');
         yield TextareaField::new('imageFile')->setFormType(VichImageType::class)->hideOnIndex();

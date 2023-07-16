@@ -12,8 +12,8 @@
 				Vous êtes connectés en tant que
 				{{ app.user.username}}
 				{{ app.user.firstname }},
-				<button>
-					<a href="{{ path('app_logout') }}">Me déconnecter
+				<button class="btn-secondary rounded-2 p-2">
+					<a class="logout-link" href="{{ path('app_logout') }}">Me déconnecter
 					</a>
 				</button>
 			</div>

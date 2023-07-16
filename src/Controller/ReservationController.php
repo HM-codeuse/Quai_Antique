@@ -4,7 +4,6 @@ namespace App\Controller;
 
 use App\Entity\Reservation;
 use App\Entity\User;
-use App\Entity\Table;
 use App\Form\ReservationType;
 use App\Repository\OpeningHoursRepository;
 use Doctrine\ORM\EntityManagerInterface;

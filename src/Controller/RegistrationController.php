@@ -18,7 +18,13 @@ use Symfony\Component\Security\Http\Authentication\UserAuthenticatorInterface;
 class RegistrationController extends AbstractController
 {
     #[Route('/register', name: 'app_register')]
-    public function register(Request $request, UserPasswordHasherInterface $userPasswordHasher, UserAuthenticatorInterface $userAuthenticator, AppAuthenticator $authenticator, EntityManagerInterface $entityManager, OpeningHoursRepository $openingHoursRepository, DishRepository $dishRepository): Response
+    public function register(
+        Request $request, 
+        UserPasswordHasherInterface $userPasswordHasher, 
+        UserAuthenticatorInterface $userAuthenticator, 
+        AppAuthenticator $authenticator, 
+        EntityManagerInterface $entityManager, 
+        OpeningHoursRepository $openingHoursRepository, ): Response
     {
         $user = new User();
         $form = $this->createForm(RegistrationFormType::class, $user);
@@ -32,12 +38,12 @@ class RegistrationController extends AbstractController
                     $form->get('plainPassword')->getData()
                 )
             );
-//ajout du ROLE_USER à tous les utilisateurs 
+            
+            //ajout du ROLE_USER à tous les utilisateurs 
             $user->setRoles(["ROLE_USER"]);
 
             $entityManager->persist($user);
             $entityManager->flush();
-            // do anything else you need here, like send an email
         
 
             return $userAuthenticator->authenticateUser(
