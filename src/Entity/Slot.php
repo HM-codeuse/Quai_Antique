@@ -22,13 +22,6 @@ class Slot
     #[ORM\OneToMany(targetEntity:Reservation::class, mappedBy: 'slot')]
     private Collection $reservation;
 
-    #[ORM\OneToMany(mappedBy: 'slot', targetEntity: Table::class)]
-    private Collection $tables;
-
-    public function __construct()
-    {
-        $this->tables = new ArrayCollection();
-    }
 
     public function __toString(): string
     {
@@ -69,33 +62,4 @@ class Slot
         return $this;
     }
 
-    /**
-     * @return Collection<int, Table>
-     */
-    public function getTables(): Collection
-    {
-        return $this->tables;
-    }
-
-    public function addTable(Table $table): self
-    {
-        if (!$this->tables->contains($table)) {
-            $this->tables->add($table);
-            $table->setSlot($this);
-        }
-
-        return $this;
-    }
-
-    public function removeTable(Table $table): self
-    {
-        if ($this->tables->removeElement($table)) {
-            // set the owning side to null (unless already changed)
-            if ($table->getSlot() === $this) {
-                $table->setSlot(null);
-            }
-        }
-
-        return $this;
-    }
 }

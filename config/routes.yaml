@@ -4,7 +4,7 @@ app_home:
 
 admin:
   path: /admin
-  controller: App\Controller\Admin\DashboardCrudController::index
+  controller: App\Controller\Admin\DashboardController::index
 
 app_category:
   path: /category
