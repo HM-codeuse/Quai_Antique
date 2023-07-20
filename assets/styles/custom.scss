@@ -160,15 +160,7 @@ footer {
 }
 
 //responsive
-<<<<<<< HEAD
-@media only screen and (max-width: 550px) {
-    .openinghours, .footer-logo, .Adress, .Social-title {
-      display: none; 
-    }
-  }
 
-  
-=======
 @media only screen and (max-width: 400px) {
     .openinghours, .footer-logo, .Adress, .Social-title {
       display: none; 
@@ -176,7 +168,6 @@ footer {
     
   }
 
->>>>>>> introjs
 @media (min-width: 991px) {
     .container {
       width: 70%;
