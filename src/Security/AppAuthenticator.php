@@ -43,7 +43,6 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
         );
     }
 
-
     public function onAuthenticationSuccess(Request $request, TokenInterface $token, string $firewallName): ?Response
     {
         if ($targetPath = $this->getTargetPath($request->getSession(), $firewallName)) {
@@ -54,7 +53,6 @@ class AppAuthenticator extends AbstractLoginFormAuthenticator
         return new RedirectResponse($this->urlGenerator->generate('app_home'));
         // throw new \Exception('TODO: provide a valid redirect inside '.FILE);
     }
-    
 
     protected function getLoginUrl(Request $request): string
     {

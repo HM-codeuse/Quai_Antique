@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
-{% include 'base_site/head.html.twig' %}
+	{% include 'base_site/head.html.twig' %}
 
-    <body>
-        {% include 'base_site/nav.html.twig' %}
-        {% block body %}{% endblock %}
+	<body>
+		{% include 'base_site/nav.html.twig' %}
+		{% block body %}{% endblock %}
 		{% include 'base_site/footer.html.twig' %}
 
-    {% block javascripts %}
+		{% block javascripts %}
 			{{ encore_entry_script_tags('app') }}
 			{{ encore_entry_script_tags('intro') }}
-	{% endblock %}
-    </body>
+		{% endblock %}
+	</body>
 </html>
