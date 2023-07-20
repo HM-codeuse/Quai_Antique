@@ -121,7 +121,6 @@ iframe {
 }
 
 
-
 //page des menus 
 .menu-title, .category-title {
     color:var(--secondary);
@@ -159,8 +158,50 @@ iframe {
 footer {
     font-size: smaller;
 }
-@media only screen and (max-width: 400px) {
-    .openinghours {
+
+//responsive
+@media only screen and (max-width: 550px) {
+    .openinghours, .footer-logo, .Adress, .Social-title {
       display: none; 
     }
   }
+
+  
+@media (min-width: 991px) {
+    .container {
+      width: 70%;
+    }
+    .carousel-control-prev,
+    .carousel-control-next {
+      top: 50%;
+      transform: translateY(-50%);
+      width: auto;
+    }
+  
+    .carousel-control-prev {
+      left: -40px;
+      background-color: red;
+      z-index:1;
+    }
+  
+    .carousel-control-next {
+      right: -40px;
+      background-color: red;
+      z-index:1;
+    }
+
+  }
+  
+  .carousel-item {
+    position: relative;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+  }
+  
+
