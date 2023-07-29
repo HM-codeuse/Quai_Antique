@@ -1,8 +1,14 @@
 {% extends 'base.html.twig' %}
 
 
-
 {% block body %}
+
+	{# Afficher les messages flash s'il y en a #}
+	{% for flashMessage in app.flashes('error') %}
+		<div class="alert alert-danger">
+			{{ flashMessage }}
+		</div>
+	{% endfor %}
 
 	<div class="reservation_form m-5">
 

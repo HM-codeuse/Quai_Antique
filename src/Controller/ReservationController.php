@@ -2,11 +2,13 @@
 
 namespace App\Controller;
 
-use App\Entity\Reservation;
+use App\Entity\Slot;
 use App\Entity\User;
+use App\Entity\Table;
+use App\Entity\Reservation;
 use App\Form\ReservationType;
-use App\Repository\OpeningHoursRepository;
 use Doctrine\ORM\EntityManagerInterface;
+use App\Repository\OpeningHoursRepository;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -21,7 +23,6 @@ class ReservationController extends AbstractController
         EntityManagerInterface $entityManager
     ): Response {
         $reservation = new Reservation();
-
         $user = $this->getUser();
                 
         /** @var User $user */
@@ -30,12 +31,14 @@ class ReservationController extends AbstractController
             $reservation->setEmail($user->getEmail());
         } 
 
-        $form = $this->createForm(ReservationType::class, $reservation, ['user' => $user]);
+        $form = $this->createForm(
+            ReservationType::class,
+            $reservation, 
+            ['user' => $user]);
         
         
         $form->handleRequest($request);
 
-        // ... verification nombre reservation
 
 if ($form->isSubmitted() && $form->isValid()) {            
     $reservation = $form->getData();
@@ -45,38 +48,36 @@ if ($form->isSubmitted() && $form->isValid()) {
         $reservation->addAllergy($allergy);
     }
 
+    // Récupérer le créneau horaire et la date de la réservation depuis le formulaire
+    $slot = $reservation->getSlot();
+    $Date = $reservation->getDate();
+
+    // Récupérer les tables disponibles depuis le repository de Table
+    $tableRepository = $entityManager->getRepository(Table::class);
+    $availableTables = $tableRepository->findAvailableTables($slot, $Date);
     
-    // Récupérer l'entité de la table correspondante à la réservation
-    $table = $reservation->getTable(); // Remplacez "getTable()" par la méthode pour récupérer la table de votre réservation
-    $table->setStatus('réservée');
-    $table->setSlot($reservation->getSlot()); // Remplacez "getSlot()" par la méthode pour récupérer le créneau horaire de votre réservation
-    $table->setDate($reservation->getDate()); // Remplacez "getDate()" par la méthode pour récupérer la date de votre réservation
+     
+     // Vérifier si la table sélectionnée est disponible
+     $selectedTable = $reservation->getTable();
+     $isTableAvailable = false;
+     foreach ($availableTables as $table) {
+         if ($table->getId() === $selectedTable->getId()) {
+             $isTableAvailable = true;
+             break;
+         }
+     }
 
-    // $table = $reservation->getTable(); // Remplacez "getTable()" par la méthode pour récupérer la table de votre réservation
-    // $WantedTableId = $table->getId($reservation->getId());
-    // $WantedTableSlot = $table->setSlot($reservation->getSlot()); // Remplacez "getSlot()" par la méthode pour récupérer le créneau horaire de votre réservation
-    // $WantedTableDate = $table->setDate($reservation->getDate()); // Remplacez "getDate()" par la méthode pour récupérer la date de votre réservation
-
-
-    // SELECT * FROM tables WHERE 
-    // Slot = $WantedTableSlot 
-    // AND Date = $WantedTableDate 
-    // AND id = $WantedTableId
-
-    // if status $WantedTable === "réservée" {
-    //     $error = "OOPS cette table est déjà réservée, choisissez une autre table si possible!"
-    // } else {
-    //     flush la reservation
-    // }
+     if (!$isTableAvailable) {
+         // La table sélectionnée n'est pas disponible, vous pouvez générer une erreur ou rediriger vers une page d'erreur
+         $this->addFlash('error', 'Cette table est déjà réservée, veuillez choisir une autre table.');
+         return $this->redirectToRoute('app_reservation');
+     }
     
     $entityManager->persist($reservation);
     $entityManager->flush();
 
     return $this->redirectToRoute('app_reservation_success');
 }
-
-// ...
-
 
         return $this->render('reservation/index.html.twig', [
             'controller_name' => 'ReservationController',

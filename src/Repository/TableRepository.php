@@ -2,9 +2,10 @@
 
 namespace App\Repository;
 
+use App\Entity\Slot;
 use App\Entity\Table;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @extends ServiceEntityRepository<Table>
@@ -39,6 +40,37 @@ class TableRepository extends ServiceEntityRepository
         }
     }
 
+    /**
+     * @param Slot $slot
+     * @param \DateTimeInterface $Date
+     * @return Table[]
+     */
+    public function findAvailableTables(Slot $slot, \DateTimeInterface $Date)
+    {
+        $reservedTables = $this->createQueryBuilder('t')
+            ->select('t.id')
+            ->leftJoin('t.reservation', 'r')
+            ->andWhere('r.slot = :slot')
+            ->andWhere('r.Date = :Date')
+            ->setParameters([
+                'slot' => $slot,
+                'Date' => $Date,
+            ])
+            ->getQuery()
+            ->getResult();
+
+        $reservedTableIds = array_column($reservedTables, 'id');
+
+        if (empty($reservedTableIds)) {
+            return $this->findAll();
+        }
+
+        return $this->createQueryBuilder('t')
+            ->where('t.id NOT IN (:reservedTableIds)')
+            ->setParameter('reservedTableIds', $reservedTableIds)
+            ->getQuery()
+            ->getResult();
+    }
 //    /**
 //     * @return Table[] Returns an array of Table objects
 //     */

@@ -11,7 +11,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
-use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Validator\Constraints\GreaterThanOrEqual;
 
@@ -67,10 +66,8 @@ class ReservationType extends AbstractType
                 'class' => Table::class,
                 'label' => 'Sélectionner une table',
                 'choice_label' => function (Table $table) {
-                    return 'Table de ' . $table->getNumberOfSettings() . ' personnes';
+                    return 'Table Quai n°'. $table->getId(). ' de ' . $table->getNumberOfSettings() . ' personnes';
                 },
-                //afficher seulement les tables disponibles
-                'placeholder' => 'Choisissez une table',
             ])
     
         ;
@@ -81,7 +78,7 @@ class ReservationType extends AbstractType
        
         $resolver->setDefaults([
             'data_class' => Reservation::class,
-            'user' => null
+            'user' => null,
         ]);
     }
 }

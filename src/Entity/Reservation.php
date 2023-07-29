@@ -37,9 +37,12 @@ class Reservation
     #[ORM\JoinColumn(nullable: false)]
     private ?Slot $slot = null;
 
-    #[ORM\ManyToOne(targetEntity:Table::class, inversedBy: 'reservation')]
-    #[ORM\JoinColumn(nullable: false)]
-    private $table;
+    // #[ORM\ManyToOne(targetEntity:Table::class, inversedBy: 'reservation')]
+    // #[ORM\JoinColumn(nullable: false)]
+    // private $table;
+
+    #[ORM\ManyToOne(inversedBy: 'Reservation')]
+    private ?Table $table = null;
 
 
     public function __construct()
@@ -128,12 +131,24 @@ class Reservation
     }
 
 
+    // public function getTable(): ?Table
+    // {
+    //     return $this->table;
+    // }
+
+    // public function setTable(?Table $table): self
+    // {
+    //     $this->table = $table;
+
+    //     return $this;
+    // }
+
     public function getTable(): ?Table
     {
         return $this->table;
     }
 
-    public function setTable(?Table $table): self
+    public function setTable(?Table $table): static
     {
         $this->table = $table;
 

@@ -36,7 +36,7 @@ app_reservation:
 
 app_reservation_success:
   path: /reservation/success
-  controller: App\Controller\Reservation_successController::index
+  controller: App\Controller\ReservationSuccessController::index
 
 app_login:
   path: /login
