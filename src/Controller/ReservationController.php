@@ -51,6 +51,23 @@ if ($form->isSubmitted() && $form->isValid()) {
     $table->setStatus('réservée');
     $table->setSlot($reservation->getSlot()); // Remplacez "getSlot()" par la méthode pour récupérer le créneau horaire de votre réservation
     $table->setDate($reservation->getDate()); // Remplacez "getDate()" par la méthode pour récupérer la date de votre réservation
+
+    // $table = $reservation->getTable(); // Remplacez "getTable()" par la méthode pour récupérer la table de votre réservation
+    // $WantedTableId = $table->getId($reservation->getId());
+    // $WantedTableSlot = $table->setSlot($reservation->getSlot()); // Remplacez "getSlot()" par la méthode pour récupérer le créneau horaire de votre réservation
+    // $WantedTableDate = $table->setDate($reservation->getDate()); // Remplacez "getDate()" par la méthode pour récupérer la date de votre réservation
+
+
+    // SELECT * FROM tables WHERE 
+    // Slot = $WantedTableSlot 
+    // AND Date = $WantedTableDate 
+    // AND id = $WantedTableId
+
+    // if status $WantedTable === "réservée" {
+    //     $error = "OOPS cette table est déjà réservée, choisissez une autre table si possible!"
+    // } else {
+    //     flush la reservation
+    // }
     
     $entityManager->persist($reservation);
     $entityManager->flush();
