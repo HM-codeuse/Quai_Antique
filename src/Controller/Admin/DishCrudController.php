@@ -16,6 +16,7 @@ class DishCrudController extends AbstractCrudController
     public static function getEntityFqcn(): string
     {
         return Dish::class;
+        
     }
 
     public function configureFields(string $pageName): iterable

@@ -33,6 +33,8 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
+        // Ajout du bouton de retour à la page d'accueil dans le menu
+        yield MenuItem::linkToUrl('Retour à l\'accueil du site', 'fa-brands fa-quora', '/');
         yield MenuItem::linkToDashboard('Tableau de Bord', 'fa fa-home');
         yield MenuItem::linkToCrud('Categories', 'fa-solid fa-seedling', Category::class);
         yield MenuItem::linkToCrud('Menus', 'fa-solid fa-plate-wheat', Menu::class);
