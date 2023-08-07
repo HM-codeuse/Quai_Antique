@@ -43,7 +43,7 @@ class ReservationType extends AbstractType
                 'label' => 'Date de la réservation',
                 'constraints' => [
                     new GreaterThanOrEqual([
-                        'value' => 'now', 
+                        'value' => Date('Y-m-d'), 
                         'message' => 'La date doit être ultérieure ou égale à la date actuelle.'
                     ]),                
                 ],
