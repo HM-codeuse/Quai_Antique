@@ -1,6 +1,8 @@
 {% extends 'base.html.twig' %}
 
 
+
+
 {% block body %}
 
 	{# Afficher les messages flash s'il y en a #}
@@ -20,10 +22,10 @@
 			{{ form_errors(form) }}
 			{{ form_row(form.user, { 'disabled': true, 'value': app.user.username }) }}
 			{{ form_row(form.email, { 'disabled': true, 'value': app.user.email }) }}
-			{{ form_row(form.Date) }}
-			{{ form_row(form.slot) }}
+			{{ form_row(form.Date, { 'attr': {'class': 'reservation_date'} }) }}
+			{{ form_row(form.slot, { 'attr': {'class': 'reservation_slot'} }) }}
 
-			{{ form_row(form.table) }}
+			{{ form_row(form.table, { 'attr': {'id': 'reservation_table', 'class': 'table-select'} }) }}
 			{{ form_row(form.allergy) }}
 
 			<button type="submit" class="btn-secondary rounded-2 p-2">Enregistrer la réservation</button>
@@ -40,3 +42,7 @@
 
 
 {% endblock body %}
+{% block javascripts %}
+			{{ encore_entry_script_tags('app') }}
+			{{ encore_entry_script_tags('reservation') }}
+{% endblock %}

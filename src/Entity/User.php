@@ -41,7 +41,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\ManyToMany(targetEntity: Allergy::class, mappedBy: 'user')]
     private Collection $allergies;
 
-   
+    // #[ORM\OneToMany(targetEntity:Reservation::class, mappedBy: 'user')]
+    // private Collection $reservation;
+
     public function __construct()
     {
        
@@ -188,4 +190,24 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this;
     }
     
+
+    // /**
+    //  * Get the value of reservation
+    //  */ 
+    // public function getReservation()
+    // {
+    //     return $this->reservation;
+    // }
+
+    // /**
+    //  * Set the value of reservation
+    //  *
+    //  * @return  self
+    //  */ 
+    // public function setReservation($reservation)
+    // {
+    //     $this->reservation = $reservation;
+
+    //     return $this;
+    // }
 }

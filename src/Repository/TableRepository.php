@@ -61,6 +61,7 @@ class TableRepository extends ServiceEntityRepository
 
         $reservedTableIds = array_column($reservedTables, 'id');
 
+
         if (empty($reservedTableIds)) {
             return $this->findAll();
         }
@@ -71,6 +72,41 @@ class TableRepository extends ServiceEntityRepository
             ->getQuery()
             ->getResult();
     }
+
+     /**
+     * @param int $slot
+     * @param \DateTimeInterface $Date
+     * @return Table[]
+     */
+    public function findAvailableTablesBySlotId(int $slot, \DateTimeInterface $Date)
+    {
+        $reservedTables = $this->createQueryBuilder('t')
+    ->select('t.id')
+    ->leftJoin('t.reservation', 'r')
+    ->Join('r.slot', 's')
+    ->andWhere('s.id = :slot')
+    ->andWhere('r.Date = :Date')
+    ->setParameters([
+        'slot' => $slot,
+        'Date' => $Date,
+    ])
+    ->getQuery()
+    ->getResult();
+
+        $reservedTableIds = array_column($reservedTables, 'id');
+
+
+        if (empty($reservedTableIds)) {
+            return $this->findAll();
+        }
+
+        return $this->createQueryBuilder('t')
+            ->where('t.id NOT IN (:reservedTableIds)')
+            ->setParameter('reservedTableIds', $reservedTableIds)
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return Table[] Returns an array of Table objects
 //     */

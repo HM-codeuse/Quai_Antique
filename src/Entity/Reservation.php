@@ -41,7 +41,7 @@ class Reservation
     // #[ORM\JoinColumn(nullable: false)]
     // private $table;
 
-    #[ORM\ManyToOne(inversedBy: 'Reservation')]
+    #[ORM\ManyToOne(inversedBy: 'reservation')]
     private ?Table $table = null;
 
 

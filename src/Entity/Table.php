@@ -20,7 +20,7 @@ class Table
     #[ORM\Column]
     private ?int $numberOfSettings;
 
-    #[ORM\OneToMany(mappedBy: 'table', targetEntity: reservation::class)]
+    #[ORM\OneToMany(mappedBy: 'table', targetEntity: Reservation::class)]
     private Collection $reservation;
 
     public function __construct()
