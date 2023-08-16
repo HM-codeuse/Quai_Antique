@@ -1,27 +1,27 @@
-<nav class="navbar navbar-expand-lg bg-body-info text-light menu-info">
+<nav class="navbar navbar-expand-xl bg-body-info text-light menu-info">
 	<div class="container-fluid">
 		<a class="navbar-brand link-light" href="{{ path ('app_home') }}">
 			<h2 class="logo">Quai Antique</h2>
 		</a>
-		<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+		<button class="navbar-dark navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon active"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item ">
-					<a class="nav-link" href="{{ path ('app_home') }}">ACCUEIL</a>
+					<a class="nav-link" href="{{ path ('app_home') }}">Accueil</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="{{ path ('app_dishes') }}">PLATS</a>
+					<a class="nav-link" href="{{ path ('app_dishes') }}">Plats</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="{{ path ('app_menu') }}">MENUS</a>
+					<a class="nav-link" href="{{ path ('app_menu') }}">Menus</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="{{ path ('app_gallery') }}">GALERIE</a>
+					<a class="nav-link" href="{{ path ('app_gallery') }}">Galerie</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="{{ path ('app_contact') }}">CONTACT</a>
+					<a class="nav-link" href="{{ path ('app_contact') }}">Contact</a>
 				</li>
 			</ul>
 			<div class="navbar-nav ms-auto buttons">
@@ -29,15 +29,15 @@
 					{{ app.user.username}}
 					{{ app.user.firstname }}, connecté
 					<div class="btn-group m-3" role="group" aria-label="Basic example">
-						<button type="button" class="btn-secondary rounded-4 my-2 btn-sm">
+						<button type="button" class="btn-secondary rounded-4 p-2 btn-sm">
 							<a class="nav-link" href="{{ path('app_logout') }}">Me déconnecter
 							</a>
 						</button>
-						<button type="button" class="btn-secondary rounded-4 my-2 btn-sm">
+						<button type="button" class="btn-secondary rounded-4 p-1 btn-sm">
 							<a class="nav-link " href="{{ path ('app_reservation') }}">Réserver</a>
 						</button>
 						{% if 'ROLE_ADMIN' in app.user.roles %}
-							<button type="button" class="btn-secondary rounded-4 my-2 btn-sm">
+							<button type="button" class="btn-secondary rounded-4 p-1 btn-sm">
 								<a class="nav-link " href="{{ path ('admin') }}">Administration</a>
 							</button>
 						{% endif %}
@@ -45,13 +45,13 @@
 					</div>
 				{% else %}
 					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn-secondary rounded-4 my-2 btn-sm registration-info">
+						<button type="button" class="btn-secondary rounded-4 p-1 btn-sm registration-info">
 							<a class="nav-link link-light " href="{{ path ('app_register') }}">S'inscrire</a>
 						</button>
-						<button type="button" class="btn-secondary rounded-4 my-2 btn-sm connexion-info">
+						<button type="button" class="btn-secondary rounded-4 p-1 btn-sm connexion-info">
 							<a class="nav-link link-light " href="{{ path ('app_login') }}">Se connecter</a>
 						</button>
-						<button type="button" class="btn-secondary rounded-4 my-2 btn-sm reservation-info">
+						<button type="button" class="btn-secondary rounded-4 p-1 btn-sm reservation-info">
 							<a class="nav-link link-light " href="{{ path ('app_reservation') }}">Réserver</a>
 						</button>
 					</div>

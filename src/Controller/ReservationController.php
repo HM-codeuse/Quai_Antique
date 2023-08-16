@@ -24,9 +24,11 @@ class ReservationController extends AbstractController
         TableRepository $tableRepository,
         EntityManagerInterface $entityManager
     ): Response{
+
         $reservation = new Reservation();
         $user = $this->getUser();
 
+ //Je mets à jour le nom et l'email de l'utilisateur en les récupérant vu qu'il est connecté
         /** @var User $user */
         if ($user) {
             $reservation->setUser($user);
@@ -40,10 +42,6 @@ class ReservationController extends AbstractController
 
         $form->handleRequest($request);
 
-
-// // Récupérer les tables disponibles depuis le repository de Table
-//         $tableRepository = $entityManager->getRepository(Table::class);
-//         $availableTables = $tableRepository->findAvailableTables($slot, $Date);
 
         if ($form->isSubmitted() && $form->isValid()) {
             $reservation = $form->getData();
