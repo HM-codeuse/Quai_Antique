@@ -3,15 +3,17 @@
 {% block body %}
 <h1 class="gallery-title text-center m-4 p-2">Galerie des plats de notre restaurant</h1>
 
-<div class="row">
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 {% for dish in dishes %}
-    <div class="col-md-4 lg-3 gallery">
-  <div class="gallery-card card h-100 rounded-0 border-0">
+    <div class="col">
+  <div class="gallery-card card h-100 rounded-0 border-0 shadow-sm">
     <div class="card-body">
     <img class="image-item" src=" {{ vich_uploader_asset( dish, 'imageFile' ) }} " alt="Card image cap">
       <p class="card-title text-center text-dark dish-name">{{ dish.name }}</p></div>
     </div>
 </div>
+
+
 
 
 {% endfor %}
