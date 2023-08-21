@@ -24,37 +24,43 @@
 					<a class="nav-link" href="{{ path ('app_contact') }}">Contact</a>
 				</li>
 			</ul>
-			<div class="navbar-nav ms-auto buttons">
+			<div class="connexion-status">
 				{% if app.user %}
 					{{ app.user.username}}
 					{{ app.user.firstname }}, connecté
-					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn-secondary rounded-4 py-1 col-4-sm col-2-lg connexion-info">
+				</div>
+				<div class="navbar-nav ms-auto buttons">
+					<div class="d-grid gap-1 d-md-flex justify-content-md-end">
+						<button class="btn-primary me-md-2" type="button">
 							<a class="nav-link" href="{{ path('app_logout') }}">Me déconnecter
 							</a>
 						</button>
-						<button type="button" class="btn-secondary rounded-4 py-1 col-4-sm col-2-lg reservation-info">
+						<button class="btn-primary" type="button">
 							<a class="nav-link " href="{{ path ('app_reservation') }}">Réserver</a>
 						</button>
 						{% if 'ROLE_ADMIN' in app.user.roles %}
-							<button type="button" class="btn-secondary rounded-4 py-1 col-4-sm col-2-lg connexion-info">
+							<button type="button" class="btn-primary">
 								<a class="nav-link " href="{{ path ('admin') }}">Administration</a>
 							</button>
 						{% endif %}
-
 					</div>
+
 				{% else %}
-					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn-secondary rounded-4 p-1 col-4-sm col-2-lg registration-info">
-							<a class="nav-link link-light " href="{{ path ('app_register') }}">S'inscrire</a>
+
+					<div class="navbar-nav ms-auto buttons">
+						<div class="d-grid gap-1 d-md-flex justify-content-md-end">
+							<button class="btn-primary me-md-2" type="button">
+								<a class="nav-link link-light " href="{{ path ('app_register') }}">S'inscrire</a>
+							</a>
 						</button>
-						<button type="button" class="btn-secondary rounded-4 p-1 col-4-sm col-2-lg connexion-info">
+						<button class="btn-primary" type="button">
 							<a class="nav-link link-light " href="{{ path ('app_login') }}">Se connecter</a>
 						</button>
-						<button type="button" class="btn-secondary rounded-4 p-1 col-4-sm col-2-lg reservation-info">
+						<button type="button" class="btn-primary">
 							<a class="nav-link link-light " href="{{ path ('app_reservation') }}">Réserver</a>
 						</button>
 					</div>
+
 				{% endif %}
 			</div>
 		</div>
