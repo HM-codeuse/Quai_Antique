@@ -2,7 +2,7 @@
 
 
 {% block body %}
-	<h3 class="title p-2">Contactez-nous!!!</h3>
+	<h1 class="title p-2 text-center text-smaller">Formulaire de contact</h1>
 	<div class="contact_form m-3">
 		{{ form_start(form) }}
 		{{ form_errors(form) }}
@@ -11,8 +11,9 @@
 		{{ form_row(form.email) }}
 		{{ form_row(form.message) }}
 
-
-		<button type="submit" class="btn-secondary rounded-2 p-2">Envoyer votre message</button>
+		<div class="contactform-button text-center">
+			<button type="submit" class="btn-secondary rounded-2 p-2">Envoyer votre message</button>
+		</div>
 		{{ form_end(form) }}
 
 	</div>
