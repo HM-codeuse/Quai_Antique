@@ -1,8 +1,6 @@
 {% extends 'base.html.twig' %}
 
 
-
-
 {% block body %}
 
 	{# Afficher les messages flash s'il y en a #}
@@ -28,7 +26,9 @@
 			{{ form_row(form.table, { 'attr': {'id': 'reservation_table', 'class': 'table-select'} }) }}
 			{{ form_row(form.allergy) }}
 
-			<button type="submit" class="btn-secondary rounded-2 p-2 col-6">Enregistrer la réservation</button>
+			<div class="reservation-button">
+				<button type="submit" class="btn-secondary rounded-2 p-2 col-6">Enregistrer la réservation</button>
+			</div>
 			{{ form_end(form) }}
 
 		{% else %}
@@ -43,6 +43,6 @@
 
 {% endblock body %}
 {% block javascripts %}
-			{{ encore_entry_script_tags('app') }}
-			{{ encore_entry_script_tags('reservation') }}
+	{{ encore_entry_script_tags('app') }}
+	{{ encore_entry_script_tags('reservation') }}
 {% endblock %}
