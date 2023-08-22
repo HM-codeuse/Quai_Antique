@@ -183,19 +183,20 @@ iframe {
 //footer
 footer {
     font-size: smaller;
-    position:relative;
-    width:100%;
+    position: relative;
+    bottom: 0;
+    width: 100%;
     display: flex;
     flex-direction: column;
 }
 
 //responsive
 
-@media only screen and (max-width: 500px) {
-    .openinghours, .footer-logo, .Adress, .Social-title {
-      display: none; 
-    }
-    
+@media only screen and (max-width: 880px) {
+    footer{
+          font-size: x-small;
+    }   
+
   }
 
 
