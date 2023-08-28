@@ -27,7 +27,7 @@ introJs()
         },
         {
             element: document.querySelector('.openhours-info'),
-      intro: "Vérifiez si nous sommes ouverts ici et venez nous rencontrer.Vous ne serez pas déçus"
+      intro: "Vérifiez si nous sommes ouverts ici et venez déguster nos spécialités!"
         }]
   }).start();
 
