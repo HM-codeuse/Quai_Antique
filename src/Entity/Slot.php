@@ -19,7 +19,7 @@ class Slot
     #[ORM\Column(type: Types::TIME_MUTABLE)]
     private ?\DateTimeInterface $time = null;
 
-    #[ORM\OneToMany(targetEntity:Reservation::class, mappedBy: 'slot')]
+    #[ORM\OneToMany(targetEntity:Reservation::class, mappedBy: 'slot',  cascade: ['persist', 'remove'])]
     private Collection $reservation;
 
 
