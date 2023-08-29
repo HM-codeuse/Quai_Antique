@@ -12,8 +12,7 @@ class TableFixtures extends Fixture
     public function load(ObjectManager $manager)
     {
         $table = new Table();
-        $table->setStatus("True");
-        $table->setNumberOfSettings(2);
+        $table->setNumberOfSettings(7);
 
         $manager->persist($table);
         $manager->flush();

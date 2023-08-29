@@ -19,6 +19,9 @@ class ReservationFixtures extends Fixture implements DependentFixtureInterface
         $reservation->setTable($this->getReference(TableFixtures::TABLE_REFERENCE));
         $reservation->setSlot($this->getReference(SlotFixtures::SLOT_REFERENCE));
         $reservation->setUser($this->getReference(UserFixtures::USER_REFERENCE));
+        $user = $this->getReference(UserFixtures::USER_REFERENCE);
+        $reservation->setEmail($user->getEmail());
+        
 
         $manager->persist($reservation);
         $manager->flush();

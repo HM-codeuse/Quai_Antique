@@ -14,12 +14,12 @@ class UserFixtures extends Fixture
         $this->hasher = $hasher;
     }
 
-    public const USER_REFERENCE = 'user-john';
+    public const USER_REFERENCE = 'user-jane';
     public function load(ObjectManager $manager)
     {
         $user = new User();
         $password = $this->hasher->hashPassword($user, 'fixtures');
-        $user->setUsername("Fixtures");
+        $user->setUsername("Fixtures-john");
         $user->setFirstName("John");
         $user->setEmail("john@fixtures.com");
         $user->setRoles(["ROLE_USER"]);
