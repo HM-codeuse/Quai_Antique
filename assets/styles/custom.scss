@@ -136,10 +136,16 @@ iframe {
         justify-content:space-around;
     }
     
-    .carousel-inner {
-        width: 90vw;
+    .carousel {
+        width:80%;
+        display: flex;
+        align-content: center;
     }
-    
+
+    .carousel-row {
+        display: flex;
+        justify-content: space-around;
+    }    
   }
 
 
