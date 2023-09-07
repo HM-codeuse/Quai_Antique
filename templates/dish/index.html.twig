@@ -3,9 +3,9 @@
 {% block body %}
 <h1 class="dishes-title text-center m-4 p-2">Nos plats</h1>
 
-<div class="row">
+<div class="row dishes-columns">
 {% for category in categories %}
-    <div class="row m-2 p-2 text-center">
+    <div class="col-lg-3 col-sm-12 m-2 p-2 text-center">
     <h3 class= "category-title text-center">{{category.name}}</h3>
     <div class="list-dishes">
         <ul class="list-unstyled">
@@ -19,7 +19,5 @@
     </div>
 </div>
 {% endfor %}
-
-
-
+</div>
 {% endblock %}

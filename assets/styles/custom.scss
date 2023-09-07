@@ -153,6 +153,13 @@ iframe {
     color:var(--primary);
 }
 
+
+//page des plats classés en catégories 
+.dishes-columns {
+    display: flex;
+    justify-content: center;
+}
+
 //page des menus 
 .menu-title, .category-title {
     color:var(--secondary);
@@ -204,6 +211,15 @@ footer {
     }   
 
   }
+
+
+  @media only screen and (max-width: 880px){
+    .dishes-columns {
+        flex-direction: column;
+        align-items: center;
+    }
+    }
+ 
 
 
 
