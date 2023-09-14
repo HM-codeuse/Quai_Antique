@@ -17,9 +17,9 @@ class SecurityController extends AbstractController
         //     return $this->redirectToRoute('target_path');
         // }
 
-        // get the login error if there is one
+        // récupère la dernère erreur d'authentification survenue 
         $error = $authenticationUtils->getLastAuthenticationError();
-        // last username entered by the user
+        // dernier nom d'utilisateur récupéré pour une future connexion 
         $lastUsername = $authenticationUtils->getLastUsername();
 
         return $this->render(

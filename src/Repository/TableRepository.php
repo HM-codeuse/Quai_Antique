@@ -4,8 +4,8 @@ namespace App\Repository;
 
 use App\Entity\Slot;
 use App\Entity\Table;
-use Doctrine\Persistence\ManagerRegistry;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\Persistence\ManagerRegistry;
 
 /**
  * @extends ServiceEntityRepository<Table>
@@ -61,7 +61,6 @@ class TableRepository extends ServiceEntityRepository
 
         $reservedTableIds = array_column($reservedTables, 'id');
 
-
         if (empty($reservedTableIds)) {
             return $this->findAll();
         }
@@ -73,7 +72,7 @@ class TableRepository extends ServiceEntityRepository
             ->getResult();
     }
 
-     /**
+    /**
      * @param int $slot
      * @param \DateTimeInterface $Date
      * @return Table[]
@@ -81,20 +80,19 @@ class TableRepository extends ServiceEntityRepository
     public function findAvailableTablesBySlotId(int $slot, \DateTimeInterface $Date)
     {
         $reservedTables = $this->createQueryBuilder('t')
-    ->select('t.id')
-    ->leftJoin('t.reservation', 'r')
-    ->Join('r.slot', 's')
-    ->andWhere('s.id = :slot')
-    ->andWhere('r.Date = :Date')
-    ->setParameters([
-        'slot' => $slot,
-        'Date' => $Date,
-    ])
-    ->getQuery()
-    ->getResult();
+            ->select('t.id')
+            ->leftJoin('t.reservation', 'r')
+            ->Join('r.slot', 's')
+            ->andWhere('s.id = :slot')
+            ->andWhere('r.Date = :Date')
+            ->setParameters([
+                'slot' => $slot,
+                'Date' => $Date,
+            ])
+            ->getQuery()
+            ->getResult();
 
         $reservedTableIds = array_column($reservedTables, 'id');
-
 
         if (empty($reservedTableIds)) {
             return $this->findAll();
