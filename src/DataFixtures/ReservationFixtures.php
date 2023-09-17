@@ -2,7 +2,7 @@
 
 namespace App\DataFixtures;
 use App\DataFixtures\UserFixtures;
-use App\DataFixtures\TableFixtures;
+use App\DataFixtures\GuestFixtures;
 use App\DataFixtures\SlotFixtures;
 use App\Entity\Reservation;
 use Doctrine\Persistence\ObjectManager;
@@ -16,7 +16,7 @@ class ReservationFixtures extends Fixture implements DependentFixtureInterface
         $Date = new \DateTime('2023-12-17');
         $reservation = new Reservation();
         $reservation->setDate($Date);
-        $reservation->setTable($this->getReference(TableFixtures::TABLE_REFERENCE));
+        $reservation->setGuest($this->getReference(GuestFixtures::GUEST_REFERENCE));
         $reservation->setSlot($this->getReference(SlotFixtures::SLOT_REFERENCE));
         $reservation->setUser($this->getReference(UserFixtures::USER_REFERENCE));
         $user = $this->getReference(UserFixtures::USER_REFERENCE);
@@ -32,7 +32,7 @@ class ReservationFixtures extends Fixture implements DependentFixtureInterface
         return array(
             UserFixtures::class,
             SlotFixtures::class,
-            TableFixtures::class,
+            GuestFixtures::class,
         );
     }
 }
