@@ -17,11 +17,11 @@
             {{ form_row(form.email, { 'disabled': true, 'value': app.user.email }) }}
             {{ form_row(form.Date, { 'attr': {'class': 'reservation_date'} }) }}
             {{ form_row(form.slot, { 'attr': {'class': 'reservation_slot'} }) }}
-            <div id="available-guests-info">
-                <!-- Le texte statique avant la mise à jour dynamique -->
-                Nombre de places disponibles : <span id="available-guests-count"> 20 </span>
-            </div>
             {{ form_row(form.guest) }}
+             <div id="available-guests-info">
+                <!-- Le texte statique avant la mise à jour dynamique -->
+                Nombre de places disponibles pour ce créneau : <span id="available-guests-count"> 20 </span>
+            </div>
             {{ form_row(form.allergy) }}
             <div class="reservation-button text-center">
                 <button type="submit" class="btn-secondary rounded-2 p-2 col-6">Enregistrer la réservation</button>
