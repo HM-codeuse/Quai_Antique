@@ -11,7 +11,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\Common\Collections\ArrayCollection;
 
 #[ORM\Entity(repositoryClass: ReservationRepository::class)]
-#[ORM\Table(uniqueConstraints: [new ORM\UniqueConstraint(name: "reservation_unique",columns: ["table_id", "slot_id", "date"])])]
+#[ORM\Table(uniqueConstraints: [new ORM\UniqueConstraint(name: "reservation_unique",columns: ["guest_id", "slot_id", "date"])])]
 class Reservation
 {
     #[ORM\Id]
@@ -39,10 +39,10 @@ class Reservation
 
     // #[ORM\ManyToOne(targetEntity:Table::class, inversedBy: 'reservation')]
     // #[ORM\JoinColumn(nullable: false)]
-    // private $table;
+    // private $guest;
 
     #[ORM\ManyToOne(inversedBy: 'reservation')]
-    private ?Table $table = null;
+    private ?Guest $guest = null;
 
 
     public function __construct()
@@ -143,14 +143,14 @@ class Reservation
     //     return $this;
     // }
 
-    public function getTable(): ?Table
+    public function getGuest(): ?Guest
     {
-        return $this->table;
+        return $this->guest;
     }
 
-    public function setTable(?Table $table): static
+    public function setGuest(?Guest $guest): static
     {
-        $this->table = $table;
+        $this->guest = $guest;
 
         return $this;
     }

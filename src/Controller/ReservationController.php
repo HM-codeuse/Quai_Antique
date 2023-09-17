@@ -6,8 +6,8 @@ use App\Entity\Reservation;
 use App\Entity\Slot;
 use App\Entity\User;
 use App\Form\ReservationType;
+use App\Repository\GuestRepository;
 use App\Repository\OpeningHoursRepository;
-use App\Repository\TableRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
@@ -21,14 +21,14 @@ class ReservationController extends AbstractController
     public function index(
         Request $request,
         OpeningHoursRepository $openingHoursRepository,
-        TableRepository $tableRepository,
+        GuestRepository $guestRepository,
         EntityManagerInterface $entityManager
-    ): Response{
+    ): Response {
 
         $reservation = new Reservation();
         $user = $this->getUser();
 
- //Je mets à jour le nom et l'email de l'utilisateur en les récupérant vu qu'il est connecté
+        //Je mets à jour le nom et l'email de l'utilisateur en les récupérant vu qu'il est connecté
         /** @var User $user */
         if ($user) {
             $reservation->setUser($user);
@@ -42,7 +42,6 @@ class ReservationController extends AbstractController
 
         $form->handleRequest($request);
 
-
         if ($form->isSubmitted() && $form->isValid()) {
             $reservation = $form->getData();
 
@@ -51,30 +50,27 @@ class ReservationController extends AbstractController
                 $reservation->addAllergy($allergy);
             }
 
-            // Vérifier si la table sélectionnée est disponible
-            $selectedTable = $reservation->getTable();
-            // // Récupérer le créneau horaire et la date de la réservation depuis le formulaire
+            // Vérifier si le nombre de convives sélectionné est disponible
+            $selectedGuest = $reservation->getGuest();
             $slot = $reservation->getSlot();
             $Date = $reservation->getDate();
-            $availableTables = $tableRepository->findAvailableTables($slot, $Date);
-            $isTableAvailable = false;
-            foreach ($availableTables as $table) {
-                if ($table->getId() === $selectedTable->getId()) {
-                    $isTableAvailable = true;
-                    break;
-                }
-            }
+            $reservedGuestsCount = $guestRepository->findAvailableGuests($slot, $Date);
+            $availableGuests = 20 - $reservedGuestsCount;
+            
+            //dump($availableGuests); // Affichez la valeur de $availableGuests
+            //die();
 
-            if (!$isTableAvailable) {
-                // La table sélectionnée n'est pas disponible, vous pouvez générer une erreur ou rediriger vers une page d'erreur
-                $this->addFlash('error', 'Cette table est déjà réservée, veuillez choisir une autre table.');
+            if ($selectedGuest->getNumberOfSettings() <= $availableGuests) {
+                // Le nombre de convives est disponible, continuez le traitement
+                $entityManager->persist($reservation);
+                $entityManager->flush();
+
+                return $this->redirectToRoute('app_reservation_success');
+            } else {
+                // Le nombre de convives n'est pas disponible
+                $this->addFlash('error', 'Aucune réservation disponible pour ce créneau, veuillez changer votre réservation');
                 return $this->redirectToRoute('app_reservation');
             }
-
-            $entityManager->persist($reservation);
-            $entityManager->flush();
-
-            return $this->redirectToRoute('app_reservation_success');
         }
 
         return $this->render('reservation/index.html.twig', [
@@ -84,28 +80,24 @@ class ReservationController extends AbstractController
         ]);
     }
 
+    #[Route('/get-available-guests', name: 'get_available_guests')]
+    public function getAvailableGuests(
+        Request $request,
+        GuestRepository $guestRepository,
+        EntityManagerInterface $entityManager
+    ) {
+        try {
+            $selectedDate = $request->query->get('date');
+            $selectedSlotId = $request->query->get('slot'); // Obtenez l'ID du slot depuis la requête GET
 
-    #[Route('/get-available-tables', name: 'get_available_tables')]
-public function getAvailableTables(
-    Request $request, 
-    TableRepository $tableRepository)
-{
-    
-     // Gérer la requête AJAX pour la mise à jour des tables disponibles
-            //Je récupère les 2 paramètres du formulaire que j'ai passé dans l'AJAX du js
-                 $selectedDate = $request->query->get('date');
-                 $selectedSlot = $request->query->get('slot');
-     
-                 // Récupérer les tables disponibles en faisant un tri par l'identifiant de l'horaire via fonction définie dans tablerepo
-                 $availableTables = $tableRepository->findAvailableTablesBySlotId($selectedSlot, new \DateTime($selectedDate));
-                 
-                 $tablesData = [];
-                 foreach ($availableTables as $table) {
-                     $tablesData[] = [
-                         'id' => $table->getId(),
-                         'numberOfSettings' => $table->getNumberOfSettings()
-                     ];
-                 }
-     
-                 return new JsonResponse(['tables' => $tablesData]);
-            }}
+            // Récupérez l'entité Slot correspondante à partir de l'ID
+            $selectedSlot = $entityManager->getRepository(Slot::class)->find($selectedSlotId);
+            $availableGuestsCount = $guestRepository->findAvailableGuests($selectedSlot, new \DateTime($selectedDate));
+
+            return new JsonResponse($availableGuestsCount);
+        } catch (\Exception $e) {
+            return new JsonResponse(['error' => $e->getMessage()], Response::HTTP_INTERNAL_SERVER_ERROR);
+
+        }
+    }
+}

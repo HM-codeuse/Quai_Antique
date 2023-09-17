@@ -6,7 +6,7 @@ use App\Entity\Dish;
 use App\Entity\Menu;
 use App\Entity\Slot;
 use App\Entity\User;
-use App\Entity\Table;
+use App\Entity\Guest;
 use App\Entity\Allergy;
 use App\Entity\Category;
 use App\Entity\Reservation;
@@ -40,7 +40,7 @@ class DashboardController extends AbstractDashboardController
         yield MenuItem::linkToCrud('Menus', 'fa-solid fa-plate-wheat', Menu::class);
         yield MenuItem::linkToCrud('Horaires', 'fa-regular fa-clock', OpeningHours::class);
         yield MenuItem::linkToCrud('Allergies', 'fa-solid fa-triangle-exclamation', Allergy::class);
-        yield MenuItem::linkToCrud('Tables', 'fa-solid fa-utensils', Table::class);
+        yield MenuItem::linkToCrud('Convives', 'fa-solid fa-utensils', Guest::class);
         yield MenuItem::linkToCrud('Créneaux', 'fa-solid fa-clock', Slot::class);
         yield MenuItem::linkToCrud('Reservations', 'fa-solid fa-pager', Reservation::class);
         yield MenuItem::linkToCrud('Clients', 'fa-solid fa-user', User::class);

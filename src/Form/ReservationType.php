@@ -4,7 +4,7 @@ namespace App\Form;
 
 use App\Entity\Allergy;
 use App\Entity\Slot;
-use App\Entity\Table;
+use App\Entity\Guest;
 use App\Entity\Reservation;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -62,11 +62,11 @@ class ReservationType extends AbstractType
                 'required' => false,
                 'label' => 'Allergie à signaler'
             ])
-            ->add('table', EntityType::class, [
-                'class' => Table::class,
-                'label' => 'Sélectionner une table',
-                'choice_label' => function (Table $table) {
-                    return 'Table Quai n°'. $table->getId(). ' de ' . $table->getNumberOfSettings() . ' personnes';
+            ->add('guest', EntityType::class, [
+                'class' => Guest::class,
+                'label' => 'Sélectionner le nombre de convives',
+                'choice_label' => function (Guest $guest) {
+                    return $guest->getNumberOfSettings() . ' convives';
                 },
             ])
     

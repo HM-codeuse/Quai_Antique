@@ -53,6 +53,7 @@ class Slot
     public function setReservation(Reservation $reservation): self
     {
         // set the owning side of the relation if necessary
+
         if ($reservation->getSlot() !== $this) {
             $reservation->setSlot($this);
         }

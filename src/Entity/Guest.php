@@ -2,15 +2,15 @@
 
 namespace App\Entity;
 
-use App\Repository\TableRepository;
+use App\Repository\GuestRepository;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
-#[ORM\Entity(repositoryClass: TableRepository::class)]
-#[ORM\Table(name: '`table`')]
-class Table
+#[ORM\Entity(repositoryClass: GuestRepository::class)]
+#[ORM\Table(name: '`guest`')]
+class Guest
 {
     #[ORM\Id]
     #[ORM\GeneratedValue]
@@ -20,7 +20,7 @@ class Table
     #[ORM\Column]
     private ?int $numberOfSettings;
 
-    #[ORM\OneToMany(mappedBy: 'table', targetEntity: Reservation::class)]
+    #[ORM\OneToMany(mappedBy: 'guest', targetEntity: Reservation::class)]
     private Collection $reservation;
 
     public function __construct()
@@ -30,7 +30,7 @@ class Table
 
     public function __toString()
     {
-        return 'Table n°'. $this->getId().' de '. $this->getNumberOfSettings().' personnes';
+        return 'Table de '. $this->getNumberOfSettings().' personnes';
     }
 
     public function getId(): ?int
@@ -38,12 +38,12 @@ class Table
         return $this->id;
     }
 
-    public function getNumberOfSettings(): ?string
+    public function getNumberOfSettings(): ?int
     {
         return $this->numberOfSettings;
     }
 
-    public function setNumberOfSettings(string $numberOfSettings): self
+    public function setNumberOfSettings(int $numberOfSettings): self
     {
         $this->numberOfSettings = $numberOfSettings;
 
@@ -62,7 +62,7 @@ class Table
     {
         if (!$this->reservation->contains($reservation)) {
             $this->reservation->add($reservation);
-            $reservation->setTable($this);
+          //  $reservation->setGuest($this);
         }
 
         return $this;
@@ -72,8 +72,8 @@ class Table
     {
         if ($this->reservation->removeElement($reservation)) {
             // set the owning side to null (unless already changed)
-            if ($reservation->getTable() === $this) {
-                $reservation->setTable(null);
+            if ($reservation->getGuest() === $this) {
+              //  $reservation->setGuest(null);
             }
         }
 

@@ -1,47 +1,39 @@
 {% extends 'base.html.twig' %}
 
-
 {% block body %}
+    {# Afficher les messages flash s'il y en a #}
+    {% for flashMessage in app.flashes('error') %}
+        <div class="alert alert-danger">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
 
-	{# Afficher les messages flash s'il y en a #}
-	{% for flashMessage in app.flashes('error') %}
-		<div class="alert alert-danger">
-			{{ flashMessage }}
-		</div>
-	{% endfor %}
-
-	<div class="reservation_form m-5">
-
-		{% if app.user %}
-
-			<h1 class="title">Votre réservation</h1>
-
-			{{ form_start(form) }}
-			{{ form_errors(form) }}
-			{{ form_row(form.user, { 'disabled': true, 'value': app.user.username }) }}
-			{{ form_row(form.email, { 'disabled': true, 'value': app.user.email }) }}
-			{{ form_row(form.Date, { 'attr': {'class': 'reservation_date'} }) }}
-			{{ form_row(form.slot, { 'attr': {'class': 'reservation_slot'} }) }}
-
-			{{ form_row(form.table, { 'attr': {'id': 'reservation_table', 'class': 'table-select'} }) }}
-			{{ form_row(form.allergy) }}
-
-			<div class="reservation-button text-center">
-				<button type="submit" class="btn-secondary rounded-2 p-2 col-6">Enregistrer la réservation</button>
-			</div>
-			{{ form_end(form) }}
-
-		{% else %}
-
-			<h1 class="title">Votre réservation</h1>
-			<h6 class="advice">Pour réserver, veuillez vous inscrire ou vous connecter.</h6>
-
-		{% endif %}
-
-	</div>
-
-
+    <div class="reservation_form m-5">
+        {% if app.user %}
+            <h1 class="title">Votre réservation</h1>
+            {{ form_start(form) }}
+            {{ form_errors(form) }}
+            {{ form_row(form.user, { 'disabled': true, 'value': app.user.username }) }}
+            {{ form_row(form.email, { 'disabled': true, 'value': app.user.email }) }}
+            {{ form_row(form.Date, { 'attr': {'class': 'reservation_date'} }) }}
+            {{ form_row(form.slot, { 'attr': {'class': 'reservation_slot'} }) }}
+            <div id="available-guests-info">
+                <!-- Le texte statique avant la mise à jour dynamique -->
+                Nombre de places disponibles : <span id="available-guests-count"> 20 </span>
+            </div>
+            {{ form_row(form.guest) }}
+            {{ form_row(form.allergy) }}
+            <div class="reservation-button text-center">
+                <button type="submit" class="btn-secondary rounded-2 p-2 col-6">Enregistrer la réservation</button>
+            </div>
+            {{ form_end(form) }}
+        {% else %}
+            <h1 class="title">Votre réservation</h1>
+            <h6 class="advice">Pour réserver, veuillez vous inscrire ou vous connecter.</h6>
+        {% endif %}
+    </div>
 {% endblock body %}
+
 {% block javascripts %}
 	{{ encore_entry_script_tags('app') }}
 	{{ encore_entry_script_tags('reservation') }}

@@ -2,15 +2,15 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Table;
+use App\Entity\Guest;
 use EasyCorp\Bundle\EasyAdminBundle\Field\NumberField;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractCrudController;
 
-class TableCrudController extends AbstractCrudController
+class GuestCrudController extends AbstractCrudController
 {
     public static function getEntityFqcn(): string
     {
-        return Table::class;
+        return Guest::class;
     }
 
     

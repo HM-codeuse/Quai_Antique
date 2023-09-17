@@ -1,42 +1,38 @@
 document.addEventListener('DOMContentLoaded', function () {
     const dateInput = document.querySelector('.reservation_date');
     const slotInput = document.querySelector('.reservation_slot');
-    // slotInput.value renvoie que le id
-    const tableSelect = document.getElementById('reservation_table');
+    const availableGuestsCount = document.getElementById('available-guests-count');
 
-    dateInput.addEventListener('change', updateAvailableTables);
-    slotInput.addEventListener('change', updateAvailableTables);
+    // Ajoutez un gestionnaire d'événements pour le champ slot
+    slotInput.addEventListener('change', updateAvailableGuests);
+    dateInput.addEventListener('change', updateAvailableGuests);
 
-    //Je mets à jour la liste des tables 
-    function updateAvailableTables() {
+
+    function updateAvailableGuests() {
         const selectedDate = dateInput.value;
         const selectedSlot = slotInput.value;
 
-        // J'envoie une requête à la route get-availables tables en donnant en paramètre la date et l'horaire sélectionnés
-        fetch(`get-available-tables?date=${selectedDate}&slot=${selectedSlot}`)
-            .then(response => response.json())
-            .then(data => {
-                // Mettre à jour les options du champ de sélection des tables
-                tableSelect.innerHTML = '';
-                if (data.tables.length > 0) {
-                    data.tables.forEach(table => {
-                        const option = document.createElement('option');
-                        option.value = table.id;
-                        option.textContent = `Table Quai n° ${table.id} de ${table.numberOfSettings} personnes `;
+        // Vérifiez si slot est défini avant d'effectuer la requête AJAX
+        if (selectedSlot) {
+            fetch(`get-available-guests?date=${selectedDate}&slot=${selectedSlot}`)
+                .then(response => response.json())
+                .then(data => {
+                    console.log('Données reçues :', data);
 
-                        tableSelect.appendChild(option);
-                    });
-                } else {
-                    const option = document.createElement('option');
-                    option.textContent = 'Aucune table disponible pour cette date et heure.';
-                    tableSelect.appendChild(option);
-                }
-            })
-            .catch(error => {
-                console.error('Une erreur s\'est produite lors de la récupération des tables disponibles :', error);
-            });
+                    if (data >= 0) {
+                        availableGuestsCount.textContent = 20 - data;
+                    } else {
+                        availableGuestsCount.textContent = '0';
+                    }
+                })
+                .catch(error => {
+                    console.error('Une erreur s\'est produite lors de la récupération du nombre de convives disponibles :', error);
+                });
+        } else {
+            // Le champ slot n'est pas défini, gérer le cas ici
+        }
     }
 
-    // Appel initial pour afficher les tables disponibles au chargement de la page
-    updateAvailableTables();
+    // Appel initial pour afficher le nombre de convives disponibles au chargement de la page
+    updateAvailableGuests();
 });
