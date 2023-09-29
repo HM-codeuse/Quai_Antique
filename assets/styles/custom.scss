@@ -157,7 +157,9 @@ iframe {
 //page des plats classés en catégories 
 .dishes-columns {
     display: flex;
+    flex: 1;
     justify-content: center;
+    padding: 60px;
 }
 
 //page des menus 
@@ -193,6 +195,11 @@ iframe {
     justify-content: center;
 }
 
+//page de réservation 
+.reservation_announce {
+    padding-bottom: 260px;
+}
+
 //footer
 footer {
     font-size: smaller;
@@ -211,7 +218,6 @@ footer {
     }   
 
   }
-
 
   @media only screen and (max-width: 880px){
     .dishes-columns {
