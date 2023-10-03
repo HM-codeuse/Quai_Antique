@@ -1,8 +1,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-	<p class="m-5 text-center">Votre réservation est confirmée.<br/>
-		Pour retourner à la page d'accueil,
-		<a href="{{ path ('app_home') }}">cliquez ici</a>
-	</p>
+	<div class="container reservation-success">
+		<p class="m-5 text-center">Votre réservation est confirmée.<br/>
+			Pour retourner à la page d'accueil,
+			<a href="{{ path ('app_home') }}">cliquez ici</a>
+		</p>
+	</div>
+
 {% endblock %}

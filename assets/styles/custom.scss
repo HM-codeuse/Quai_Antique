@@ -17,6 +17,7 @@
     --info: #392C1E;
 }
 
+
 h1 {
     font-family: 'Mea Culpa', cursive;
     color: var(--primary);
@@ -120,7 +121,7 @@ button{
 .star{
     background-color:var(--primary);
     color:white;
-    margin: 10px;
+ //   margin: 10px;
     border-style: none;
 }
 
@@ -133,7 +134,7 @@ iframe {
 @media only screen and (min-width: 1200px) {
     .carousel {
         display: flex;
-        justify-content:space-around;
+      //  justify-content:space-around;
     }
     
     .carousel {
@@ -144,7 +145,7 @@ iframe {
 
     .carousel-row {
         display: flex;
-        justify-content: space-around;
+       // justify-content: space-around;
     }    
   }
 
@@ -209,15 +210,10 @@ footer {
     display: flex;
     flex-direction: column;
 }
-
+.year {
+    color: white;
+}
 //responsive
-
-@media only screen and (max-width: 880px) {
-    footer{
-          font-size: x-small;
-    }   
-
-  }
 
   @media only screen and (max-width: 880px){
     .dishes-columns {
@@ -236,6 +232,11 @@ footer {
     padding-top: 0px;
 
 
+}
+
+//page de succès réservation 
+.reservation-success {
+    height: 60vh;
 }
 
 
